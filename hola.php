@@ -7,7 +7,7 @@ echo '<h2>Direccion vacia</h2>';
 echo '<pre>' .var_export($direccion, TRUE). '</pre>';
 echo '<h2> Estableciendo propiedades</h2>';
 
-$direccion->calle_direccion_1 = '555 calle falsa';
+$direccion->calle_direccion_1 = '555 calle super falsa';
 $direccion->ciudad_nombre = 'Caracas';
 $direccion->subdivision_nombre = 'Estado';
 $direccion->codigo_postal = '1234';
