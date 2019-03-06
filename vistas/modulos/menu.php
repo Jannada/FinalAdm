@@ -26,38 +26,27 @@
 
 			</li>
 
-			<!-- <li>
-
-				<a href="categorias">
-
-					<i class="fa fa-th"></i>
-					<span>Categorías</span>
-
-				</a>
-
-			</li>
-
-			<li>
-
-				<a href="productos">
-
-					<i class="fa fa-product-hunt"></i>
-					<span>Productos</span>
-
-				</a>
-
-			</li>
-
 			<li>
 
 				<a href="clientes">
 
-					<i class="fa fa-users"></i>
+					<i class="fa fa-user"></i>
 					<span>Clientes</span>
 
 				</a>
 
 			</li>
+
+			<li>
+
+				<a href="empleados">
+
+					<i class="fa fa-user"></i>
+					<span>Empleados</span>
+
+				</a>
+
+			</li>			
 
 			<li class="treeview">
 
@@ -65,7 +54,7 @@
 
 					<i class="fa fa-list-ul"></i>
 					
-					<span>Ventas</span>
+					<span>Prestamos</span>
 					
 					<span class="pull-right-container">
 					
@@ -79,10 +68,10 @@
 					
 					<li>
 
-						<a href="ventas">
+						<a href="prestamos">
 							
 							<i class="fa fa-circle-o"></i>
-							<span>Administrar ventas</span>
+							<span>Administrar prestamos</span>
 
 						</a>
 
@@ -90,10 +79,10 @@
 
 					<li>
 
-						<a href="crear-venta">
+						<a href="crear-prestamos">
 							
 							<i class="fa fa-circle-o"></i>
-							<span>Crear venta</span>
+							<span>Crear prestamo</span>
 
 						</a>
 
@@ -101,16 +90,38 @@
 
 					<li>
 
-						<a href="reportes">
+						<a href="cuotas">
 							
 							<i class="fa fa-circle-o"></i>
-							<span>Reporte de ventas</span>
+							<span>Administras cuotas</span>
 
 						</a>
 
-					</li> -->
+					</li> 
+
+					<li>
+
+						<a href="resportes">
+							
+							<i class="fa fa-circle-o"></i>
+							<span>Reporte de prestamos</span>
+
+						</a>
+
+					</li> 
 
 				</ul>
+
+			</li>
+
+			<li>
+
+				<a href="facturas">
+
+					<i class="fas fa-check-circle"></i>
+					<span>Administrar facturas</span>
+
+				</a>
 
 			</li>
 

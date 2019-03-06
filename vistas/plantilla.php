@@ -138,6 +138,13 @@ CUERPO DOCUMENTO
 
       if($_GET["ruta"] == "inicio" ||
          $_GET["ruta"] == "usuarios" ||
+         $_GET["ruta"] == "clientes" ||
+         $_GET["ruta"] == "empleados" ||
+         $_GET["ruta"] == "prestamos" ||
+         $_GET["ruta"] == "crear-prestamos" ||
+         $_GET["ruta"] == "cuotas" ||
+         $_GET["ruta"] == "reportes" ||
+         $_GET["ruta"] == "facturas" ||
          $_GET["ruta"] == "salir"){
 
         include "modulos/".$_GET["ruta"].".php";
