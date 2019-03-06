@@ -40,11 +40,11 @@
 
               echo '
               <tr>
-                    <td>1</td>
-                    <td>Administrador</td>
-                    <td>ADM</td>
+                    <td>'.($key+1).'</td>
+                    <td>'.$value["usuario"].'</td>
+                    <td>'.$value["perfil"].'</td>
                     <td><button class="btn btn-success btn-xs">Activado</button></td>
-                    <td>00-00-0000</td>
+                    <td>'.$value["fecha"].'</td>
                     <td>
                   <div class="btn-group">
                   <button class="btn btn-warning" ><i class="fa fa-pencil"></i></button>
