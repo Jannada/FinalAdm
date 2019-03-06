@@ -30,16 +30,7 @@
               </tr>
             </thead>
             <tbody>
-            <?php
-            $item = null;
-            $valor = null;
-
-            $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
-
-            foreach($usuarios as $key => $value){
-
-              echo '
-              <tr>
+                <tr>
                     <td>1</td>
                     <td>Administrador</td>
                     <td>ADM</td>
@@ -51,10 +42,7 @@
                   <button class="btn btn-danger" ><i class="fa fa-times"></i></button>
 
                   </div>
-                </tr>';
-            }
-            ?>
-                
+                </tr>
             </tbody>
           </table>
         </div>
