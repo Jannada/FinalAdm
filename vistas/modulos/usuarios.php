@@ -45,6 +45,10 @@
             $valor = $usuarios[$i]["id_empleado"];
             $empleados = ControladorEmpleados::ctrMostrarEmpleados($item, $valor);
 
+            $item2 = "id";
+            $valor2 = $usuarios[$i]["id_cliente"];
+            $clientes = ControladorClientes::ctrMostrarClientes($item2, $valor2);
+
             // var_dump($valor);
             // var_dump($empleados["documento"]);
 
@@ -52,9 +56,14 @@
               echo '
               <tr>
                     <td>'.($i+1).'</td>
-                    <td>'.$usuarios[$i]["usuario"].'</td>
-                    <td>'.$empleados["documento"].'</td>
-                    <td>'.$usuarios[$i]["perfil"].'</td>
+                    <td>'.$usuarios[$i]["usuario"].'</td>';
+
+                    if ($usuarios[$i]["perfil"]=="Cliente") {
+                      echo '<td>'.$clientes["documento"].'</td>';
+                    }else{
+                      echo '<td>'.$empleados["documento"].'</td>';
+                    }
+                    echo '<td>'.$usuarios[$i]["perfil"].'</td>
                     <td><button class="btn btn-success btn-xs">Activado</button></td>
                     <td>'.$usuarios[$i]["fecha"].'</td>
                     <td>
