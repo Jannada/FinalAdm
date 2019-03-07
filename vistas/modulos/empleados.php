@@ -21,28 +21,43 @@
             <thead>
               <tr>
                 <th style="width:10px;">#</th>
-                <th>Usuario</th>
-                <th>Perfil</th>
-                <th>Estado</th>
-                <th>fecha</th>
+                <th>Nombre</th>
+                <th>Documento</th>
+                <th>Telefono</th>
+                <th>Dirección</th>
+                <th>Email</th>
+                <th>Fecha de nacimiento</th>
                 <th>Acciones</th>
            
               </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Administrador</td>
-                    <td>ADM</td>
-                    <td><button class="btn btn-success btn-xs">Activado</button></td>
-                    <td>00-00-0000</td>
+            <?php 
+            $item = null;
+            $valor = null;
+
+            $empleados = ControladorEmpleados::ctrMostrarEmpleados($item, $valor);
+
+            for($i=0; $i< count($empleados); $i++){
+              echo ' <tr>
+                    <td>'.($i+1).'</td>
+                    <td>'.$empleados[$i]["nombre"].'</td>
+                    <td>'.$empleados[$i]["documento"].'</td>
+                    <td>'.$empleados[$i]["telefono"].'</td>
+                    <td>'.$empleados[$i]["direccion"].'</td>
+                    <td>'.$empleados[$i]["email"].'</td>
+                    <td>'.$empleados[$i]["fecha_nacimiento"].'</td>
                     <td>
                   <div class="btn-group">
                   <button class="btn btn-warning" ><i class="fa fa-pencil"></i></button>
                   <button class="btn btn-danger" ><i class="fa fa-times"></i></button>
 
                   </div>
-                </tr>
+                </tr>';
+            }
+
+               
+                ?>
             </tbody>
           </table>
         </div>
