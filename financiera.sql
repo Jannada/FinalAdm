@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-03-2019 a las 16:57:17
--- Versión del servidor: 10.1.37-MariaDB
--- Versión de PHP: 7.3.1
+-- Tiempo de generación: 07-03-2019 a las 21:03:47
+-- Versión del servidor: 10.1.28-MariaDB
+-- Versión de PHP: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -78,6 +78,7 @@ CREATE TABLE `empleados` (
   `telefono` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `direccion` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `email` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `id_perfil` int(11) NOT NULL,
   `fecha_nacimiento` date NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -86,9 +87,9 @@ CREATE TABLE `empleados` (
 -- Volcado de datos para la tabla `empleados`
 --
 
-INSERT INTO `empleados` (`id`, `nombre`, `documento`, `telefono`, `direccion`, `email`, `fecha_nacimiento`, `fecha`) VALUES
-(1, 'Alejandro Matos', '7589093545', '(849) 987-6543', 'El país de las maravillas', 'Otrocorreo@correo.com', '1990-03-11', '2019-03-07 15:13:28'),
-(2, 'Juan Perez', '6475857463', '(809) 654-3211', 'Una direccion', 'Email@email.com', '1995-03-28', '2019-03-07 15:41:32');
+INSERT INTO `empleados` (`id`, `nombre`, `documento`, `telefono`, `direccion`, `email`, `id_perfil`, `fecha_nacimiento`, `fecha`) VALUES
+(1, 'Alejandro Matos', '7589093545', '(849) 987-6543', 'El país de las maravillas', 'Otrocorreo@correo.com', 4, '1990-03-11', '2019-03-07 19:45:53'),
+(2, 'Juan Perez', '6475857463', '(809) 654-3211', 'Una direccion', 'Email@email.com', 1, '1995-03-28', '2019-03-07 19:46:34');
 
 -- --------------------------------------------------------
 
@@ -113,6 +114,27 @@ CREATE TABLE `login` (
   `id_usuario` int(11) NOT NULL,
   `fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `perfil`
+--
+
+CREATE TABLE `perfil` (
+  `id` int(11) NOT NULL,
+  `perfil` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `perfil`
+--
+
+INSERT INTO `perfil` (`id`, `perfil`) VALUES
+(1, 'Administrador'),
+(2, 'Cliente'),
+(3, 'Cajero'),
+(4, 'Especial');
 
 -- --------------------------------------------------------
 
@@ -180,7 +202,7 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `usuario` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `password` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-  `perfil` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `id_perfil` int(11) NOT NULL,
   `estado` int(11) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `id_empleado` int(11) NOT NULL,
@@ -191,10 +213,10 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `usuario`, `password`, `perfil`, `estado`, `fecha`, `id_empleado`, `id_cliente`) VALUES
-(1, 'admin', 'admin123', 'administrador', 1, '2019-03-07 15:41:52', 2, 0),
-(2, 'usuario1', 'usuario123', 'Cliente', 1, '2019-03-07 15:48:01', 0, 0),
-(3, 'usuario2', 'usuario123', 'Empleado', 1, '2019-03-07 15:38:05', 1, 0);
+INSERT INTO `usuarios` (`id`, `usuario`, `password`, `id_perfil`, `estado`, `fecha`, `id_empleado`, `id_cliente`) VALUES
+(1, 'admin', 'admin123', 1, 1, '2019-03-07 19:44:43', 2, 0),
+(2, 'usuario1', 'usuario123', 2, 1, '2019-03-07 19:45:17', 0, 1),
+(3, 'usuario2', 'usuario123', 4, 1, '2019-03-07 19:44:57', 1, 0);
 
 --
 -- Índices para tablas volcadas
@@ -228,6 +250,12 @@ ALTER TABLE `formadepago`
 -- Indices de la tabla `login`
 --
 ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `perfil`
+--
+ALTER TABLE `perfil`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -287,6 +315,12 @@ ALTER TABLE `formadepago`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `perfil`
+--
+ALTER TABLE `perfil`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamos`
