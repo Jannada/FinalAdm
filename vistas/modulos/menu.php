@@ -19,7 +19,7 @@
 
 				<a href="usuarios">
 
-					<i class="fa fa-user"></i>
+					<i class="fa fa-users"></i>
 					<span>Usuarios</span>
 
 				</a>
@@ -30,7 +30,7 @@
 
 				<a href="clientes">
 
-					<i class="fa fa-user"></i>
+				<i class="fa fa-user-circle"></i>
 					<span>Clientes</span>
 
 				</a>
@@ -41,7 +41,7 @@
 
 				<a href="empleados">
 
-					<i class="fa fa-user"></i>
+				<i class="fa fa-id-card"></i>
 					<span>Empleados</span>
 
 				</a>
@@ -118,7 +118,7 @@
 
 				<a href="facturas">
 
-					<i class="fas fa-check-circle"></i>
+					<i class="fa fa-credit-card-alt"></i>
 					<span>Administrar facturas</span>
 
 				</a>
