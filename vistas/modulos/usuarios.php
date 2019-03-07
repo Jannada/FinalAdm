@@ -22,6 +22,7 @@
               <tr>
                 <th style="width:10px;">#</th>
                 <th>Usuario</th>
+                <th>documento</th>
                 <th>Perfil</th>
                 <th>Estado</th>
                 <th>fecha</th>
@@ -36,15 +37,26 @@
 
             $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
 
-            foreach($usuarios as $key => $value){
+
+
+           for($i=0; $i < count($usuarios); $i++){
+
+            $item = "id";
+            $valor = $usuarios[$i]["id_empleado"];
+            $empleados = ControladorEmpleados::ctrMostrarEmpleados($item, $valor);
+
+            // var_dump($valor);
+            // var_dump($empleados["documento"]);
+
 
               echo '
               <tr>
-                    <td>'.($key+1).'</td>
-                    <td>'.$value["usuario"].'</td>
-                    <td>'.$value["perfil"].'</td>
+                    <td>'.($i+1).'</td>
+                    <td>'.$usuarios[$i]["usuario"].'</td>
+                    <td>'.$empleados["documento"].'</td>
+                    <td>'.$usuarios[$i]["perfil"].'</td>
                     <td><button class="btn btn-success btn-xs">Activado</button></td>
-                    <td>'.$value["fecha"].'</td>
+                    <td>'.$usuarios[$i]["fecha"].'</td>
                     <td>
                   <div class="btn-group">
                   <button class="btn btn-warning" ><i class="fa fa-pencil"></i></button>

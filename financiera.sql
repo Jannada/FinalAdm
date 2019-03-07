@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-03-2019 a las 18:39:09
+-- Tiempo de generación: 07-03-2019 a las 16:57:17
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -30,7 +30,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `clientes` (
   `id` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
   `nombre` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `documento` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `telefono` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
@@ -40,6 +39,13 @@ CREATE TABLE `clientes` (
   `calificacion` int(11) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `nombre`, `documento`, `telefono`, `direccion`, `email`, `fecha_nacimiento`, `calificacion`, `fecha`) VALUES
+(1, 'Alejandra Martinez', '7674839986', '(809) 999-9999', 'Una dirección en algún lugar del mundo', 'unemail@email.com', '1995-08-08', 0, '2019-03-07 15:10:59');
 
 -- --------------------------------------------------------
 
@@ -67,7 +73,6 @@ CREATE TABLE `cuotas` (
 
 CREATE TABLE `empleados` (
   `id` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
   `nombre` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `documento` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `telefono` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
@@ -76,6 +81,14 @@ CREATE TABLE `empleados` (
   `fecha_nacimiento` date NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `empleados`
+--
+
+INSERT INTO `empleados` (`id`, `nombre`, `documento`, `telefono`, `direccion`, `email`, `fecha_nacimiento`, `fecha`) VALUES
+(1, 'Alejandro Matos', '7589093545', '(849) 987-6543', 'El país de las maravillas', 'Otrocorreo@correo.com', '1990-03-11', '2019-03-07 15:13:28'),
+(2, 'Juan Perez', '6475857463', '(809) 654-3211', 'Una direccion', 'Email@email.com', '1995-03-28', '2019-03-07 15:41:32');
 
 -- --------------------------------------------------------
 
@@ -169,8 +182,19 @@ CREATE TABLE `usuarios` (
   `password` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `perfil` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `estado` int(11) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `id_empleado` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `usuario`, `password`, `perfil`, `estado`, `fecha`, `id_empleado`, `id_cliente`) VALUES
+(1, 'admin', 'admin123', 'administrador', 1, '2019-03-07 15:41:52', 2, 0),
+(2, 'usuario1', 'usuario123', 'Cliente', 1, '2019-03-07 15:48:01', 0, 0),
+(3, 'usuario2', 'usuario123', 'Empleado', 1, '2019-03-07 15:38:05', 1, 0);
 
 --
 -- Índices para tablas volcadas
@@ -238,7 +262,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `cuotas`
@@ -250,7 +274,7 @@ ALTER TABLE `cuotas`
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `formadepago`
@@ -280,7 +304,7 @@ ALTER TABLE `recibo`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

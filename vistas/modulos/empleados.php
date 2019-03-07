@@ -20,7 +20,7 @@
           <table class="table tablr-bordered table-striped dt-responsive tablas" width="100%">
             <thead>
               <tr>
-                <th style="width:10px;">##</th>
+                <th style="width:10px;">#</th>
                 <th>Usuario</th>
                 <th>Perfil</th>
                 <th>Estado</th>
