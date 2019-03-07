@@ -21,8 +21,8 @@
             <thead>
               <tr>
                 <th style="width:10px;">##</th>
-                <th>Usuario</th>
-                <th>Perfil</th>
+                <th>Nombre</th>
+                <th>Documento</th>
                 <th>Estado</th>
                 <th>fecha</th>
                 <th>Acciones</th>
