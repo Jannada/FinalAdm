@@ -26,6 +26,7 @@
                 <th>Telefono</th>
                 <th>Dirección</th>
                 <th>Email</th>
+                <th>perfil</th>
                 <th>Fecha de nacimiento</th>
                 <th>Acciones</th>
            
@@ -39,6 +40,11 @@
             $empleados = ControladorEmpleados::ctrMostrarEmpleados($item, $valor);
 
             for($i=0; $i< count($empleados); $i++){
+
+              $item2 = "id";
+              $valor2 = $empleados[$i]["id_perfil"];
+
+              $perfiles = ControladorUsuarios::ctrMostrarPerfil($item2, $valor2);
               echo ' <tr>
                     <td>'.($i+1).'</td>
                     <td>'.$empleados[$i]["nombre"].'</td>
@@ -46,6 +52,7 @@
                     <td>'.$empleados[$i]["telefono"].'</td>
                     <td>'.$empleados[$i]["direccion"].'</td>
                     <td>'.$empleados[$i]["email"].'</td>
+                    <td>'.$perfiles["perfil"].'</td>
                     <td>'.$empleados[$i]["fecha_nacimiento"].'</td>
                     <td>
                   <div class="btn-group">
