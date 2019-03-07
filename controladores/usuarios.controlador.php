@@ -7,4 +7,11 @@ class ControladorUsuarios{
 		$respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 		return $respuesta;
 	}
+
+	static public function ctrMostrarPerfil($item, $valor){
+
+		$tabla = "perfil";
+		$respuesta = ModeloUsuarios::MdlMostrarPerfil($tabla, $item, $valor);
+		return $respuesta;
+	}
 }

@@ -49,6 +49,10 @@
             $valor2 = $usuarios[$i]["id_cliente"];
             $clientes = ControladorClientes::ctrMostrarClientes($item2, $valor2);
 
+            $item3 = "id";
+            $valor3 = $usuarios[$i]["id_perfil"];
+            $perfiles = ControladorUsuarios::ctrMostrarPerfil($item3, $valor3);
+
             // var_dump($valor);
             // var_dump($empleados["documento"]);
 
@@ -58,12 +62,12 @@
                     <td>'.($i+1).'</td>
                     <td>'.$usuarios[$i]["usuario"].'</td>';
 
-                    if ($usuarios[$i]["perfil"]=="Cliente") {
+                    if ($usuarios[$i]["id_perfil"]=="2") {
                       echo '<td>'.$clientes["documento"].'</td>';
                     }else{
                       echo '<td>'.$empleados["documento"].'</td>';
                     }
-                    echo '<td>'.$usuarios[$i]["perfil"].'</td>
+                    echo '<td>'.$perfiles["perfil"].'</td>
                     <td><button class="btn btn-success btn-xs">Activado</button></td>
                     <td>'.$usuarios[$i]["fecha"].'</td>
                     <td>

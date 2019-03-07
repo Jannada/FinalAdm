@@ -13,7 +13,7 @@
 
       <div class="box">
         <div class="box-header with-border">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuario">Agregar usuario</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuario">Agregar empleado</button>
         </div>
         
         <div class="box-body">
