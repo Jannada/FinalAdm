@@ -103,6 +103,18 @@
       <div class="modal-body">
         <div class="box-body">
    
+       <!-- ENTRADA PARA SELECCIONAR EL EMPLEADO -->
+
+       <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <select class="form-control input-lg" name="nuevoPerfil">
+                <option value="">Seleccionar empleado</option>
+                <option value="Administrador">Juan Carlos - 9898866550</option>
+                <option value="Empleado">Pedro Martinez - 8765444333</option>
+              </select>
+            </div>
+          </div>
 
           <!-- ENTRADA PARA EL USUARIO -->
           <div class="form-group">
@@ -115,25 +127,18 @@
           <!-- ENTRADA PARA CONTRASEÑA -->
           <div class="form-group">
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <span class="input-group-addon"><i class="fa fa-unlock-alt"></i></span>
               <input type="password" class="form-control input-lg" name="nuevoPassword" required placeholder="Ingresa contraseña">
             </div>
           </div>
           
-          <!-- ENTRADA PARA SELECCIONAR PERFIL -->
-
-          <div class="form-group">
+            <!-- ENTRADA PARA EL PERFIL -->
+            <div class="form-group">
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <select class="form-control input-lg" name="nuevoPerfil">
-                <option value="">Seleccionar perfil</option>
-                <option value="Administrador">Administrador</option>
-                <option value="Empleado">Empleado</option>
-                <option value="Cliente">Cliente</option>
-              </select>
+              <span class="input-group-addon"><i class="fa fa-address-card"></i></span>
+              <input type="text" class="form-control input-lg" name="nuevoUsuario" readonly required placeholder="Perfil">
             </div>
           </div>
-
 
         </div>
       </div>
