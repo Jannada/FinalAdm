@@ -101,7 +101,7 @@
 
 					<li>
 
-						<a href="resportes">
+						<a href="reportes">
 							
 							<i class="fa fa-circle-o"></i>
 							<span>Reporte de prestamos</span>
