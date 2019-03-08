@@ -14,4 +14,8 @@ class ControladorUsuarios{
 		$respuesta = ModeloUsuarios::MdlMostrarPerfil($tabla, $item, $valor);
 		return $respuesta;
 	}
+	static public function crtIngresoUsuario($item, $valor){
+		
+	}
+
 }
