@@ -24,10 +24,10 @@
         </div>
       </div>
       <!-- Creando el objeto para el login -->
-      <!-- <?php
-        // $login = new ControladorUsuarios();
-        // $login -> crtIngresoUsuario();
-      ?> -->
+       <?php
+          $login = new ControladorUsuarios();
+          $login -> crtIngresoUsuario();
+      ?>
 
     </form>
   </div>

@@ -47,21 +47,21 @@
 
 					<?php
 
-					// if($_SESSION["foto"] != ""){
+					 /*if($_SESSION["foto"] != ""){
 
-					// 	echo '<img src="'.$_SESSION["foto"].'" class="user-image">';
+					 	echo '<img src="'.$_SESSION["foto"].'" class="user-image">';
 
-					// }else{
+					 }else{
 
 
-					// 	echo '<img src="vistas/img/usuarios/default/anonymous.png" class="user-image">';
+						echo '<img src="vistas/img/usuarios/default/anonymous.png" class="user-image">';
 
-					// }
+					 }*/
 
 
 					?>
 						
-						<span class="hidden-xs"></span>
+						<span class="hidden-xs"><?php  echo $_SESSION["usuario"]; ?></span>
 
 					</a>
 
