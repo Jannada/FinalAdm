@@ -4,9 +4,9 @@
 
 		<ul class="sidebar-menu">
 
-			<li class="active">
+			<li>
 
-				<a href="inicio">
+				<a href="inicio" >
 
 					<i class="fa fa-home"></i>
 					<span>Inicio</span>
