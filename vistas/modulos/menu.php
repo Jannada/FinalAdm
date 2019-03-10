@@ -4,9 +4,13 @@
 
 		<ul class="sidebar-menu">
 
+<<<<<<< HEAD
 			<li class="">
+=======
+			<li>
+>>>>>>> f913e13c659e804a26175257f350462e1f929b88
 
-				<a href="inicio">
+				<a href="inicio" >
 
 					<i class="fa fa-home"></i>
 					<span>Inicio</span>
