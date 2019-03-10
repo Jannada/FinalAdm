@@ -20,11 +20,15 @@
           <table class="table tablr-bordered table-striped dt-responsive tablas" width="100%">
             <thead>
               <tr>
-                <th style="width:10px;">##</th>
+              <th style="width:10px;">#</th>
                 <th>Nombre</th>
                 <th>Documento</th>
-                <th>Estado</th>
-                <th>fecha</th>
+                <th>Telefono</th>
+                <th>Dirección</th>
+                <th>Email</th>
+                <th>Calificaion</th>
+                <th>Fecha de nacimiento</th>
+                <th>Ultimo login</th>
                 <th>Acciones</th>
            
               </tr>
@@ -32,10 +36,14 @@
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>Administrador</td>
-                    <td>ADM</td>
-                    <td><button class="btn btn-success btn-xs">Activado</button></td>
-                    <td>00-00-0000</td>
+                    <td>Juan Perez</td>
+                    <td>402-5555448-8</td>
+                    <td>809-999-9999</td>
+                    <td>algun lugar</td>
+                    <td>email@mail.com</td>
+                    <td>5 estrellas</td>
+                    <td>1998-02-25</td>
+                    <td>0000-00-00</td>
                     <td>
                   <div class="btn-group">
                   <button class="btn btn-warning" ><i class="fa fa-pencil"></i></button>
