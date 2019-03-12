@@ -104,18 +104,26 @@
         <div class="box-body">
    
        <!-- ENTRADA PARA SELECCIONAR EL EMPLEADO -->
-
+       
        <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
               <select class="form-control input-lg" name="nuevoPerfil">
                 <option value="">Seleccionar empleado</option>
-                <option value="Administrador">Juan Carlos - 9898866550</option>
-                <option value="Empleado">Pedro Martinez - 8765444333</option>
-              </select>
+                <?php
+
+                    $item= null;
+                    $valor=null;
+
+                    $empleados=ControladorEmpleados::ctrMostrarEmpleados($item, $valor);
+
+                    foreach ($empleados as $key => $value) {
+                      echo '<option value="'.$value["documento"].'">'.$value["nombre"]." - ".$value["documento"].'</option>';
+                    }
+                  ?>
             </div>
           </div>
-
+          
           <!-- ENTRADA PARA EL USUARIO -->
           <div class="form-group">
             <div class="input-group">
@@ -136,6 +144,9 @@
             <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-address-card"></i></span>
+              <?php
+              
+                  ?>
               <input type="text" class="form-control input-lg" name="nuevoUsuario" readonly required placeholder="Perfil">
             </div>
           </div>
