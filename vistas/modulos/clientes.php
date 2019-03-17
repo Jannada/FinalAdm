@@ -34,23 +34,37 @@
               </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Juan Perez</td>
-                    <td>402-5555448-8</td>
-                    <td>809-999-9999</td>
-                    <td>algun lugar</td>
-                    <td>email@mail.com</td>
-                    <td>5 estrellas</td>
-                    <td>1998-02-25</td>
-                    <td>0000-00-00</td>
-                    <td>
-                  <div class="btn-group">
-                  <button class="btn btn-warning" ><i class="fa fa-pencil"></i></button>
-                  <button class="btn btn-danger" ><i class="fa fa-times"></i></button>
 
-                  </div>
-                </tr>
+            <?php
+
+                $item = null;
+                $valor = null;
+
+                $clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
+
+                for($i=0; $i < count($clientes); $i++){
+
+                echo ' <tr>
+                <td>'.($i+1).'</td>
+                <td>'.$clientes[$i]["nombre"].'</td>
+                <td>'.$clientes[$i]["documento"].'</td>
+                <td>'.$clientes[$i]["telefono"].'</td>
+                <td>'.$clientes[$i]["direccion"].'</td>
+                <td>'.$clientes[$i]["email"].'</td>
+                <td>5 estrellas</td>
+                <td>'.$clientes[$i]["fecha_nacimiento"].'</td>
+                <td>'.$clientes[$i]["fecha"].'</td>
+                <td>
+              <div class="btn-group">
+              <button class="btn btn-warning" ><i class="fa fa-pencil"></i></button>
+              <button class="btn btn-danger" ><i class="fa fa-times"></i></button>
+
+              </div>
+            </tr>';
+
+              }
+            ?>
+               
             </tbody>
           </table>
         </div>
@@ -79,7 +93,7 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-key"></i></span>
-              <input type="text" class="form-control input-lg" name="nuevoUsuario" required placeholder="Ingresa usuario">
+              <input type="text" class="form-control input-lg" name="nuevoUsuario" required placeholder="Nombre">
             </div>
           </div>
 
@@ -87,23 +101,51 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="password" class="form-control input-lg" name="nuevoPassword" required placeholder="Ingresa contraseña">
+              <input type="text" class="form-control input-lg" name="nuevoPassword" required placeholder="Documento">
             </div>
           </div>
-          
-          <!-- ENTRADA PARA SELECCIONAR PERFIL -->
 
+          <!-- ENTRADA PARA CONTRASEÑA -->
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <select class="form-control input-lg" name="nuevoPerfil">
-                <option value="">Seleccionar perfil</option>
-                <option value="Administrador">Administrador</option>
-                <option value="Empleado">Empleado</option>
-                <option value="Cliente">Cliente</option>
-              </select>
+              <input type="text" class="form-control input-lg" name="nuevoPassword" required placeholder="telefono">
             </div>
           </div>
+
+          <!-- ENTRADA PARA CONTRASEÑA -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control input-lg" name="nuevoPassword" required placeholder="Email">
+            </div>
+          </div>
+
+          <!-- ENTRADA PARA CONTRASEÑA -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control input-lg" name="nuevoPassword" required placeholder="Fecha de nacimiento">
+            </div>
+          </div>
+
+          <!-- ENTRADA PARA CONTRASEÑA -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control input-lg" name="nuevoPassword" required placeholder="Usuario">
+            </div>
+          </div>
+
+          <!-- ENTRADA PARA CONTRASEÑA -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control input-lg" name="nuevoPassword" required placeholder="Contraseña">
+            </div>
+          </div>
+          
+          
 
 
         </div>
