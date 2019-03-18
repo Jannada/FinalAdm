@@ -16,7 +16,7 @@ session_start();
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  <link rel="icon" href="vistas/img/plantilla/icono-negro.png">
+  <!-- <link rel="icon" href="vistas/img/plantilla/icono-negro.png"> -->
 
    <!--=====================================
   PLUGINS DE CSS
@@ -24,6 +24,7 @@ session_start();
 
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="vistas/bower_components/bootstrap/dist/css/bootstrap.min.css">
+
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="vistas/bower_components/font-awesome/css/font-awesome.min.css">
@@ -62,6 +63,7 @@ session_start();
   
   <!-- Bootstrap 3.3.7 -->
   <script src="vistas/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
 
   <!-- FastClick -->
   <script src="vistas/bower_components/fastclick/lib/fastclick.js"></script>
@@ -179,6 +181,7 @@ CUERPO DOCUMENTO
 
 
 <script src="vistas/js/plantilla.js"></script>
+<script src="vistas/js/usuarios.js"></script>
 
 </body>
 </html>

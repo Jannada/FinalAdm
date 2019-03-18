@@ -72,7 +72,7 @@
                     <td>'.$usuarios[$i]["fecha"].'</td>
                     <td>
                   <div class="btn-group">
-                  <button class="btn btn-warning" ><i class="fa fa-pencil"></i></button>
+                  <button class="btn btn-warning btnPrueba" ><i class="fa fa-pencil"></i></button>
                   <button class="btn btn-danger" ><i class="fa fa-times"></i></button>
 
                   </div>
@@ -108,7 +108,7 @@
        <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <select class="form-control input-lg" name="nuevoPerfil">
+              <select class="form-control input-lg" name="nuevoPerfil"  id="nuevoPerfil">
                 <option value="">Seleccionar empleado</option>
                 <?php
 
@@ -118,12 +118,25 @@
                     $empleados=ControladorEmpleados::ctrMostrarEmpleados($item, $valor);
 
                     foreach ($empleados as $key => $value) {
-                      echo '<option value="'.$value["documento"].'">'.$value["nombre"]." - ".$value["documento"].'</option>';
+                      echo '<option idEmpleado="'.$value["id"].'"  value="'.$value["documento"].'">'.$value["nombre"]." - ".$value["documento"].'</option>'; 
+                      
                     }
+                    
+                    // echo'<input type="hidden" name="idEmpleado">';
+
                   ?>
+                </select>
+
             </div>
           </div>
           
+            <!-- ENTRADA PARA EL DOCUMENTO -->
+            <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
+              <input type="text" class="form-control input-lg" name="nuevoDocumento" id="nuevoDocumento" required placeholder="Documento" readonly>
+            </div>
+          </div>
           <!-- ENTRADA PARA EL USUARIO -->
           <div class="form-group">
             <div class="input-group">
@@ -143,7 +156,7 @@
             <!-- ENTRADA PARA EL PERFIL -->
             <div class="form-group">
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-address-card"></i></span>
+              <span class="input-group-addon"><i class="fa fa-check-circle"></i></span>
               <?php
               
                   ?>
