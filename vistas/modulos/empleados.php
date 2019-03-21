@@ -97,7 +97,7 @@
             </div>
           </div>
 
-           <!-- ENTRADA PARA EL Documento -->
+           <!-- ENTRADA PARA EL DOCUMENTO -->
            <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-key"></i></span>
