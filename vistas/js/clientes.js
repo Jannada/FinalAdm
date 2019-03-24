@@ -2,9 +2,9 @@
 	CREAR USUARIO AUTOMATICO
 =============================================*/
 
-$(document).on("change", "#nuevoDocumentoCliente", function(){
+$(document).on("change", "#nuevoDocumentoCliente2", function(){
     
-    var documento = $("#nuevoDocumentoCliente").val();
+    var documento = $("#nuevoDocumentoCliente2").val();
 
     var usuario = documento.substr(0,3)+documento.substr(4,7)+documento.substr(12);
 
@@ -37,17 +37,27 @@ $(document).on("click", ".btnEditarCliente", function(){
       success:function(respuesta){
             console.log(respuesta["nombre"]);
 
-      	   $("#idCliente").val(respuesta["id"]);
+      	 $("#idCliente").val(respuesta["id"]);
 	       $("#editarCliente").val(respuesta["nombre"]);
-           $("#editarDocumentoCliente2").val(respuesta["documento"]);
-           $("#editarDocumentoCliente").val($("#editarDocumentoCliente2").val().substr(0,3)+$("#editarDocumentoCliente2").val().substr(4,7)+$("#editarDocumentoCliente2").val().substr(12));
-           $("#editarEmail").val(respuesta["email"]);
-	       $("#editarTelefono").val(respuesta["telefono"]);
+         $("#editarDocumentoCliente2").val(respuesta["documento"]);
+         $("#editarTelefono").val(respuesta["telefono"]);
+         $("#editarEmail").val(respuesta["email"]);         
 	       $("#editarDireccionCliente").val(respuesta["direccion"]);
-           $("#editarFechaNacimiento").val(respuesta["fecha_nacimiento"]);
+         $("#editarFechaNacimiento").val(respuesta["fecha_nacimiento"]);
 	  }
 
-  	})
+    })
+
+    $(document).on("change", "#editarDocumentoCliente2", function(){
+    
+      var documento = $("#editarDocumentoCliente2").val();
+  
+      var usuario = documento.substr(0,3)+documento.substr(4,7)+documento.substr(12);
+  
+      $("#editarDocumentoCliente").val(usuario);
+  
+      
+  })
 
 })
 
