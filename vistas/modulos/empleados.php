@@ -253,7 +253,7 @@ MODAL EDITAR Empleado
               
                 <span class="input-group-addon"><i class="fa fa-key"></i></span> 
 
-                <input type="number" min="0" class="form-control input-lg" name="editarDocumentoId" id="editarDocumentoId" required>
+                <input type="number" min="0" class="form-control input-lg" name="editarDocumento" id="editarDocumento" required>
 
               </div>
 

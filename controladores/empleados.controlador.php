@@ -19,8 +19,7 @@ class ControladorEmpleados{
 
 			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoEmpleado"]) &&
 				 preg_match('/^[0-9]+$/', $_POST["nuevoDocumento"]) &&
-				 preg_match('/^[0-9]+$/', $_POST["nuevoTelefono"]) &&
-			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["nuevoEmail"]) && 
+			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["nuevoEmail"]) &&
 			   preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["nuevoDireccion"])){
 
 			   	$tabla = "empleados";
@@ -88,52 +87,26 @@ class ControladorEmpleados{
 
 		if(isset($_POST["editarEmpleado"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarNombre"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarEmpleado"]) &&
+				 preg_match('/^[0-9]+$/', $_POST["editarDocumento"]) &&
+			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["editarEmail"]) && 
+			   preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["editarDireccion"])){
 
 					$tabla = "empleados";
 
-				if($_POST["editarPassword"] != ""){
+				
 
-					if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["editarPassword"])){
+				
+				 $datos = array("nombre"=>$_POST["editarEmpleado"],
+				 "id"=>$_POST["idEmpleado"],
+				 "documento"=>$_POST["editarDocumento"],
+				 "email"=>$_POST["editarEmail"],
+				 "telefono"=>$_POST["editarTelefono"],
+				 "direccion"=>$_POST["editarDireccion"],
+				 "fecha_nacimiento"=>$_POST["editarFechaNacimiento"]);
+				 
 
-						$encriptar = crypt($_POST["editarPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
-
-					}else{
-
-						echo'<script>
-
-								swal({
-									  type: "error",
-									  title: "¡La contraseña no puede ir vacía o llevar caracteres especiales!",
-									  showConfirmButton: true,
-									  confirmButtonText: "Cerrar"
-									  }).then(function(result) {
-										if (result.value) {
-
-										window.location = "usuarios";
-
-										}
-									})
-
-						  	</script>';
-
-						  	return;
-
-					}
-
-				}else{
-
-					$encriptar = $_POST["passwordActual"];
-
-				}
-
-				$datos = array("nombre" => $_POST["editarNombre"],
-							   "usuario" => $_POST["editarUsuario"],
-							   "password" => $encriptar,
-							   "perfil" => $_POST["editarPerfil"],
-							   "foto" => $ruta);
-
-				$respuesta = ModeloEmpleados::mdlActualizarEmpleado($tabla, $datos);
+				$respuesta = ModeloEmpleados::mdlEditarEmpleado($tabla, $datos);
 
 				if($respuesta == "ok"){
 
@@ -147,7 +120,7 @@ class ControladorEmpleados{
 						  }).then(function(result) {
 									if (result.value) {
 
-									window.location = "usuarios";
+									window.location = "empleados";
 
 									}
 								})
@@ -169,7 +142,7 @@ class ControladorEmpleados{
 						  }).then(function(result) {
 							if (result.value) {
 
-							window.location = "usuarios";
+							window.location = "empleados";
 
 							}
 						})

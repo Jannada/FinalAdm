@@ -51,29 +51,34 @@ class ModeloEmpleados{
 		$stmt = null;
 
 	}
+
 	/*=============================================
-	ACTUALIZAR Empleado
+	EDITAR CLIENTE
 	=============================================*/
 
-	static public function mdlActualizarEmpleado($tabla, $item1, $valor1, $item2, $valor2){
+	static public function mdlEditarEmpleado($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET $item1 = :$item1 WHERE $item2 = :$item2");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, documento = :documento, email = :email, telefono = :telefono, direccion = :direccion, fecha_nacimiento = :fecha_nacimiento WHERE id = :id");
 
-		$stmt -> bindParam(":".$item1, $valor1, PDO::PARAM_STR);
-		$stmt -> bindParam(":".$item2, $valor2, PDO::PARAM_STR);
+		$stmt->bindParam(":id", $datos["id"], PDO::PARAM_INT);
+		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+		$stmt->bindParam(":documento", $datos["documento"], PDO::PARAM_INT);
+		$stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
+		$stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
+		$stmt->bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);
+		$stmt->bindParam(":fecha_nacimiento", $datos["fecha_nacimiento"], PDO::PARAM_STR);
 
-		if($stmt -> execute()){
+		if($stmt->execute()){
 
 			return "ok";
-		
+
 		}else{
 
-			return "error";	
-
+			return "error";
+		
 		}
 
-		$stmt -> close();
-
+		$stmt->close();
 		$stmt = null;
 
 	}
