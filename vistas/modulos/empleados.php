@@ -61,6 +61,7 @@
 
                     if($_SESSION["perfil"] == "Administrador"){
 
+                      
                         echo '<button class="btn btn-danger btnEliminarEmpleado" idCliente="'.$value["id"].'"><i class="fa fa-times"></i></button>';
 
                     }

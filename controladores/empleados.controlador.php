@@ -13,6 +13,7 @@ class ControladorEmpleados{
 	=============================================*/
 
 	static public function ctrCrearEmpleado(){
+		
 
 		if(isset($_POST["nuevoDocumento"])){
 
