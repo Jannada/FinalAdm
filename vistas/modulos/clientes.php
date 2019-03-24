@@ -260,12 +260,17 @@
 
       <?php
       
-              $cliente = new ControladorClientes();
-              $cliente -> ctrEditarCliente();
+              $editarCliente = new ControladorClientes();
+              $editarCliente -> ctrEditarCliente();
       ?>
     </form>
 
     </div>
   </div>
 </div>
+<?php
 
+  $eliminarCliente = new ControladorClientes();
+  $eliminarCliente -> ctrEliminarCliente();
+
+?>

@@ -12,8 +12,40 @@ $(document).on("change", "#nuevoDocumentoCliente2", function(){
     $("#nuevoUsuarioCliente").val(usuario);
     $("#nuevoPasswordCliente").val(usuario);
 
-    
+/*=============================================
+REVISAR SI EL USUARIO YA ESTÁ REGISTRADO
+=============================================*/
+
+	$(".alert").remove();
+
+	var cliente = $("#nuevoDocumentoCliente").val();
+
+	var datos = new FormData();
+	datos.append("validarCliente", cliente);
+
+	 $.ajax({
+	    url:"ajax/clientes.ajax.php",
+	    method:"POST",
+	    data: datos,
+	    cache: false,
+	    contentType: false,
+	    processData: false,
+	    dataType: "json",
+	    success:function(respuesta){
+	    	
+	    	if(respuesta){
+
+	    		$("#nuevoDocumentoCliente2").parent().after('<div class="alert alert-warning">Este Cliente ya existe</div>');
+
+	    		$("#nuevoDocumentoCliente2").val("");
+
+	    	}
+
+	    }
+
+	})
 })
+
 
 /*=============================================
 EDITAR CLIENTE
@@ -86,3 +118,4 @@ $(".tablas").on("click", ".btnEliminarCliente", function(){
   })
 
 })
+
