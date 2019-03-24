@@ -57,18 +57,10 @@
                     <td>
                     <div class="btn-group">
                           
-                    <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarEmpleado" idCliente="'.$value["id"].'"><i class="fa fa-pencil"></i></button>';
+                    <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarEmpleado" idCliente="'.$empleados[$i]["id"].'"><i class="fa fa-pencil"></i>
+                    </button>
 
-                    if($_SESSION["perfil"] == "Administrador"){
-
-                      
-                        echo '<button class="btn btn-danger btnEliminarEmpleado" idCliente="'.$value["id"].'"><i class="fa fa-times"></i></button>';
-
-                    }
-
-                    echo 
-
-                  '</div>  
+                   <button class="btn btn-danger btnEliminarEmpleado" idCliente="'.$empleados[$i]["id"].'"><i class="fa fa-times"></i></button></div>  
                 </tr>';
             }
 
@@ -343,8 +335,8 @@ MODAL EDITAR Empleado
 
       <?php
 
-        $editarCliente = new ControladorEmpleados();
-        $editarCliente -> ctrEditarEmpleado();
+        // $editarCliente = new ControladorEmpleados();
+        // $editarCliente -> ctrEditarEmpleado();
 
       ?>
 
@@ -358,8 +350,8 @@ MODAL EDITAR Empleado
 
 <?php
 
-  $eliminarCliente = new ControladorEmpleados();
-  $eliminarCliente -> ctrEliminarEmpleado();
+  // $eliminarCliente = new ControladorEmpleados();
+  // $eliminarCliente -> ctrEliminarEmpleado();
 
 ?>
 
