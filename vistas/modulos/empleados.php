@@ -57,10 +57,10 @@
                     <td>
                     <div class="btn-group">
                           
-                    <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarEmpleado" idCliente="'.$empleados[$i]["id"].'"><i class="fa fa-pencil"></i>
+                    <button class="btn btn-warning btnEditarEmpleado" data-toggle="modal" data-target="#modalEditarEmpleado" idEmpleado="'.$empleados[$i]["id"].'"><i class="fa fa-pencil"></i>
                     </button>
 
-                   <button class="btn btn-danger btnEliminarEmpleado" idCliente="'.$empleados[$i]["id"].'"><i class="fa fa-times"></i></button></div>  
+                   <button class="btn btn-danger btnEliminarEmpleado" idEmpleado="'.$empleados[$i]["id"].'"><i class="fa fa-times"></i></button></div>  
                 </tr>';
             }
 
@@ -239,8 +239,8 @@ MODAL EDITAR Empleado
               
                 <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="editarCliente" id="editarCliente" required>
-                <input type="hidden" id="idCliente" name="idCliente">
+                <input type="text" class="form-control input-lg" name="editarEmpleado" id="editarEmpleado" required>
+                <input type="hidden" id="idEmpleado" name="idEmpleado">
               </div>
 
             </div>
@@ -335,8 +335,8 @@ MODAL EDITAR Empleado
 
       <?php
 
-        // $editarCliente = new ControladorEmpleados();
-        // $editarCliente -> ctrEditarEmpleado();
+        $editarCliente = new ControladorEmpleados();
+        $editarCliente -> ctrEditarEmpleado();
 
       ?>
 
@@ -350,8 +350,8 @@ MODAL EDITAR Empleado
 
 <?php
 
-  // $eliminarCliente = new ControladorEmpleados();
-  // $eliminarCliente -> ctrEliminarEmpleado();
+    $eliminarCliente = new ControladorEmpleados();
+    $eliminarCliente -> ctrBorrarEmpleado();
 
 ?>
 

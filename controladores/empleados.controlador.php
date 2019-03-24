@@ -133,7 +133,7 @@ class ControladorEmpleados{
 							   "perfil" => $_POST["editarPerfil"],
 							   "foto" => $ruta);
 
-				$respuesta = ModeloUsuarios::mdlEditarEmpleado($tabla, $datos);
+				$respuesta = ModeloEmpleados::mdlActualizarEmpleado($tabla, $datos);
 
 				if($respuesta == "ok"){
 
@@ -190,17 +190,10 @@ class ControladorEmpleados{
 
 		if(isset($_GET["idEmpleado"])){
 
-			$tabla ="usuarios";
+			$tabla ="empleados";
 			$datos = $_GET["idEmpleado"];
 
-			if($_GET["fotoUsuario"] != ""){
-
-				unlink($_GET["fotoUsuario"]);
-				rmdir('vistas/img/usuarios/'.$_GET["usuario"]);
-
-			}
-
-			$respuesta = ModeloUsuarios::mdlBorrarEmpleado($tabla, $datos);
+			$respuesta = ModeloEmpleados::mdlBorrarEmpleado($tabla, $datos);
 
 			if($respuesta == "ok"){
 
@@ -215,7 +208,7 @@ class ControladorEmpleados{
 					  }).then(function(result) {
 								if (result.value) {
 
-								window.location = "usuarios";
+								window.location = "empleados";
 
 								}
 							})
