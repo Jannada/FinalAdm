@@ -108,7 +108,6 @@
        <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
-<<<<<<< HEAD
               <select class="form-control input-lg" name="nuevoPerfil" id="nuevoPerfil">
                 <option >Seleccionar empleado</option>
                 <?php
@@ -135,21 +134,6 @@
                 ?>
 
               </select>
-=======
-              <select class="form-control input-lg" name="nuevoPerfil">
-                <option value="">Seleccionar empleado</option>
-                <?php
-
-                    $item= null;
-                    $valor=null;
-
-                    $empleados=ControladorEmpleados::ctrMostrarEmpleados($item, $valor);
-
-                    foreach ($empleados as $key => $value) {
-                      echo '<option value="'.$value["documento"].'">'.$value["nombre"]." - ".$value["documento"].'</option>';
-                    }
-                  ?>
->>>>>>> 7b4d6b9fa138faa8c8367296e023051b3aed9a45
             </div>
           </div>
           
@@ -173,15 +157,8 @@
             <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-address-card"></i></span>
-<<<<<<< HEAD
               <input type="text" class="form-control input-lg" name="nuevoPerfilUsuario" id="nuevoPerfilUsuario" readonly required placeholder="Perfil">
               <input type="hidden" name="nuevoPerfilUsuario2" id="nuevoPerfilUsuario2">
-=======
-              <?php
-              
-                  ?>
-              <input type="text" class="form-control input-lg" name="nuevoUsuario" readonly required placeholder="Perfil">
->>>>>>> 7b4d6b9fa138faa8c8367296e023051b3aed9a45
             </div>
           </div>
 
