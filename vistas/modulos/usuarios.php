@@ -34,34 +34,23 @@
             <?php
             $item = null;
             $valor = null;
-
             $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
-
-
-
            for($i=0; $i < count($usuarios); $i++){
-
             $item = "id";
             $valor = $usuarios[$i]["id_empleado"];
             $empleados = ControladorEmpleados::ctrMostrarEmpleados($item, $valor);
-
-            $item2 = "id";
+            $item2 = "documento";
             $valor2 = $usuarios[$i]["id_cliente"];
             $clientes = ControladorClientes::ctrMostrarClientes($item2, $valor2);
-
             $item3 = "id";
             $valor3 = $usuarios[$i]["id_perfil"];
             $perfiles = ControladorUsuarios::ctrMostrarPerfil($item3, $valor3);
-
             // var_dump($valor);
             // var_dump($empleados["documento"]);
-
-
               echo '
               <tr>
                     <td>'.($i+1).'</td>
                     <td>'.$usuarios[$i]["usuario"].'</td>';
-
                     if ($usuarios[$i]["id_perfil"]=="2") {
                       echo '<td>'.$clientes["documento"].'</td>';
                     }else{
@@ -72,9 +61,8 @@
                     <td>'.$usuarios[$i]["fecha"].'</td>
                     <td>
                   <div class="btn-group">
-                  <button class="btn btn-warning" ><i class="fa fa-pencil"></i></button>
+                  <button class="btn btn-warning " ><i class="fa fa-pencil"></i></button>
                   <button class="btn btn-danger" ><i class="fa fa-times"></i></button>
-
                   </div>
                 </tr>';
             }
@@ -93,7 +81,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
 
-    <form role="form" method="post" encryptype="multipart/form-data">
+    <form role="form" method="post">
 
       <div class="modal-header" style="background: #3c8dbc; color:#fff ">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -108,10 +96,26 @@
        <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <select class="form-control input-lg" name="nuevoPerfil">
-                <option value="">Seleccionar empleado</option>
-                <option value="Administrador">Juan Carlos - 9898866550</option>
-                <option value="Empleado">Pedro Martinez - 8765444333</option>
+              <select class="form-control input-lg" name="nuevoPerfil" id="nuevoPerfil">
+                <option >Seleccionar empleado</option>
+                <?php
+          
+                  $item= null;
+                  $valor= null;
+                  $empleado= ControladorEmpleados::ctrMostrarEmpleados($item, $valor);
+                  for ($i=0; $i<count($empleado); $i++) {
+                    
+                  $item2="id_empleado";
+                  $valor2=$empleado[$i]["id"];
+                  $usuario= ControladorUsuarios::ctrMostrarUsuarios($item2, $valor2);
+                    
+                    if($empleado[$i]["id"] != $usuario["id_empleado"]){
+                    echo '<option value="'.$empleado[$i]["id"].'" id="traerEmpleado">'.$empleado[$i]["nombre"].' - '.$empleado[$i]["documento"].'</option>';
+                  
+                  }
+                }
+                ?>
+
               </select>
             </div>
           </div>
@@ -136,7 +140,8 @@
             <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-address-card"></i></span>
-              <input type="text" class="form-control input-lg" name="nuevoUsuario" readonly required placeholder="Perfil">
+              <input type="text" class="form-control input-lg" name="nuevoPerfilUsuario" id="nuevoPerfilUsuario" readonly required placeholder="Perfil">
+              <input type="hidden" name="nuevoPerfilUsuario2" id="nuevoPerfilUsuario2">
             </div>
           </div>
 
@@ -150,9 +155,13 @@
         <button type="submit" class="btn btn-primary">Guardar usuario</button>
 
       </div>
+
+      <?php
+                $usuario = new ControladorUsuarios();
+                $usuario -> ctrCrearUsuario();
+              ?>
     </form>
 
     </div>
   </div>
 </div>
-
