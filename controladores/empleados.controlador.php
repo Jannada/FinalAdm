@@ -41,7 +41,7 @@ class ControladorEmpleados{
 
 					swal({
 						  type: "success",
-						  title: "El cliente ha sido guardado correctamente",
+						  title: "El cliente a sido guardado correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){

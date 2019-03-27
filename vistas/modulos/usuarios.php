@@ -92,7 +92,7 @@
         <div class="box-body">
    
        <!-- ENTRADA PARA SELECCIONAR EL EMPLEADO -->
-
+       
        <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -119,7 +119,6 @@
               </select>
             </div>
           </div>
-
           <!-- ENTRADA PARA EL USUARIO -->
           <div class="form-group">
             <div class="input-group">

@@ -1,116 +1,53 @@
-<div class="content-wrapper">
-    <section class="content-header">
-      <h1>
-        Panel de informacion
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Informacion</li>
-      </ol>
-    </section>
 
-    <section class="content">
+ <!-- Bootstrap 4.3.1 -->
+ <!-- <link rel="stylesheet" href="vistas/bower_components/bootstrap-4/css/bootstrap.min.css"> -->
+  <!-- Bootstrap 4.3.1 -->
+  <!-- <script src="vistas/bower_components/bootstrap-4/js/bootstrap.min.js"></script> -->
 
-      <div class="box">
-        <div class="box-header with-border">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuario">Agregar usuario</button>
-        </div>
-        
-        <div class="box-body">
-          <table class="table tablr-bordered table-striped dt-responsive tablas" width="100%">
-            <thead>
-              <tr>
-                <th style="width:10px;">##</th>
-                <th>Usuario</th>
-                <th>Perfil</th>
-                <th>Estado</th>
-                <th>fecha</th>
-                <th>Acciones</th>
-           
-              </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Administrador</td>
-                    <td>ADM</td>
-                    <td><button class="btn btn-success btn-xs">Activado</button></td>
-                    <td>00-00-0000</td>
-                    <td>
-                  <div class="btn-group">
-                  <button class="btn btn-warning" ><i class="fa fa-pencil"></i></button>
-                  <button class="btn btn-danger" ><i class="fa fa-times"></i></button>
-
+    <div class="container-fluid">
+      <div class="container">
+       <div class="colum">
+       <!-- Tasa de interés -->
+          <div class="col-md-3" >
+            <div class="panel panel-default text-center">
+              <div class="panel-body">
+                  <div style= "margin: 10%">
+                    <sup class="h4 ">%</sup><sub style="font-size: 50px">7</sub>
                   </div>
-                </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Modal Agregar Usuario -->
-  <!-- Modal -->
-<div id="modalAgregarUsuario" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-    <form role="form" method="post" encryptype="multipart/form-data">
-
-      <div class="modal-header" style="background: #3c8dbc; color:#fff ">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Agregar usuario</h4>
-      </div>
-
-      <div class="modal-body">
-        <div class="box-body">
-   
-
-          <!-- ENTRADA PARA EL USUARIO -->
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-key"></i></span>
-              <input type="text" class="form-control input-lg" name="nuevoUsuario" required placeholder="Ingresa usuario">
+                  <p class="h3">Tasa de interés</p>
+                  <h5 class="card-title">Tasa de interés fija</h5>
+                   <!-- <p class="card-text">With supporting text  to additional content.</p> -->
+                </div>
+                <!-- <div class="panel-footer btn btn-lg btn-block" style="background: #055E90">Modificar</div> -->
+                <a href="#" style="background: #055E90" class="btn btn-primary  btn-block">Modificar</a>
+             </div>
             </div>
           </div>
+          <!-- Tasa de interés -->
 
-          <!-- ENTRADA PARA CONTRASEÑA -->
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="password" class="form-control input-lg" name="nuevoPassword" required placeholder="Ingresa contraseña">
+               <!-- Empleados -->
+               <div class="col-md-3" >
+            <div class="panel panel-default text-center">
+              <div class="panel-body">
+                  <div style= "margin: 10%">
+                    <sup class="h4 ">$</sup><sub style="font-size: 50px">7</sub>
+                  </div>
+                  <p class="h3">Empleados</p>
+                  <h5 class="card-title">Tasa de interés fija</h5>
+                   <!-- <p class="card-text">With supporting text  to additional content.</p> -->
+                </div>
+                <!-- <div class="panel-footer btn btn-lg btn-block" style="background: #055E90">Modificar</div> -->
+                <a href="#" style="background: #055E90" class="btn btn-primary  btn-block">Modificar</a>
+             </div>
             </div>
           </div>
+          <!-- Empleados -->
+
           
-          <!-- ENTRADA PARA SELECCIONAR PERFIL -->
-
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <select class="form-control input-lg" name="nuevoPerfil">
-                <option value="">Seleccionar perfil</option>
-                <option value="Administrador">Administrador</option>
-                <option value="Empleado">Empleado</option>
-                <option value="Cliente">Cliente</option>
-              </select>
-            </div>
-          </div>
-
-
         </div>
       </div>
-
-          <!-- PIE DEL MODAL -->
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Guardar usuario</button>
-
-      </div>
-    </form>
-
     </div>
-  </div>
-</div>
+
+    
+
 
