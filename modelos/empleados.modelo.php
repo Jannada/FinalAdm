@@ -21,7 +21,7 @@ class ModeloEmpleados{
     }
 
     /*=============================================
-	CREAR CLIENTE
+	CREAR EMPLEADO
 	=============================================*/
 
 	static public function mdlIngresarEmpleado($tabla, $datos){
