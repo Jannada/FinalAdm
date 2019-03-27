@@ -4,7 +4,7 @@
 
 		<ul class="sidebar-menu">
 
-			<li class="">
+			<li>
 
 				<a href="inicio" >
 

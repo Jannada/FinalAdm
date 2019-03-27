@@ -93,28 +93,86 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-key"></i></span>
-              <input type="text" class="form-control input-lg" name="nuevoUsuario" required placeholder="Ingresa usuario">
+              <input type="text" class="form-control input-lg" name="nuevoEmpleado" required placeholder="Ingresar Empleado">
             </div>
           </div>
 
-          <!-- ENTRADA PARA CONTRASEÑA -->
-          <div class="form-group">
+           <!-- ENTRADA PARA EL Documento -->
+           <div class="form-group">
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="password" class="form-control input-lg" name="nuevoPassword" required placeholder="Ingresa contraseña">
+              <span class="input-group-addon"><i class="fa fa-key"></i></span>
+              <input type="text" class="form-control input-lg" name="nuevoDocumento" required placeholder="Documento">
             </div>
           </div>
+
+           <!-- ENTRADA PARA TELEFONO -->
+           <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key"></i></span>
+              <input type="text" class="form-control input-lg" name="nuevoTelefono" required placeholder="Telefono">
+            </div>
+          </div>
+
+           <!-- ENTRADA PARA LA DIRECCION -->
+           <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key"></i></span>
+              <input type="text" class="form-control input-lg" name="nuevoDireccion" required placeholder="Direccion">
+            </div>
+          </div>
+           <!-- ENTRADA PARA EMAIL -->
+           <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key"></i></span>
+              <input type="email" class="form-control input-lg" name="nuevoEmail" required placeholder="Ingresa tu correo">
+            </div>
+          </div>
+
+           <!-- ENTRADA PARA LA FECHA DE NACIMIENTO -->
+            
+           <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevaFechaNacimiento" placeholder="Ingresar fecha nacimiento" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask required>
+
+              </div>
+
+            </div>
+
+         
           
           <!-- ENTRADA PARA SELECCIONAR PERFIL -->
 
           <div class="form-group">
+          
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
               <select class="form-control input-lg" name="nuevoPerfil">
-                <option value="">Seleccionar perfil</option>
-                <option value="Administrador">Administrador</option>
-                <option value="Empleado">Empleado</option>
-                <option value="Cliente">Cliente</option>
+              <option value="">Seleccionar perfil</option>
+              
+
+              <?php
+
+               $item = null;
+               $valor = null;
+
+               $perfiles = ControladorUsuarios::ctrMostrarPerfil($item, $valor);
+
+               foreach($perfiles as $key => $value){
+
+                if($value["id"]!=2){
+
+                  echo '<option value='.$value["id"].'>'.$value["perfil"].'</option>';
+                }
+
+                
+               }
+              
+              ?>
+              
               </select>
             </div>
           </div>
@@ -127,10 +185,14 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Guardar usuario</button>
+        <button type="submit" class="btn btn-primary">Guardar empleado</button>
 
       </div>
-    </form>
+              <?php
+                $empleado = new ControladorEmpleados();
+                $empleado -> ctrCrearEmpleado();
+              ?>
+      </form>
 
     </div>
   </div>
