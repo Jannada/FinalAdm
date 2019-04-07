@@ -36,14 +36,10 @@
             <tbody>
 
             <?php
-
                 $item = null;
                 $valor = null;
-
                 $clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
-
                 for($i=0; $i < count($clientes); $i++){
-
                 echo ' <tr>
                 <td>'.($i+1).'</td>
                 <td>'.$clientes[$i]["nombre"].'</td>
@@ -59,10 +55,8 @@
                           
                 <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarCliente" idCliente="'.$clientes[$i]["id"].'"><i class="fa fa-pencil"></i></button>
                 <button class="btn btn-danger btnEliminarCliente" idCliente="'.$clientes[$i]["id"].'"><i class="fa fa-times"></i></button>
-
               </div>  
             </tr>';
-
               }
             ?>
                
@@ -90,11 +84,60 @@
         <div class="box-body">
    
 
-          <!-- ENTRADA PARA EL USUARIO -->
+          <!-- ENTRADA PARA EL NOMBRE -->
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-key"></i></span>
-              <input type="text" class="form-control input-lg" name="nuevoUsuario" required placeholder="Nombre">
+              <input type="text" class="form-control input-lg" name="nuevoCliente" id="nuevoCliente" required placeholder="Nombre">
+            </div>
+          </div>
+
+          <!-- ENTRADA PARA EL DOCUMENTO -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control input-lg" id="nuevoDocumentoCliente2" required placeholder="Documento" data-inputmask="'mask':'999-9999999-9'" data-mask>
+              <input type="hidden" name="nuevoDocumentoCliente" id="nuevoDocumentoCliente">
+            </div>
+          </div>
+
+          <!-- ENTRADA PARA LA DIRECCION -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key"></i></span>
+              <input type="text" class="form-control input-lg" name="nuevaDireccionCliente" required placeholder="Direccion">
+            </div>
+          </div>
+
+          <!-- ENTRADA PARA TELEFONO -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control input-lg" name="nuevoTelefono" required placeholder="telefono" data-inputmask="'mask':'(999) 999-9999'" data-mask>
+            </div>
+          </div>
+
+          <!-- ENTRADA PARA EL EMAIL -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control input-lg" name="nuevoEmail" required placeholder="Email">
+            </div>
+          </div>
+
+          <!-- ENTRADA PARA FECHA DE NACIMIENTO -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control input-lg" name="nuevaFechaNacimiento" required placeholder="Fecha de nacimiento" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
+            </div>
+          </div>
+
+          <!-- ENTRADA PARA USUARIO -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control input-lg" name="nuevoUsuarioCliente" id="nuevoUsuarioCliente" required placeholder="Usuario" readonly>
             </div>
           </div>
 
@@ -102,47 +145,7 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="text" class="form-control input-lg" name="nuevoPassword" required placeholder="Documento">
-            </div>
-          </div>
-
-          <!-- ENTRADA PARA CONTRASEÑA -->
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="text" class="form-control input-lg" name="nuevoPassword" required placeholder="telefono">
-            </div>
-          </div>
-
-          <!-- ENTRADA PARA CONTRASEÑA -->
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="text" class="form-control input-lg" name="nuevoPassword" required placeholder="Email">
-            </div>
-          </div>
-
-          <!-- ENTRADA PARA CONTRASEÑA -->
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="text" class="form-control input-lg" name="nuevoPassword" required placeholder="Fecha de nacimiento">
-            </div>
-          </div>
-
-          <!-- ENTRADA PARA CONTRASEÑA -->
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="text" class="form-control input-lg" name="nuevoPassword" required placeholder="Usuario">
-            </div>
-          </div>
-
-          <!-- ENTRADA PARA CONTRASEÑA -->
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="text" class="form-control input-lg" name="nuevoPassword" required placeholder="Contraseña">
+              <input type="password" class="form-control input-lg" name="nuevoPasswordCliente" id="nuevoPasswordCliente" required placeholder="Contraseña" readonly>
             </div>
           </div>
           
@@ -159,6 +162,12 @@
         <button type="submit" class="btn btn-primary">Guardar usuario</button>
 
       </div>
+
+      <?php
+      
+              $cliente = new ControladorClientes();
+              $cliente -> ctrCrearCliente();
+      ?>
     </form>
 
     </div>
@@ -254,8 +263,6 @@
   </div>
 </div>
 <?php
-
   $eliminarCliente = new ControladorClientes();
   $eliminarCliente -> ctrEliminarCliente();
-
 ?>
