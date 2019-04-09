@@ -66,7 +66,24 @@ class ModeloUsuarios{
 		$stmt = null;
     }
     
+        //editar usuario
+
+    static public function mdlEditarUsuario($tabla, $datos){
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET password =:password WHERE usuario = :usuario");
+        
+        $stmt->bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
+        $stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
+
+        if($stmt->execute()){
+            return "ok";
+        }else{
+            return "error";
+        }
+        $stmt-> close();
+
+        $stmt = null;
     
+    }
     // Borrar Usuario
 
     static public function mdlBorrarUsuario($tabla, $datos){

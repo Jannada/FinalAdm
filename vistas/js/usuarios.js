@@ -30,7 +30,7 @@ $(document).on("change", "#nuevoPerfil", function(){
 
     $.ajax({
 
-        url:"ajax/usuarios.ajax.php",
+        url:"../ajax/usuarios.ajax.php",
         method: "POST",
         data: datos,
         cache: false,
@@ -45,7 +45,7 @@ $(document).on("change", "#nuevoPerfil", function(){
             datosPerfil.append("idPerfil",respuesta["id_perfil"]);
         
             $.ajax({
-                      url:"ajax/usuarios.ajax.php",
+                      url:"../ajax/usuarios.ajax.php",
                       method: "POST",
                       data: datosPerfil,
                       cache: false,
@@ -71,7 +71,7 @@ $(document).on("change", "#nuevoPerfil", function(){
 
     $.ajax({
 
-        url:"ajax/usuarios.ajax.php",
+        url:"../ajax/usuarios.ajax.php",
         method: "POST",
         data: datos,
         cache: false,
@@ -80,10 +80,7 @@ $(document).on("change", "#nuevoPerfil", function(){
         dataType: "json",
         success: function(respuesta){
             
-            $("#editarEmpleado").val(respuesta["nombre"]);
             $("#editarUsuario").val(respuesta["usuario"]);
-           
-
             $("#passwordActual").val(respuesta["password"]);
 
            
@@ -113,7 +110,7 @@ $(document).on("change", "#nuevoPerfil", function(){
     }).then(function(result){
 
         if(result.value){
-            window.location = "index.php?ruta=usuarios&idUsuario="+idUsuario;
+            window.location = "plantilla.php?ruta=usuarios&idUsuario="+idUsuario;
         }
     })
 })

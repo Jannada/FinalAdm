@@ -185,14 +185,6 @@
       <div class="modal-body">
         <div class="box-body">
    
-       <!-- ENTRADA PARA EDITAR EL EMPLEADO -->
-       
-       <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="text" class="form-control input-lg" name="editarEmpleado" id="editarEmpleado" required readonly placeholder="Ingresa Empleado">
-            </div>
-          </div>
           <!-- ENTRADA PARA EDITAR EL USUARIO -->
           <div class="form-group">
             <div class="input-group">
@@ -220,7 +212,11 @@
         <button type="submit" class="btn btn-primary">Guardar cambios</button>
 
       </div>
-
+      
+      <?php
+         $editarUsuario = new ControladorUsuarios();
+         $editarUsuario -> ctrEditarUsuario();
+      ?>
       
     </form>
 
