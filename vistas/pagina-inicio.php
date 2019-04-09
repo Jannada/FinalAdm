@@ -9,7 +9,7 @@
   <title>Formulario</title>
 
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  
+
   <!-- <link rel="icon" href="vistas/img/plantilla/icono-negro.png"> -->
 
   <link rel="stylesheet" href="vistas/css/styles.css">
@@ -30,7 +30,7 @@
 
   <!-- Theme style -->
   <link rel="stylesheet" href="vistas/dist/css/AdminLTE.css">
-  
+
   <!-- AdminLTE Skins -->
   <link rel="stylesheet" href="vistas/dist/css/skins/_all-skins.min.css">
 
@@ -56,14 +56,14 @@
 
   <!-- jQuery 3 -->
   <script src="vistas/bower_components/jquery/dist/jquery.min.js"></script>
-  
+
   <!-- Bootstrap 3.3.7 -->
   <script src="vistas/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 
   <!-- FastClick -->
   <script src="vistas/bower_components/fastclick/lib/fastclick.js"></script>
-  
+
   <!-- AdminLTE App -->
   <script src="vistas/dist/js/adminlte.min.js"></script>
 
@@ -161,17 +161,17 @@
       <div class="informacion col-md-8">
         <h2>¿Quienes Somos?</h2>
         <p>Somos una empresa dedicada a brindar el mejor servicio de financiamientos de la República
-          Dominicana. 
+          Dominicana.
           ¡Si lo puedes imaginar, lo puedes comprar!
           </p>
 
             <p>Únete a nosotros, solo tienes que enviar tu Solicitud, el personal evaluará tu información y seguido
               tendrás un perfil mediante el cual te mantendremos al tanto de tu préstamo. Sencillo y a la mano siempre.
             </p>
-  
-            <p>Has click <a href="">AQUÍ</a> para obtener más información acerca del registro.</p>   
+
+            <p>Has click <a href="">AQUÍ</a> para obtener más información acerca del registro.</p>
       </div>
-    
+
     </div>
 
 
@@ -196,14 +196,14 @@
                 ======================================-->
                     <div class="form-group">
                       <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
                         <input type="text" class="form-control" id="nombre" name="ingNombre" placeholder="Nombre" required>
                       </div>
-                    </div> 
+                    </div>
 
                 <!--=====================================
                 ENTRADA DEL Apellido
-                ======================================--> 
+                ======================================-->
                     <div class="form-group">
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -212,7 +212,7 @@
                     </div>
                   <!--=====================================
                 ENTRADA DEL Cedula
-                ======================================--> 
+                ======================================-->
                     <div class="form-group">
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
@@ -221,7 +221,7 @@
                     </div>
                   <!--=====================================
                 ENTRADA DEL email
-                ======================================--> 
+                ======================================-->
 
                     <div class="form-group">
                       <div class="input-group">
@@ -231,7 +231,7 @@
                     </div>
                   <!--=====================================
                 ENTRADA DE LA Ocupación
-                ======================================--> 
+                ======================================-->
                     <div class="form-group">
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-briefcase"></i></span>
@@ -246,7 +246,7 @@
 
                     <div class="cajaOcupacion"></div>
                     <input type="hidden" name="inputOcupacion" id="inputOcupacion">
-                        
+
                 </div>
               </div>
 
@@ -254,22 +254,22 @@
               <div class="box-footer">
                 <button type="submit" class="boton pull-right" >Enviar</button>
               </div>
-              <?php
+              <!-- <?php
                 $ingresarPersona = new ControladorPersonas();
                 $ingresarPersona -> ctrCrearPersona();
-              ?>
+              ?> -->
             </form>
-                
+
           </div>
-          <?php
+          <!-- <?php
                 $inicio = new ControladorPaginaInicio();
                 $inicio -> ctrLogin();
-              ?>
+              ?> -->
         </div>
-      </div>   
+      </div>
   </div>
 </section>
-  
+
 </main>
 <footer class="tamaño-max">
 
@@ -277,7 +277,7 @@
 <h3 class="center creadores-h3">Creadores</h3>
 
   <div class="contenedor">
-    
+
     <div class="uno">
     <a href="https://www.instagram.com/anthonype07/" target="_blanq"><img src="vistas/img/dani.jpg" width="115"></a>
     <a href="https://www.instagram.com/v.belt_9/" target="_blanq"><img src="vistas/img/vivi.jpg" width="115"></a>
@@ -286,7 +286,7 @@
     <a href="https://www.instagram.com/deividc47/" target="_blanq"><img src="vistas/img/deivid.jpg" width="115"></a>
     <a href="https://www.instagram.com/jesus_reynardo/" target="_blanq"><img src="vistas/img/jesus.jpg" width="115"></a>
     </div>
-    
+
     </div>
 </section> -->
   <div class="enlaces">
@@ -295,7 +295,7 @@
   <a href="#">HydraCorp &copy; Todos los derechos reservados</a>
 
   </div>
-    
+
 
 </footer>
 
