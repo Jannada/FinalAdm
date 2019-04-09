@@ -82,6 +82,17 @@
               </div>
           </div>
 
+          <div class="cuenta col-md-12 ">
+                <div class="form-group ">
+                  <div class="form-check pull-left">
+                  <label >Sexo:</label>
+                  <label class="radio-inline"><input type="radio" name="optradio" checked>Masculino</label>
+                  <label class="radio-inline"><input type="radio" name="optradio">Femenino</label>
+                  </div>
+              </div>
+              <br/>
+          </div>
+
           <div class="garante col-md-12 ">
               <div class="form-group ">
                 <div class="form-check pull-right">
@@ -123,7 +134,7 @@
           <!-- Entrada para el email del garante -->
           <div class="form-group">
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" id="nuevoEmail" name="nuevoEmailGarante" required placeholder="EmailGarante">  
+              <input type="text" class="form-control" id="nuevoEmail" name="nuevoEmailGarante" required placeholder="Email">  
             </div>
           </div>
           <!-- Entrada para el telefono del garante -->
@@ -150,30 +161,47 @@
             <h3 style="text-align:center">Información del préstamo</h3>
 
            <!-- Entrada para el monto -->
-           <div class="form-group col-md-3">
+           <div class="form-group col-md-4">
             <input type="text" class="form-control" id="montoPrestamo" name="montoPrestamo" required  placeholder="Monto">
           </div>
           <!-- Entrada para el plazo -->
-          <div class="form-group col-md-3">
+          <div class="form-group col-md-4">
             <input type="text" class="form-control" id="plazoPrestamo" name="plazoPrestamo" required  placeholder="Plazo (meses)">
           </div>
 
            <!-- Entrada para el interés -->
-           <div class="form-group col-md-3">
+           <div class="form-group col-md-4">
             <input type="text" class="form-control" id="interesPrestamo" name="interesPrestamo" required  placeholder="Interés">
           </div>
 
           <!-- Entrada para cuotas mensuales -->
-          <div class="form-group col-md-3">
+          <div class="form-group col-md-4">
             <input type="text" class="form-control" id="cuotasMensuales" name="cuotasMensuales" required  placeholder="Cuotas">
+          </div>
+
+          <!-- Entrada para la Fecha de inicio préstamo -->
+          <div class="form-group">
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" id="fechaInicio" name="fechaInicio" required  placeholder="Fecha de inicio" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
+            </div>
+          </div>
+
+          <!-- Entrada para la Fecha de fin préstamo -->
+          <div class="form-group">
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" id="fechaFin" name="fechaFin" required readonly  placeholder="Fecha de fin" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
+            </div>
           </div>
 
 
          <!-- Información del préstamo -->
         </div>
-         
-        
         </div>
+        
+        <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Crear préstamo</button>
+        </div>
+
        </form>
        <!-- Formulario -->
       </div>

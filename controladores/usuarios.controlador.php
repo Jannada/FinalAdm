@@ -109,6 +109,61 @@ class ControladorUsuarios{
 			}
 		}
 	}
+
+	//editar Usuario
+	static public function ctrEditarUsuario(){
+
+		if(isset($_POST["editarUsuario"])){
+
+			$tabla = "usuarios";
+
+			if($_POST["editarPassword"]!= ""){
+				if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["editarPassword"])){
+
+					$encriptar = crypt($_POST["editarPassword"], '$2a$07$usesomesillystringforsalt$');
+
+				}else{
+					echo '<script>
+					swal({
+						type: "error",
+						title: "!La contraseña no puede contar con caracteres especiales",
+						showConfirmButton: true,
+						confirmButtonText: "Cerrar",
+						closeOnConfirm: false 
+					}).then(function(result){
+						if(result.value){
+							window.location="usuarios";
+						}
+					});
+				</script>';
+				}
+
+			}else{
+				$encriptar = $_POST["passwordActual"];
+			}
+			$datos = array( "usuario" => $_POST["editarUsuario"],
+											"password" => $encriptar,
+						);
+
+			$respuesta = ModeloUsuarios::mdlEditarUsuario($tabla, $datos);
+			
+			if($respuesta == "ok"){
+				echo '<script>
+				swal({
+					type: "success",
+					title: "!El usuario ha sido editado correctamente",
+					showConfirmButton: true,
+					confirmButtonText: "Cerrar",
+					closeOnConfirm: false 
+				}).then(function(result){
+					if(result.value){
+						window.location="usuarios";
+					}
+				});
+				</script>';
+			}
+			}
+    }
 	// Borrar usuario
 
 static public function ctrBorrarUsuario(){

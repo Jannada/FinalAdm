@@ -8,7 +8,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="../index.php">Home</a></li>
         <li><a href="#">Nosotros</a></li>
-        <li><a href="#">Enviar Solicitud</a></li>
+        <li><a href="../vistas/formulario-inicio.php">Enviar Solicitud</a></li>
         <li class="active"><a href="#">Login</a></li>
         <li><a href="#creadores">Conócenos</a></li>
       </ul>
