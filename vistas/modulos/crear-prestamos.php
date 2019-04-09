@@ -96,7 +96,7 @@
         </div>
 
           <!-- Información del garánte -->
-        <div class="contenido-garante">
+        <div class="contenido-garante" style="display:none;">
            
            <br/>
            

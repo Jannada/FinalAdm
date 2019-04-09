@@ -4,6 +4,6 @@ session_destroy();
 
 echo '<script>
 
-	window.location = "ingreso";
+location.href ="../index.php"
 
 </script>';
