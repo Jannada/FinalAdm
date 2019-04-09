@@ -61,8 +61,8 @@
                     <td>'.$usuarios[$i]["fecha"].'</td>
                     <td>
                   <div class="btn-group">
-                  <button class="btn btn-warning " ><i class="fa fa-pencil"></i></button>
-                  <button class="btn btn-danger" ><i class="fa fa-times"></i></button>
+                  <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$usuarios[$i]["id"].'" data-toggle="modal" data-target="#modalEditarUsuario" ><i class="fa fa-pencil"></i></button>
+                  <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$usuarios[$i]["id"].'" ><i class="fa fa-times"></i></button>
                   </div>
                 </tr>';
             }
@@ -164,3 +164,70 @@
     </div>
   </div>
 </div>
+
+
+
+<!-- Modal Editar Usuario -->
+
+<!-- modal -->
+
+<div id="modalEditarUsuario" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+    <form role="form" method="post">
+
+      <div class="modal-header" style="background: #3c8dbc; color:#fff ">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Agregar usuario</h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="box-body">
+   
+       <!-- ENTRADA PARA EDITAR EL EMPLEADO -->
+       
+       <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control input-lg" name="editarEmpleado" id="editarEmpleado" required readonly placeholder="Ingresa Empleado">
+            </div>
+          </div>
+          <!-- ENTRADA PARA EDITAR EL USUARIO -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key"></i></span>
+              <input type="text" class="form-control input-lg" name="editarUsuario" id="editarUsuario" readonly required placeholder="Editar usuario">
+            </div>
+          </div>
+
+          <!-- ENTRADA PARA EDITAR CONTRASEÑA -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-unlock-alt"></i></span>
+              <input type="password" name="editarPassword" class="form-control input-lg" placeholder="Escriba la nueva contraseña" >
+                <input type="hidden" id="passwordActual" name="passwordActual">
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+          <!-- PIE DEL MODAL -->
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+
+      </div>
+
+      
+    </form>
+
+    </div>
+  </div>
+</div>
+<?php
+  $borrarUsuario = new ControladorUsuarios();
+  $borrarUsuario -> ctrBorrarUsuario();
+?> 

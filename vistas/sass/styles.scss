@@ -1,0 +1,115 @@
+$color1: #2B5C42;
+.tamaño-max{
+    width:100%;
+}
+.center{
+    text-align: center;
+    margin: 4%;
+}
+.carousel-inner{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    .item{
+        img{
+            width: 90%;
+            margin: auto;
+        }
+    }
+}
+.anuncios{
+    margin: 5%;
+    
+}
+.acercade{
+    background:rgba(43, 92, 66, 0.274);
+
+    color: #000;
+
+    .informacion{
+        margin: 5%;
+        padding: 2%;
+        font-size: 1.5rem;
+        font-weight: 100;
+    }
+}
+
+.boton{
+    background:$color1;
+    color: #fff;
+    border: none;
+    padding: 2% 4%;
+    border-radius: 5px;
+    margin-top: 3%;
+    &:hover{
+        opacity: 0.5;
+    }
+}
+footer{
+    width: 100%;
+    .enlaces{
+        text-align: center;
+    }
+    .creadores{
+        .creadores-h3{
+            color: $color1;
+        }
+        margin-bottom: 4%;
+        margin-top: 4%;
+        .contenedor{
+            display: flex;
+            justify-content: space-around;
+            .uno{
+                display: flex;
+                width: 50%;
+                justify-content: space-around;
+            }
+            .dos{
+                display: flex;
+                width: 50%;
+                justify-content: space-around;
+            }
+            img{
+                vertical-align: top;
+                border-radius: 50%;
+                opacity: 0.6;
+                
+                &:hover{
+                    opacity: 1;
+                    
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:680px){
+    .contenido{
+        display: flex;
+        width: 100%;
+        a{
+            margin: 10%;
+            justify-content: space-between;
+
+        }
+        img{
+            opacity: 1;
+        }
+    }
+    .creadores{
+        .contenedor{
+            flex-direction: column;
+            align-items: center;
+            .uno{
+                @extend .contenido;
+                justify-content: space-between;
+                
+            }
+            .dos{
+                @extend .contenido;
+            }
+            
+
+        }
+    }
+}

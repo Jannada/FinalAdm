@@ -1,116 +1,184 @@
 <div class="content-wrapper">
-    <section class="content-header">
-      <h1>
-        Crear Prestamos
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Crear Prestamos</li>
-      </ol>
-    </section>
 
-    <section class="content">
+  <section class="content-header">
 
-      <div class="box">
-        <div class="box-header with-border">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuario">Agregar usuario</button>
-        </div>
-        
+    <h1>
+
+      Crear préstamo
+
+    </h1>
+
+    <ol class="breadcrumb">
+
+      <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+
+      <li class="active">Crear préstamo</li>
+
+    </ol>
+
+  </section>
+
+  <section class="content">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+      <div class="box box-success">
+       <!-- Formulario -->
+       <form role="form" method="post" class="formularioVenta">
         <div class="box-body">
-          <table class="table tablr-bordered table-striped dt-responsive tablas" width="100%">
-            <thead>
-              <tr>
-                <th style="width:10px;">##</th>
-                <th>Usuario</th>
-                <th>Perfil</th>
-                <th>Estado</th>
-                <th>fecha</th>
-                <th>Acciones</th>
-           
-              </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Administrador</td>
-                    <td>ADM</td>
-                    <td><button class="btn btn-success btn-xs">Activado</button></td>
-                    <td>00-00-0000</td>
-                    <td>
-                  <div class="btn-group">
-                  <button class="btn btn-warning" ><i class="fa fa-pencil"></i></button>
-                  <button class="btn btn-danger" ><i class="fa fa-times"></i></button>
+          <!-- Información del cliente -->
 
-                  </div>
-                </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Modal Agregar Usuario -->
-  <!-- Modal -->
-<div id="modalAgregarUsuario" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-    <form role="form" method="post" encryptype="multipart/form-data">
-
-      <div class="modal-header" style="background: #3c8dbc; color:#fff ">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Agregar usuario</h4>
-      </div>
-
-      <div class="modal-body">
-        <div class="box-body">
-   
-
-          <!-- ENTRADA PARA EL USUARIO -->
+        <div class="contenido">
+            
+          <h3 style="text-align:center">Información del cliente</h3>
+          <!-- Entrada para el nombre -->
           <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-key"></i></span>
-              <input type="text" class="form-control input-lg" name="nuevoUsuario" required placeholder="Ingresa usuario">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="nuevoCliente" name="nuevoCliente" required placeholder="Nombres">
+            </div>
+
+             <!-- Entrada para el documento -->
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" id="nuevoDocumentoCliente2" name="nuevoDocumentoCliente2" required  placeholder="Documento">
+            <input type="hidden" class="form-control" id="nuevoDocumentoCliente" name="nuevoDocumentoCliente" >
+          </div>
+          </div>
+         
+          <!-- Entrada para la direccion -->
+          <div class="form-group col-md-12">
+            <input type="text" class="form-control" id="nuevaDireccionCliente" name="nuevaDireccionCliente" required  placeholder="Direccion">
+          </div>
+
+          <!-- Entrada para el email -->
+          <div class="form-group">
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" id="nuevoEmail" name="nuevoEmail" required placeholder="Email">  
+            </div>
+          </div>
+          <!-- Entrada para el telefono -->
+          <div class="form-group">
+            <div class="form-group col-md-4">
+              <input type="email" class="form-control" id="nuevoTelefono" name="nuevoTelefono" required  placeholder="Telefono">
+              </div>
+          </div>
+          <!-- Entrada para la Fecha de nacimiento -->
+          <div class="form-group">
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" id="nuevaFechaNacimiento" name="nuevaFechaNacimiento" required  placeholder="Fecha de nacimiento" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
             </div>
           </div>
 
-          <!-- ENTRADA PARA CONTRASEÑA -->
+          <!-- Entrada para  el usuario -->
           <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="password" class="form-control input-lg" name="nuevoPassword" required placeholder="Ingresa contraseña">
+            <div class="form-group col-md-6">
+              <input type="email" class="form-control" id="nuevoUsuarioCliente" name="nuevoUsuarioCliente" required  placeholder="Usuario">
             </div>
           </div>
           
-          <!-- ENTRADA PARA SELECCIONAR PERFIL -->
-
+          <!-- Entrada para la clave -->
           <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <select class="form-control input-lg" name="nuevoPerfil">
-                <option value="">Seleccionar perfil</option>
-                <option value="Administrador">Administrador</option>
-                <option value="Empleado">Empleado</option>
-                <option value="Cliente">Cliente</option>
-              </select>
+            <div class="form-group col-md-6">
+                <input type="password" class="form-control" id="nuevoPasswordCliente" name="nuevoPasswordCliente" required  placeholder="Clave">
+              </div>
+          </div>
+
+          <div class="garante col-md-12 ">
+              <div class="form-group ">
+                <div class="form-check pull-right">
+                  <input class="form-check-input " type="checkbox" id="gridCheck">
+                  <label class="form-check-label" for="gridCheck">
+                    Garante
+                  </label>
+                </div>
+            </div>
+            </div>
+          <!-- Información del cliente -->
+        </div>
+
+          <!-- Información del garánte -->
+        <div class="contenido-garante">
+           
+           <br/>
+           
+              <h3 style="text-align:center">Información del garánte</h3>
+          
+          <!-- Nombre del garante -->
+          <div class="form-group">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="nuevoGarante" name="nuevoGarante" required placeholder="Nombres">
+            </div>
+            <!-- Entrada para el documento del garante -->
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" id="nuevoDocumentoGarante2" name="nuevoDocumentoGarante2" required  placeholder="Documento">
+            <input type="hidden" class="form-control" id="nuevoDocumentoGarante" name="nuevoDocumentoGarante" >
+          </div>
+          </div>
+          
+
+           <!-- Entrada para la direccion del garante -->
+           <div class="form-group col-md-12">
+            <input type="text" class="form-control" id="nuevaDireccionGarante" name="nuevaDireccionGarante" required  placeholder="Direccion">
+          </div>
+
+          <!-- Entrada para el email del garante -->
+          <div class="form-group">
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" id="nuevoEmail" name="nuevoEmailGarante" required placeholder="EmailGarante">  
+            </div>
+          </div>
+          <!-- Entrada para el telefono del garante -->
+          <div class="form-group">
+            <div class="form-group col-md-4">
+              <input type="email" class="form-control" id="nuevoTelefonoGarante" name="nuevoTelefonoGarante" required  placeholder="Telefono">
+              </div>
+          </div>
+          <!-- Entrada para la Fecha de nacimiento del garante -->
+          <div class="form-group">
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" id="nuevaFechaNacimientoGarante" name="nuevaFechaNacimientoGarante" required  placeholder="Fecha de nacimiento" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
             </div>
           </div>
 
+          <!-- Información del garante -->
 
         </div>
+         
+
+          <!-- Información del préstamo -->
+        <div class="prestamo">
+          <br/>
+            <h3 style="text-align:center">Información del préstamo</h3>
+
+           <!-- Entrada para el monto -->
+           <div class="form-group col-md-3">
+            <input type="text" class="form-control" id="montoPrestamo" name="montoPrestamo" required  placeholder="Monto">
+          </div>
+          <!-- Entrada para el plazo -->
+          <div class="form-group col-md-3">
+            <input type="text" class="form-control" id="plazoPrestamo" name="plazoPrestamo" required  placeholder="Plazo (meses)">
+          </div>
+
+           <!-- Entrada para el interés -->
+           <div class="form-group col-md-3">
+            <input type="text" class="form-control" id="interesPrestamo" name="interesPrestamo" required  placeholder="Interés">
+          </div>
+
+          <!-- Entrada para cuotas mensuales -->
+          <div class="form-group col-md-3">
+            <input type="text" class="form-control" id="cuotasMensuales" name="cuotasMensuales" required  placeholder="Cuotas">
+          </div>
+
+
+         <!-- Información del préstamo -->
+        </div>
+         
+        
+        </div>
+       </form>
+       <!-- Formulario -->
       </div>
-
-          <!-- PIE DEL MODAL -->
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Guardar usuario</button>
-
       </div>
-    </form>
-
+      <div class="col-md-2"></div>
     </div>
-  </div>
+  </section>
 </div>
-

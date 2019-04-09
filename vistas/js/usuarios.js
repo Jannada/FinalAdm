@@ -62,4 +62,58 @@ $(document).on("change", "#nuevoPerfil", function(){
         }
     });
 })
+
+   // <!-- Editar usuario -->
+   $(document).on("click", ".btnEditarUsuario", function(){
+    var idUsuario = $(this).attr("idUsuario");
+    var datos = new FormData();
+    datos.append("idUsuario", idUsuario);
+
+    $.ajax({
+
+        url:"ajax/usuarios.ajax.php",
+        method: "POST",
+        data: datos,
+        cache: false,
+        contentType: false,
+        processData: false,
+        dataType: "json",
+        success: function(respuesta){
+            
+            $("#editarEmpleado").val(respuesta["nombre"]);
+            $("#editarUsuario").val(respuesta["usuario"]);
+           
+
+            $("#passwordActual").val(respuesta["password"]);
+
+           
+        }
+    });
+})
  
+ // Eliminar usuario
+
+ $(document).on("click", ".btnEliminarUsuario", function(){
+    var idUsuario = $(this).attr("idUsuario");
+    var fotoUsuario = $(this).attr("fotoUsuario");
+    var usuario = $(this).attr("usuario");
+    console.log("fotoUsuario", fotoUsuario);
+    
+
+    swal({
+        title: "Esta seguro de borrar el usuario?",
+        text: "¡Si no lo está puede cancelar la acción",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, borrar usuario!'
+        
+
+    }).then(function(result){
+
+        if(result.value){
+            window.location = "index.php?ruta=usuarios&idUsuario="+idUsuario;
+        }
+    })
+})

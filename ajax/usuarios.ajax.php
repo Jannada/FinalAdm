@@ -22,6 +22,18 @@ class AjaxUsuarios{
         $respuestaPerfil=ControladorUsuarios::ctrMostrarPerfil($item, $valor);
         echo json_encode($respuestaPerfil);
     }
+
+    // Editar Usuario
+
+    public $idUsuario;
+
+    public function ajaxEditarUsuario(){
+       $item = "id";
+       $valor = $this -> idUsuario;
+       $respuesta = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+
+       echo json_encode($respuesta);
+    }
 }
 if(isset($_POST["idEmpleado"])){
     $empleado = new AjaxUsuarios();
@@ -32,4 +44,9 @@ if(isset($_POST["idPerfil"])){
     $perfil = new AjaxUsuarios();
     $perfil -> idPerfil = $_POST["idPerfil"];
     $perfil -> ajaxIngresarPerfil();
+}
+if(isset($_POST["idUsuario"])){
+    $editar = new AjaxUsuarios();
+    $editar -> idUsuario = $_POST["idUsuario"];
+    $editar -> ajaxEditarUsuario();
 }
