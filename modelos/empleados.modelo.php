@@ -3,7 +3,7 @@
 require_once "conexion.php";
 
 class ModeloEmpleados{
-	//Mostrar Empleados kjdsbfkjbdf
+	//Mostrar Empleados 
 	
 
     static public function mdlMostrarEmpleados($tabla, $item, $valor){
