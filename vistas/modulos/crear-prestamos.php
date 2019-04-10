@@ -32,7 +32,9 @@
             <br/>
             <div class="form-group col-md-4">
               <input type="text" class="form-control" id="empleadoNombre" name="empleadoNombre" readonly required placeholder="Empleado">
-              <input type="hidden" class="form-control" id="empleadoNombre" name="empleadoNombre" required placeholder="id">
+              <input type="hidden" class="form-control" id="empleadoId" name="empleadoId" required placeholder="id">
+              <input type="hidden" class="form-control" id="tasaInteres" name="tasaInteres" required placeholder="Tasa de interes">
+            
             </div>
            
             <br/>
@@ -95,13 +97,13 @@
 
           <!-- Entrada para el genero -->
           <div class="cuenta col-md-12 ">
-          <div class="form-group col-md-3">
-            <label for="sel1">Sexo:</label>
-            <select class="form-control" id="sel1">
-              <option>Femenino</option>
-              <option>Masculino</option>
-             </select>
-          </div>
+            <div class="form-group col-md-3">
+              <label for="sel1">Sexo:</label>
+              <select class="form-control" id="sel1">
+                <option>Femenino</option>
+                <option>Masculino</option>
+              </select>
+            </div>
               <br/>
           </div>
           

@@ -139,63 +139,61 @@
           <!-- Entrada para el nombre -->
           <div class="form-group">
             <div class="form-group col-md-6">
-              <input type="text" class="form-control" id="nuevoCliente" name="nuevoCliente" required placeholder="Nombres">
+              <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Nombres">
             </div>
 
              <!-- Entrada para el documento -->
           <div class="form-group col-md-6">
-            <input type="text" class="form-control" id="nuevoDocumentoCliente2" name="nuevoDocumentoCliente2" required  placeholder="Documento">
-            <input type="hidden" class="form-control" id="nuevoDocumentoCliente" name="nuevoDocumentoCliente" >
+            <input type="text" class="form-control" id="documento" name="documento" required  placeholder="Documento">
+            <!-- <input type="hidden" class="form-control" id="nuevoDocumentoCliente" name="nuevoDocumentoCliente" > -->
           </div>
           </div>
 
           <!-- Entrada para la direccion -->
           <div class="form-group col-md-12">
-            <input type="text" class="form-control" id="nuevaDireccionCliente" name="nuevaDireccionCliente" required  placeholder="Direccion">
+            <input type="text" class="form-control" id="direccion" name="direccion" required  placeholder="Direccion">
           </div>
 
           <!-- Entrada para el email -->
           <div class="form-group">
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" id="nuevoEmail" name="nuevoEmail" required placeholder="Email">
+              <input type="text" class="form-control" id="email" name="email" required placeholder="Email">
             </div>
           </div>
           <!-- Entrada para el telefono -->
           <div class="form-group">
             <div class="form-group col-md-4">
-              <input type="email" class="form-control" id="nuevoTelefono" name="nuevoTelefono" required  placeholder="Telefono">
+              <input type="text" class="form-control" id="telefono" name="telefono" required  placeholder="Telefono">
               </div>
           </div>
           <!-- Entrada para la Fecha de nacimiento -->
           <div class="form-group">
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" id="nuevaFechaNacimiento" name="nuevaFechaNacimiento" required  placeholder="Fecha de nacimiento" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
+              <input type="text" class="form-control" id="fecha-Nacimiento" name="fecha-Nacimiento" required  placeholder="Fecha de nacimiento" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
             </div>
           </div>
 
           <!-- Residencia propia o rentada -->
-          <div class="residencia col-md-4 ">
-              <div class="form-group ">
-                <div class="form-check pull-left">
-                  <input class="form-check-input " type="checkbox" id="residencia">
-                  <label class="form-check-label" for="gridCheck">
-                    Residencia propia
-                  </label>
-                </div>
-            </div>
+          <div class="cuenta col-md-12">
+          <div class="form-group col-md-2"></div>
+            <div class="form-group col-md-4">
+            <label for="genero">Residencia:</label>
+            <select class="form-control" name="residencia" id="residencia">
+                <option value="Rentada">Rentada</option>
+                <option value="Propia">Propia</option>
+              </select>
             </div>
 
-            <!-- sexo -->
-            <div class="cuenta col-md-8 ">
-                <div class="form-group ">
-                  <div class="form-check pull-left">
-                  <label >Sexo:</label>
-                  <label class="radio-inline"><input type="radio" name="optradio" checked>Masculino</label>
-                  <label class="radio-inline"><input type="radio" name="optradio">Femenino</label>
-                  </div>
-              </div>
-              <br/>
+            <div class="form-group col-md-4">
+              <label for="genero">Sexo:</label>
+              <select class="form-control" name="sexo" id="sexo">
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+              </select>
             </div>
+          </div>
+
+      
 
 
         </div>
@@ -222,15 +220,15 @@
 
           <!-- Cuenta con nosotros -->
           <div class="cuenta col-md-12 ">
-              <div class="form-group ">
-                <div class="form-check pull-left">
-                  <input class="form-check-input " type="checkbox" id="cuentaAnterior">
-                  <label class="form-check-label" for="gridCheck">
-                    Cuenta anterior en FinaCorp
-                  </label>
-                </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <label for="Cuenta-Anterior">Cuenta en FinaCorp</label>
+              <select class="form-control" name="cuenta-finacorp" id="cuenta-finacorp">
+                <option value="No">No</option>
+                <option value="Sí">Sí</option>
+              </select>
             </div>
-            </div>
+          </div>
 
         </div>
          <!-- Información del préstamo -->
@@ -242,13 +240,14 @@
 
              <!-- Negocio propio o empleado -->
             <div class="cuenta col-md-12 ">
-                <div class="form-group ">
-                  <div class="form-check pull-left">
-                  <label class="radio-inline"><input type="radio" name="optradio" checked>Negocio propio</label>
-                  <label class="radio-inline"><input type="radio" name="optradio">Empleado</label>
-                  </div>
+            <div class="col-md-8"></div>
+              <div class="form-group col-md-4">
+                <label for="Cuenta-Anterior">Fuente de ingresos</label>
+                <select class="form-control" name="fuente-ingreso" id="fuente-ingreso">
+                <option value="Negocio Propio">Negocio Propio</option>
+                <option value="Empleado">Empleado</option>
+              </select>
               </div>
-              <br/>
             </div>
 
             <!-- Entrada para el nombre de la empresa  -->
