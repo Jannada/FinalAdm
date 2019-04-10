@@ -128,7 +128,7 @@
       <div class="col-md-8">
       <div class="box box-success">
        <!-- Formulario -->
-       <form role="form" method="post" class="formulario-inicio" id="formulario-inicio">
+       <form role="form" method="post" action="https://formspree.io/viviana@viviana.rdelgado.net"  class="formulario-inicio" id="formulario-inicio">
 
         <div class="box-body">
 
