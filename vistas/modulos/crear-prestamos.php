@@ -171,12 +171,12 @@
 
            <!-- Entrada para el interés -->
            <div class="form-group col-md-4">
-            <input type="text" class="form-control" id="interesPrestamo" name="interesPrestamo" required  placeholder="Interés">
+            <input type="text" class="form-control" id="interesPrestamo" name="interesPrestamo" required  placeholder="Interés" readonly>
           </div>
 
           <!-- Entrada para cuotas mensuales -->
           <div class="form-group col-md-4">
-            <input type="text" class="form-control" id="cuotasMensuales" name="cuotasMensuales" required  placeholder="Cuotas">
+            <input type="text" class="form-control" id="cuotasMensuales" name="cuotasMensuales" required  placeholder="Cuotas" readonly>
           </div>
 
           <!-- Entrada para la Fecha de inicio préstamo -->
