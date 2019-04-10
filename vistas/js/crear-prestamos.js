@@ -7,6 +7,10 @@ $(document).on("change", "#gridCheck", function(){
     }
 })
 
+/**********************
+ ** CREAR PRESTAMOS **
+ **********************/
+
 $(document).on("change", "#plazoPrestamo", function(){
     
    var monto = parseInt($("#montoPrestamo").val());
@@ -33,11 +37,21 @@ $(document).on("change", "#plazoPrestamo", function(){
  
     var fecha = new Date(algo);
 
+    var doceDias = 1000 * 60 * 60 * 24 * 12;
+
+    var suma = fecha.getTime() + doceDias;
+
+    var fecha1 = new Date(suma);
+
+    var fechaFin = (fecha1.getFullYear()+"/"+fecha1.getMonth()+"/"+fecha1.getDate());
+
+    $("#fechaFin").val(fechaFin);
+
     for(var i=0; i<plazo;i++){
 
         var mes = 1000 * 60 * 60 * 24 * 30 * i;
-        var suma = fecha.getTime() + mes;
-        var fecha1 = new Date(suma);
+        var suma2 = fecha.getTime() + mes;
+        var fecha2 = new Date(suma2);
 
         
 
@@ -48,7 +62,7 @@ $(document).on("change", "#plazoPrestamo", function(){
         console.log(interesMen);
         console.log(capital);
         console.log(cuotas);
-        console.log(fecha1.getFullYear()+"/"+(fecha1.getMonth()+1)+"/"+fecha1.getDate());
+        console.log(fecha2.getFullYear()+"/"+(fecha2.getMonth()+1)+"/"+fecha.getDate());
 
         monto -= cuotas;
     }
@@ -57,20 +71,4 @@ $(document).on("change", "#plazoPrestamo", function(){
     
    
 })
-
-
-
-// $(document).on("change", "#fechaInicio", function(){
-
-//    var algo =  $("#fechaInicio").val();
-
-//    var fecha = new Date(algo);
-
-//    console.log(fecha.getFullYear(), fecha.getMonth()+1);
-// })
-
-function mifecha(year, mes, dia){
-
-    if(mes){}
-}
 
