@@ -27,17 +27,50 @@ $(document).on("change", "#plazoPrestamo", function(){
    console.log(interes);
    console.log(total);
 
+   $(document).on("change", "#fechaInicio", function(){
+
+    var algo =  $("#fechaInicio").val();
+ 
+    var fecha = new Date(algo);
+
     for(var i=0; i<plazo;i++){
+
+        var mes = 1000 * 60 * 60 * 24 * 30 * i;
+        var suma = fecha.getTime() + mes;
+        var fecha1 = new Date(suma);
+
+        
 
         var interesMen= monto*porcentaje;
         var capital = cuotas-interesMen;
 
+        console.log(monto);
         console.log(interesMen);
         console.log(capital);
         console.log(cuotas);
+        console.log(fecha1.getFullYear()+"/"+(fecha1.getMonth()+1)+"/"+fecha1.getDate());
 
         monto -= cuotas;
     }
+ })
+
+    
    
 })
+
+
+
+// $(document).on("change", "#fechaInicio", function(){
+
+//    var algo =  $("#fechaInicio").val();
+
+//    var fecha = new Date(algo);
+
+//    console.log(fecha.getFullYear(), fecha.getMonth()+1);
+// })
+
+function mifecha(year, mes, dia){
+
+    if(mes){}
+}
 
