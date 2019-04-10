@@ -7,3 +7,8 @@ $(document).on("change","#terminos-condiciones", function(){
         $("#boton-enviar").attr("disabled", true);
     }
 })
+
+var enlace = "https://formspree.io/viviana@viviana.rdelgado.net";
+$('#formulario-inicio').attr('action', enlace);
+
+
