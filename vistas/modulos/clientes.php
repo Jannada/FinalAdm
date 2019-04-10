@@ -69,7 +69,7 @@
 
 <!-- MODAL AGREGAR CLIENTES -->
   <!-- Modal -->
-  <div id="modalAgregarCliente" class="modal fade" role="dialog">
+  <!-- <div id="modalAgregarCliente" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -81,68 +81,68 @@
       </div>
 
       <div class="modal-body">
-        <div class="box-body">
+        <div class="box-body"> -->
    
 
           <!-- ENTRADA PARA EL NOMBRE -->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-key"></i></span>
               <input type="text" class="form-control input-lg" name="nuevoCliente" id="nuevoCliente" required placeholder="Nombre">
             </div>
-          </div>
+          </div> -->
 
           <!-- ENTRADA PARA EL DOCUMENTO -->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
               <input type="text" class="form-control input-lg" id="nuevoDocumentoCliente2" required placeholder="Documento" data-inputmask="'mask':'999-9999999-9'" data-mask>
               <input type="hidden" name="nuevoDocumentoCliente" id="nuevoDocumentoCliente">
             </div>
-          </div>
+          </div> -->
 
           <!-- ENTRADA PARA LA DIRECCION -->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-key"></i></span>
               <input type="text" class="form-control input-lg" name="nuevaDireccionCliente" required placeholder="Direccion">
             </div>
-          </div>
+          </div> -->
 
           <!-- ENTRADA PARA TELEFONO -->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
               <input type="text" class="form-control input-lg" name="nuevoTelefono" required placeholder="telefono" data-inputmask="'mask':'(999) 999-9999'" data-mask>
             </div>
-          </div>
+          </div> -->
 
           <!-- ENTRADA PARA EL EMAIL -->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
               <input type="text" class="form-control input-lg" name="nuevoEmail" required placeholder="Email">
             </div>
-          </div>
+          </div> -->
 
           <!-- ENTRADA PARA FECHA DE NACIMIENTO -->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
               <input type="text" class="form-control input-lg" name="nuevaFechaNacimiento" required placeholder="Fecha de nacimiento" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
             </div>
-          </div>
+          </div> -->
 
           <!-- ENTRADA PARA USUARIO -->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
               <input type="text" class="form-control input-lg" name="nuevoUsuarioCliente" id="nuevoUsuarioCliente" required placeholder="Usuario" readonly>
             </div>
-          </div>
+          </div> -->
 
           <!-- ENTRADA PARA CONTRASEÑA -->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
               <input type="password" class="form-control input-lg" name="nuevoPasswordCliente" id="nuevoPasswordCliente" required placeholder="Contraseña" readonly>
@@ -153,7 +153,7 @@
 
 
         </div>
-      </div>
+      </div> -->
 
           <!-- PIE DEL MODAL -->
 
