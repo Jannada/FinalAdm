@@ -12,37 +12,50 @@
     <section class="content">
 
       <div class="box">
-        <div class="box-header with-border">
+        <!-- <div class="box-header with-border">
             <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuario">Agregar usuario</button>
-        </div>
+        </div> -->
         
         <div class="box-body">
           <table class="table tablr-bordered table-striped dt-responsive tablas" width="100%">
             <thead>
               <tr>
                 <th style="width:10px;">##</th>
-                <th>Usuario</th>
-                <th>Perfil</th>
-                <th>Estado</th>
-                <th>fecha</th>
-                <th>Acciones</th>
+                <th>Cliente</th>
+                <th>Empleado</th>
+                <th>Prestamo</th>
+                <th>Capital</th>
+                <th>Interes</th>
+                <th>Mora</th>
+                <th>Total Pagado</th>
+                <th>Forma de pago</th>
+                <th>Refencia pago</th>
+                <th>Fecha</th>
            
               </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Administrador</td>
-                    <td>ADM</td>
-                    <td><button class="btn btn-success btn-xs">Activado</button></td>
-                    <td>00-00-0000</td>
-                    <td>
-                  <div class="btn-group">
-                  <button class="btn btn-warning" ><i class="fa fa-pencil"></i></button>
-                  <button class="btn btn-danger" ><i class="fa fa-times"></i></button>
-
-                  </div>
-                </tr>
+            <?php
+                $item = null;
+                $valor = null;
+                $recibos = ControladorRecibos::ctrMostrarRecibos($item, $valor);
+                for($i=0; $i < count($recibos); $i++){
+                echo ' <tr>
+                <td>'.($i+1).'</td>
+                <td>'.$recibos[$i]["id_cliente"].'</td>
+                <td>'.$recibos[$i]["id_empleado"].'</td>
+                <td>'.$recibos[$i]["id_prestamo"].'</td>
+                <td>'.$recibos[$i]["capital"].'</td>
+                <td>'.$recibos[$i]["interes"].'</td>
+                <td>'.$recibos[$i]["mora"].'</td>
+                <td>'.$recibos[$i]["total_pagado"].'</td>
+                <td>'.$recibos[$i]["id_forma_pago"].'</td>
+                <td>'.$recibos[$i]["referencia_f_pago"].'</td>
+                <td>'.$recibos[$i]["fecha"].'</td>
+                
+            </tr>';
+              }
+            ?>
             </tbody>
           </table>
         </div>

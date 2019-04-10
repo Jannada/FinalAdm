@@ -2,10 +2,10 @@
 
 require_once "conexion.php";
 
-class ModeloPrestamos{
+class ModeloCuotas{
     //Mostrar prestamos
 
-    static public function mdlMostrarPrestamos($tabla, $item, $valor){
+    static public function mdlMostrarCuotas($tabla, $item, $valor){
         if($item!=null){
             $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
