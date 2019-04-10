@@ -114,14 +114,47 @@
 
 			</li>
 
-			<li>
+			<li class="treeview">
 
-				<a href="facturas">
+				<a href="#">
 
 					<i class="fa fa-credit-card-alt"></i>
-					<span>Administrar facturas</span>
+					
+					<span>Facturas</span>
+					
+					<span class="pull-right-container">
+					
+						<i class="fa fa-angle-left pull-right"></i>
+
+					</span>
 
 				</a>
+
+				<ul class="treeview-menu">
+					
+					<li>
+
+						<a href="facturas">
+							
+							<i class="fa fa-circle-o"></i>
+							<span>Administrar facturas</span>
+
+						</a>
+
+					</li>
+
+					<li>
+
+						<a href="crear-factura">
+							
+							<i class="fa fa-circle-o"></i>
+							<span>Facturar</span>
+
+						</a>
+
+					</li>
+
+				</ul>
 
 			</li>
 

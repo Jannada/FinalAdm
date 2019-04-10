@@ -17,7 +17,6 @@ class ModeloUsuarios{
         $stmt-> close();
         $stmt = null;
     }
-
     static public function mdlMostrarPerfil($tabla, $item, $valor){
         if($item!=null){
             $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
@@ -32,7 +31,6 @@ class ModeloUsuarios{
         $stmt-> close();
         $stmt = null;
     }
-
     static public function mdlIngresarUsuario($tabla, $datos){
         if($datos["perfil"]!=2){
 		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(usuario, password, id_perfil, id_empleado) VALUES (:usuario, :password, :id_perfil, :id_empleado)");

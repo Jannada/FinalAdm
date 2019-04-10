@@ -11,7 +11,11 @@ class ControladorCrearPrestamos{
 			    preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["nuevoEmail"]) && 
 			    preg_match('/^[()\-0-9 ]+$/', $_POST["nuevoTelefono"])&&
 			    preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoUsuarioCliente"])&&
-			    preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["nuevaDireccionCliente"])){
+          preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["nuevaDireccionCliente"])&&
+          preg_match('/^[0-9]+$/', $_POST["montoPrestamo"]) &&
+          preg_match('/^[0-9]+$/', $_POST["plazoPrestamo"]) &&
+          preg_match('/^[0-9.]+$/', $_POST["interesPrestamo"]) &&
+          preg_match('/^[0-9]+$/', $_POST["cuotasMensuales"])){
 
 			   	$tabla = "clientes";
 
@@ -33,7 +37,21 @@ class ControladorCrearPrestamos{
 											"perfil" => 2,
 											"cliente"=>$_POST["nuevoDocumentoCliente"]);
 
-				$respuestaUsuario = ModeloUsuarios::mdlIngresarUsuario($tabla2, $datos2);
+								$respuestaUsuario = ModeloUsuarios::mdlIngresarUsuario($tabla2, $datos2);
+								
+								
+
+								$tabla3 = "prestamos";
+								
+								$datos3 = array("nombre"=>$_POST["nuevoCliente"],
+					           					"documento"=>$_POST["nuevoDocumentoCliente"],
+					           					"email"=>$_POST["nuevoEmail"],
+															"telefono"=>$_POST["nuevoTelefono"],
+							    						"direccion"=>$_POST["nuevaDireccionCliente"],
+					           					"fecha_nacimiento"=>$_POST["nuevaFechaNacimiento"]);
+
+                
+
 
 			   	if($respuesta == "ok" && $respuestaUsuario == "ok"){
 

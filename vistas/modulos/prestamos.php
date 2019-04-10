@@ -1,48 +1,61 @@
 <div class="content-wrapper">
     <section class="content-header">
       <h1>
-        Administrar prestamos
+        Lista de prestamos
       </h1>
       <ol class="breadcrumb">
         <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Administrar prestamos</li>
+        <li class="active"> Lista de prestamos</li>
       </ol>
     </section>
 
     <section class="content">
 
-      <div class="box">
-        <div class="box-header with-border">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuario">Agregar usuario</button>
-        </div>
+      
         
         <div class="box-body">
           <table class="table tablr-bordered table-striped dt-responsive tablas" width="100%">
             <thead>
               <tr>
                 <th style="width:10px;">##</th>
+                <th>Cliente</th>
                 <th>Usuario</th>
-                <th>Perfil</th>
+                <th>Monto</th>
+                <th>Pendiente</th>
+                <th>Tasa_interes</th>
+                <th>Interes</th>
                 <th>Estado</th>
-                <th>fecha</th>
-                <th>Acciones</th>
+                <th>Cuotas</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Final</th>
+                <th>Fecha</th>
            
               </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Administrador</td>
-                    <td>ADM</td>
-                    <td><button class="btn btn-success btn-xs">Activado</button></td>
-                    <td>00-00-0000</td>
-                    <td>
-                  <div class="btn-group">
-                  <button class="btn btn-warning" ><i class="fa fa-pencil"></i></button>
-                  <button class="btn btn-danger" ><i class="fa fa-times"></i></button>
-
-                  </div>
-                </tr>
+            <?php
+                $item = null;
+                $valor = null;
+                $prestamos = ControladorPrestamos::ctrMostrarPretamos($item, $valor);
+                for($i=0; $i < count($prestamos); $i++){
+                echo ' <tr>
+                <td>'.($i+1).'</td>
+                <td>'.$prestamos[$i]["id_cliente"].'</td>
+                <td>'.$prestamos[$i]["id_empleado"].'</td>
+                <td>'.$prestamos[$i]["monto"].'</td>
+                <td>'.$prestamos[$i]["pendiente"].'</td>
+                <td>'.$prestamos[$i]["tasa_interes"].'</td>
+                <td>'.$prestamos[$i]["interes"].'</td>
+                <td>'.$prestamos[$i]["estado"].'</td>
+                <td>'.$prestamos[$i]["cuotas"].'</td>
+                <td>'.$prestamos[$i]["fecha_inicio"].'</td>
+                <td>'.$prestamos[$i]["fecha_final"].'</td>
+                <td>'.$prestamos[$i]["fecha"].'</td>
+                
+            </tr>';
+              }
+            ?>
+               
             </tbody>
           </table>
         </div>
