@@ -261,7 +261,7 @@
             <input type="text" class="form-control" id="telefonoEmpresa" name="telefonoEmpresa" required  placeholder="Teléfono de la empresa">
           </div>
 
-            <!-- Entrada para el telefono de la empresa  -->
+            <!-- Entrada para el sueldo de la empresa  -->
           <div class="form-group col-md-6">
             <input type="text" class="form-control" id="sueldoMensual" name="sueldoMensual" required  placeholder="Sueldo mensual">
           </div>
@@ -279,7 +279,7 @@
                 <div class="form-check">
                   <input class="form-check-input " type="checkbox" id="terminos-condiciones">
                   <label class="form-check-label" for="gridCheck">
-                    Aceptar <a href="#">términos y condiciones</a>
+                    Aceptar <a href="pdf/Glosario-terminos-Financieros.pdf" target="_blank" >términos y condiciones</a>
                   </label>
                 </div>
               </div>
