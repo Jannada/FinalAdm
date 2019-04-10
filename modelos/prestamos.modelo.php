@@ -19,6 +19,32 @@ class ModeloPrestamos{
         $stmt-> close();
         $stmt = null;
     }
-}
 
-?>
+    static public function mdlCrearPrestamo($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_cliente, id_usuario, monto, total, pendiente, tasa_interes, interes, cuotas) VALUES (:id_cliente, :id_usuario, :monto, :total, :pendiente, :tasa_interes, :interes, :cuotas)");
+
+		$stmt->bindParam(":id_cliente", $datos["cliente"], PDO::PARAM_INT);
+		$stmt->bindParam(":id_usuario", $datos["empleado"], PDO::PARAM_INT);
+		$stmt->bindParam(":monto", $datos["monto"], PDO::PARAM_STR);
+		$stmt->bindParam(":pendiente", $datos["pendiente"], PDO::PARAM_STR);
+		$stmt->bindParam(":tasa_interes", $datos["tasaInteres"], PDO::PARAM_STR);
+        $stmt->bindParam(":interes", $datos["interes"], PDO::PARAM_STR);
+        $stmt->bindParam(":cuotas", $datos["plazo"], PDO::PARAM_STR);
+        $stmt->bindParam(":total", $datos["total"], PDO::PARAM_STR);
+
+		if($stmt->execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+		
+		}
+
+		$stmt->close();
+		$stmt = null;
+
+	}
+}
