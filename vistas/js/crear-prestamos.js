@@ -43,7 +43,7 @@ $(document).on("change", "#plazoPrestamo", function(){
 
     var fecha1 = new Date(suma);
 
-    var fechaFin = (fecha1.getFullYear()+"/"+fecha1.getMonth()+"/"+fecha1.getDate());
+    var fechaFin = (fecha1.getFullYear()+"/"+(fecha1.getMonth()+1)+"/"+fecha1.getDate());
 
     $("#fechaFin").val(fechaFin);
 

@@ -1,59 +1,48 @@
 <div class="content-wrapper">
     <section class="content-header">
       <h1>
-        Administrar cuotas
+        Administrar prestamos
       </h1>
       <ol class="breadcrumb">
         <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Administrar cuotas</li>
+        <li class="active">Administrar prestamos</li>
       </ol>
     </section>
 
     <section class="content">
 
       <div class="box">
-        <!-- <div class="box-header with-border">
+        <div class="box-header with-border">
             <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuario">Agregar usuario</button>
-        </div> -->
+        </div>
         
         <div class="box-body">
           <table class="table tablr-bordered table-striped dt-responsive tablas" width="100%">
             <thead>
               <tr>
                 <th style="width:10px;">##</th>
-                <th>Prestamo</th>
-                <th>Monto</th>
-                <th>Capital</th>
-                <th>Interes</th>
-                <th>Mora</th>
+                <th>Usuario</th>
+                <th>Perfil</th>
                 <th>Estado</th>
-                <th>Fecha de Pago</th>
-                <th>Forma limite</th>
-               
+                <th>fecha</th>
+                <th>Acciones</th>
            
               </tr>
             </thead>
             <tbody>
-            <?php
-                $item = null;
-                $valor = null;
-                $cuotas = ControladorCuotas::ctrMostrarCuotas($item, $valor);
-                for($i=0; $i < count($cuotas); $i++){
-                echo ' <tr>
-                <td>'.($i+1).'</td>
-                <td>'.$cuotas[$i]["id_prestamo"].'</td>
-                <td>'.$cuotas[$i]["monto"].'</td>
-                <td>'.$cuotas[$i]["capital"].'</td>
-                <td>'.$cuotas[$i]["interes"].'</td>
-                <td>'.$cuotas[$i]["mora"].'</td>
-                <td>'.$cuotas[$i]["estado"].'</td>
-                <td>'.$cuotas[$i]["fecha_pago"].'</td>
-                <td>'.$cuotas[$i]["fecha_limite"].'</td>
-               
-                
-            </tr>';
-              }
-            ?>
+                <tr>
+                    <td>1</td>
+                    <td>Administrador</td>
+                    <td>ADM</td>
+                    <td><button class="btn btn-success btn-xs">Activado</button></td>
+                    <td>00-00-0000</td>
+                    <td>
+                  <div class="btn-group">
+                  <button class="btn btn-warning" ><i class="fa fa-pencil"></i></button>
+                  <button class="btn btn-danger" ><i class="fa fa-times"></i></button>
+
+                  </div>
+                </tr>
             </tbody>
           </table>
         </div>
