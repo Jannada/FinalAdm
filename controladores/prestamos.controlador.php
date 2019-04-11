@@ -44,7 +44,33 @@ class ControladorPrestamos{
 												"perfil" => 2,
 												"cliente"=>$_POST["nuevoDocumentoCliente"]);
 	
-									$respuestaUsuario = ModeloUsuarios::mdlIngresarUsuario($tabla2, $datos2);
+						$respuestaUsuario = ModeloUsuarios::mdlIngresarUsuario($tabla2, $datos2);
+
+
+						/****************
+						 * GARANTE *
+						 ****************/
+
+						 if($_POST["nuevoGarante"]!=""){
+
+						$tabla5 = "garante";
+	
+						$datos5 = array("nombre"=>$_POST["nuevoGarante"],
+											"documento"=>$_POST["nuevoDocumentoGarante"],
+											"email"=>$_POST["nuevoEmailGarante"],
+											 "telefono"=>$_POST["nuevoTelefonoGarante"],
+											 "direccion"=>$_POST["nuevaDireccionGarante"],
+											 "cliente"=>$_POST["nuevoDocumentoCliente"],
+												"fecha_nacimiento"=>$_POST["nuevaFechaNacimientoGarante"]);
+ 
+				 $respuesta = ModeloClientes::mdlIngresarGarante($tabla5, $datos5);
+
+						 }
+							
+
+				 /****************
+						 * PRESTAMO *
+					****************/
 
 									$total = floatval($_POST["montoPrestamo"])+floatval($_POST["interesPrestamo"]);
 	

@@ -148,7 +148,7 @@
           <!-- Entrada para la clave -->
           <div class="form-group">
             <div class="form-group col-md-6">
-                <input type="password" class="form-control" id="nuevoPasswordCliente" name="nuevoPasswordCliente" required  placeholder="Clave">
+                <input type="password" class="form-control" id="nuevoPasswordCliente" name="nuevoPasswordCliente" required  placeholder="Clave" readonly>
               </div>
           </div>
 
@@ -206,13 +206,13 @@
           <!-- Entrada para el email del garante -->
           <div class="form-group">
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" id="nuevoEmailGarante" name="nuevoEmailGarante" placeholder="Email">
+              <input type="email" class="form-control" id="nuevoEmailGarante" name="nuevoEmailGarante" placeholder="Email">
             </div>
           </div>
           <!-- Entrada para el telefono del garante -->
           <div class="form-group">
             <div class="form-group col-md-4">
-              <input type="email" class="form-control" id="nuevoTelefonoGarante" name="nuevoTelefonoGarante" placeholder="Telefono">
+              <input type="text" class="form-control" id="nuevoTelefonoGarante" name="nuevoTelefonoGarante" placeholder="Telefono">
               </div>
           </div>
           <!-- Entrada para la Fecha de nacimiento del garante -->
