@@ -39,7 +39,8 @@ class ControladorPrestamos{
 	
 					$tabla2 = "usuarios";
 	
-					$datos2 = array("usuario" => $_POST["nuevoUsuarioCliente"],
+					$datos2 = array("nombre" => $_POST["nuevoCliente"],
+												"usuario" => $_POST["nuevoUsuarioCliente"],
 												"password" => $encriptar,
 												"perfil" => 2,
 												"cliente"=>$_POST["nuevoDocumentoCliente"]);

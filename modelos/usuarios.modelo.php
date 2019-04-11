@@ -33,8 +33,9 @@ class ModeloUsuarios{
     }
     static public function mdlIngresarUsuario($tabla, $datos){
         if($datos["perfil"]!=2){
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(usuario, password, id_perfil, id_empleado) VALUES (:usuario, :password, :id_perfil, :id_empleado)");
-		$stmt->bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, usuario, password, id_perfil, id_empleado) VALUES (:nombre, :usuario, :password, :id_perfil, :id_empleado)");
+        $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+        $stmt->bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
 		$stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
         $stmt->bindParam(":id_perfil", $datos["perfil"], PDO::PARAM_STR);
         $stmt->bindParam(":id_empleado", $datos["empleado"], PDO::PARAM_STR);
@@ -47,7 +48,8 @@ class ModeloUsuarios{
         }
     }else{
         $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(usuario, password, id_perfil, id_cliente) VALUES (:usuario, :password, :id_perfil, :id_cliente)");
-		$stmt->bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
+        $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+        $stmt->bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
 		$stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
         $stmt->bindParam(":id_perfil", $datos["perfil"], PDO::PARAM_STR);
         $stmt->bindParam(":id_cliente", $datos["cliente"], PDO::PARAM_STR);

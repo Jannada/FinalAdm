@@ -111,6 +111,7 @@
                     
                     if($empleado[$i]["id"] != $usuario["id_empleado"]){
                     echo '<option value="'.$empleado[$i]["id"].'" id="traerEmpleado">'.$empleado[$i]["nombre"].' - '.$empleado[$i]["documento"].'</option>';
+                    
                   
                   }
                 }
@@ -124,6 +125,7 @@
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-key"></i></span>
               <input type="text" class="form-control input-lg" name="nuevoUsuario" id="nuevoUsuario" required placeholder="Ingresa usuario">
+              <input type="hidden" name="nombreUsuario" id="nombreUsuario">
             </div>
           </div>
 

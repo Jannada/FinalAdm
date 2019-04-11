@@ -48,7 +48,7 @@
                     
                     <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-                    <input type="text" class="form-control" id="nuevoVendedor" name="nuevoVendedor" value="Usuario Administrador" readonly>
+                    <input type="text" class="form-control" id="nuevoVendedor" name="nuevoVendedor" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
 
                   </div>
 
@@ -63,9 +63,34 @@
                   <div class="input-group">
                     
                     <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                    
-                    <input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="10002343" readonly>
+
+                    <?php
+
+                    $item = null;
+                    $valor = null;
+
+                    $facturas = ControladorRecibos::ctrMostrarRecibos($item, $valor);
+
+                    if(!$facturas){
+
+                      echo '<input type="text" class="form-control" id="nuevaFactura" name="nuevaFactura" value="10001" readonly>';                  
+
+                    }else{
+
+                      foreach ($facturas as $key => $value) {
+                        
+                      }
+
+                      $codigo = $value["codigo"] + 1;
+
+                      echo '<input type="text" class="form-control" id="nuevaFactura" name="nuevaFactura" value="'.$codigo.'" readonly>';
                   
+
+                    }
+
+                    ?>
+                    
+                    
                   </div>
                 
                 </div>
