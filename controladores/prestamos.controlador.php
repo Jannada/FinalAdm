@@ -12,7 +12,7 @@ class ControladorPrestamos{
 
 			var_dump("kk");
 
-			if(!isset($_POST["nuevoCliente"])){
+			if(isset($_POST["nuevoCliente"])){
 				var_dump("25k");
 	
 				// if( preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoCliente"]) &&

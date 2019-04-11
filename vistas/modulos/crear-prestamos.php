@@ -39,11 +39,12 @@
            
             <br/>
         <div class="contenido">
-            <div class="col-md-6"></div>
+            <!-- <div class="col-md-3"></div> -->
              <!-- Entrada para el id empleado -->
 
 
           <h3 >Información del cliente</h3>
+
           <!-- Entrada para el nombre -->
           <div class="form-group">
             <div class="form-group col-md-6">
@@ -52,7 +53,7 @@
 
              <!-- Entrada para el documento -->
           <div class="form-group col-md-6">
-            <input type="number" class="form-control" id="nuevoDocumentoCliente2" name="nuevoDocumentoCliente2" required  placeholder="Documento">
+            <input type="text" class="form-control" id="nuevoDocumentoCliente2" name="nuevoDocumentoCliente2" required  placeholder="Documento">
             <input type="hidden" class="form-control" id="nuevoDocumentoCliente" name="nuevoDocumentoCliente" >
           </div>
           </div>
@@ -71,7 +72,7 @@
           <!-- Entrada para el telefono -->
           <div class="form-group">
             <div class="form-group col-md-4">
-              <input type="number" class="form-control" id="nuevoTelefono" name="nuevoTelefono" required  placeholder="Telefono">
+              <input type="text" class="form-control" id="nuevoTelefono" name="nuevoTelefono" required  placeholder="Telefono">
               </div>
           </div>
           <!-- Entrada para la Fecha de nacimiento -->
@@ -205,8 +206,11 @@
               <input type="text" class="form-control" id="fechaInicioPago" name="fechaInicioPago" required placeholder="Fecha del primer pago" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
             </div>
           <!-- Entrada para la Fecha de fin pago -->
+          <div class="fecha" id="fechaFinP">
+
+          </div>
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" id="fechaFinPago" name="fechaFinPago" required readonly  placeholder="Fecha del último pago" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
+              <input type="text" class="form-control" id="fechaFinPago" name="fechaFinPago" required readonly  placeholder="Fecha del último pago">
             </div>
             <div class=" col-md-2"></div>
           </div>
