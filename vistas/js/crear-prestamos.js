@@ -2,6 +2,14 @@ $(document).on("change", "#gridCheck", function(){
     
     if( $('#gridCheck').prop('checked') ) {
         $(".contenido-garante").show();
+
+        $("#nuevoGarante").attr("required","true");
+        $("#nuevoDocumentoGarante2").attr("required","true");
+        $("#nuevaDireccionGarante").attr("required","true");
+        $("#nuevoEmailGarante").attr("required","true");
+        $("#nuevoTelefonoGarante").attr("required","true");
+        $("#nuevaFechaNacimientoGarante").attr("required","true");
+        
     }else{
         $(".contenido-garante").hide();
     }
