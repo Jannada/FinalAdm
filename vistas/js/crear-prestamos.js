@@ -31,9 +31,9 @@ $(document).on("change", "#plazoPrestamo", function(){
    console.log(interes);
    console.log(total);
 
-   $(document).on("change", "#fechaInicio", function(){
+   $(document).on("change", "#fechaInicioPago", function(){
 
-    var algo =  $("#fechaInicio").val();
+    var algo =  $("#fechaInicioPago").val();
  
     var fecha = new Date(algo);
 
@@ -45,27 +45,27 @@ $(document).on("change", "#plazoPrestamo", function(){
 
     var fechaFin = (fecha1.getFullYear()+"/"+(fecha1.getMonth()+1)+"/"+fecha1.getDate());
 
-    $("#fechaFin").val(fechaFin);
+    $("#fechaFinPago").val(fechaFin);
 
-    for(var i=0; i<plazo;i++){
+    // for(var i=0; i<plazo;i++){
 
-        var mes = 1000 * 60 * 60 * 24 * 30 * i;
-        var suma2 = fecha.getTime() + mes;
-        var fecha2 = new Date(suma2);
+    //     var mes = 1000 * 60 * 60 * 24 * 30 * i;
+    //     var suma2 = fecha.getTime() + mes;
+    //     var fecha2 = new Date(suma2);
 
         
 
-        var interesMen= monto*porcentaje;
-        var capital = cuotas-interesMen;
+    //     var interesMen= monto*porcentaje;
+    //     var capital = cuotas-interesMen;
 
-        console.log(monto);
-        console.log(interesMen);
-        console.log(capital);
-        console.log(cuotas);
-        console.log(fecha2.getFullYear()+"/"+(fecha2.getMonth()+1)+"/"+fecha.getDate());
+    //     console.log(monto);
+    //     console.log(interesMen);
+    //     console.log(capital);
+    //     console.log(cuotas);
+    //     console.log(fecha2.getFullYear()+"/"+(fecha2.getMonth()+1)+"/"+fecha.getDate());
 
-        monto -= cuotas;
-    }
+    //     monto -= cuotas;
+    // }
  })
 
     

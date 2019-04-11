@@ -31,15 +31,15 @@
               <!-- Entrada para el empleado -->
             <br/>
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" id="empleadoNombre" name="empleadoNombre" readonly required placeholder="Empleado">
-              <input type="hidden" class="form-control" id="empleadoId" name="empleadoId" required placeholder="id">
-              <input type="hidden" class="form-control" id="tasaInteres" name="tasaInteres" required placeholder="Tasa de interes">
+              <input type="text" class="form-control" id="empleadoNombre" name="empleadoNombre" readonly>
+              <input type="hidden" class="form-control" id="empleadoId" name="empleadoId">
+              <input type="hidden" class="form-control" id="tasaInteres" name="tasaInteres">
             
             </div>
            
             <br/>
         <div class="contenido">
-            <!-- <div class="col-md-6"></div> -->
+            <div class="col-md-6"></div>
              <!-- Entrada para el id empleado -->
 
 
@@ -52,7 +52,7 @@
 
              <!-- Entrada para el documento -->
           <div class="form-group col-md-6">
-            <input type="text" class="form-control" id="nuevoDocumentoCliente2" name="nuevoDocumentoCliente2" required  placeholder="Documento">
+            <input type="number" class="form-control" id="nuevoDocumentoCliente2" name="nuevoDocumentoCliente2" required  placeholder="Documento">
             <input type="hidden" class="form-control" id="nuevoDocumentoCliente" name="nuevoDocumentoCliente" >
           </div>
           </div>
@@ -65,13 +65,13 @@
           <!-- Entrada para el email -->
           <div class="form-group">
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" id="nuevoEmail" name="nuevoEmail" required placeholder="Email">
+              <input type="email" class="form-control" id="nuevoEmail" name="nuevoEmail" required placeholder="Email">
             </div>
           </div>
           <!-- Entrada para el telefono -->
           <div class="form-group">
             <div class="form-group col-md-4">
-              <input type="email" class="form-control" id="nuevoTelefono" name="nuevoTelefono" required  placeholder="Telefono">
+              <input type="number" class="form-control" id="nuevoTelefono" name="nuevoTelefono" required  placeholder="Telefono">
               </div>
           </div>
           <!-- Entrada para la Fecha de nacimiento -->
@@ -84,7 +84,7 @@
           <!-- Entrada para  el usuario -->
           <div class="form-group">
             <div class="form-group col-md-6">
-              <input type="email" class="form-control" id="nuevoUsuarioCliente" name="nuevoUsuarioCliente" required  placeholder="Usuario">
+              <input type="text" class="form-control" id="nuevoUsuarioCliente" name="nuevoUsuarioCliente" required  placeholder="Usuario" readonly>
             </div>
           </div>
 
@@ -98,10 +98,10 @@
           <!-- Entrada para el genero -->
           <div class="cuenta col-md-12 ">
             <div class="form-group col-md-3">
-              <label for="sel1">Sexo:</label>
-              <select class="form-control" id="sel1">
-                <option>Femenino</option>
-                <option>Masculino</option>
+              <label for="genero">Sexo:</label>
+              <select class="form-control" id="genero" name="genero">
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
               </select>
             </div>
               <br/>
@@ -121,7 +121,7 @@
           <!-- Información del cliente -->
         </div>
 
-          <!-- Información del garánte -->
+          <!-- Información del garánte-->
         <div class="contenido-garante" style="display:none;">
 
            <br/>
@@ -131,11 +131,11 @@
           <!-- Nombre del garante -->
           <div class="form-group">
             <div class="form-group col-md-6">
-              <input type="text" class="form-control" id="nuevoGarante" name="nuevoGarante" required placeholder="Nombres">
+              <input type="text" class="form-control" id="nuevoGarante" name="nuevoGarante" placeholder="Nombres">
             </div>
             <!-- Entrada para el documento del garante -->
           <div class="form-group col-md-6">
-            <input type="text" class="form-control" id="nuevoDocumentoGarante2" name="nuevoDocumentoGarante2" required  placeholder="Documento">
+            <input type="text" class="form-control" id="nuevoDocumentoGarante2" name="nuevoDocumentoGarante2" placeholder="Documento">
             <input type="hidden" class="form-control" id="nuevoDocumentoGarante" name="nuevoDocumentoGarante" >
           </div>
           </div>
@@ -143,31 +143,31 @@
 
            <!-- Entrada para la direccion del garante -->
            <div class="form-group col-md-12">
-            <input type="text" class="form-control" id="nuevaDireccionGarante" name="nuevaDireccionGarante" required  placeholder="Direccion">
+            <input type="text" class="form-control" id="nuevaDireccionGarante" name="nuevaDireccionGarante" placeholder="Direccion">
           </div>
 
           <!-- Entrada para el email del garante -->
           <div class="form-group">
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" id="nuevoEmail" name="nuevoEmailGarante" required placeholder="Email">
+              <input type="text" class="form-control" id="nuevoEmailGarante" name="nuevoEmailGarante" placeholder="Email">
             </div>
           </div>
           <!-- Entrada para el telefono del garante -->
           <div class="form-group">
             <div class="form-group col-md-4">
-              <input type="email" class="form-control" id="nuevoTelefonoGarante" name="nuevoTelefonoGarante" required  placeholder="Telefono">
+              <input type="email" class="form-control" id="nuevoTelefonoGarante" name="nuevoTelefonoGarante" placeholder="Telefono">
               </div>
           </div>
           <!-- Entrada para la Fecha de nacimiento del garante -->
           <div class="form-group">
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" id="nuevaFechaNacimientoGarante" name="nuevaFechaNacimientoGarante" required  placeholder="Fecha de nacimiento" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
+              <input type="text" class="form-control" id="nuevaFechaNacimientoGarante" name="nuevaFechaNacimientoGarante" placeholder="Fecha de nacimiento" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
             </div>
           </div>
 
           <!-- Información del garante -->
 
-        </div>
+        </div> 
 
 
           <!-- Información del préstamo -->
@@ -221,7 +221,10 @@
         <div class="modal-footer">
         <button type="submit" class="btn btn-primary">Crear préstamo</button>
         </div>
-
+        <?php
+                $crearPrestamo = new ControladorPrestamos();
+                $crearPrestamo -> ctrCrearPrestamo();
+              ?>
        </form>
        <!-- Formulario -->
       </div>
