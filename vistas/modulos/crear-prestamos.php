@@ -100,6 +100,7 @@
 
 
           <h3 >Información del cliente</h3>
+
           <!-- Entrada para el nombre -->
           <div class="form-group">
             <div class="form-group col-md-6">
@@ -261,6 +262,9 @@
               <input type="text" class="form-control" id="fechaInicioPago" name="fechaInicioPago" required placeholder="Fecha del primer pago" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
             </div>
           <!-- Entrada para la Fecha de fin pago -->
+          <div class="fecha" id="fechaFinP">
+
+          </div>
             <div class="form-group col-md-4">
               <input type="text" class="form-control" id="fechaFinPago" name="fechaFinPago" required readonly  placeholder="Fecha del último pago">
             </div>
