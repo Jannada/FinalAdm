@@ -1,116 +1,88 @@
 <div class="content-wrapper">
-    <section class="content-header">
-      <h1>
-        Juan Martines
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Mi perfil</li>
-      </ol>
-    </section>
 
-    <section class="content">
 
-      <div class="box">
-        <div class="box-header with-border">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuario">Agregar usuario</button>
-        </div>
-        
-        <div class="box-body">
-          <table class="table tablr-bordered table-striped dt-responsive tablas" width="100%">
-            <thead>
-              <tr>
-                <th style="width:10px;">##</th>
-                <th>Usuario</th>
-                <th>Perfil</th>
-                <th>Estado</th>
-                <th>fecha</th>
-                <th>Acciones</th>
-           
-              </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Administrador</td>
-                    <td>ADM</td>
-                    <td><button class="btn btn-success btn-xs">Activado</button></td>
-                    <td>00-00-0000</td>
-                    <td>
-                  <div class="btn-group">
-                  <button class="btn btn-warning" ><i class="fa fa-pencil"></i></button>
-                  <button class="btn btn-danger" ><i class="fa fa-times"></i></button>
+  <section class="content">
 
-                  </div>
-                </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  </div>
+    <div class="row">
+      
+    <?php
 
-  <!-- Modal Agregar Usuario -->
-  <!-- Modal -->
-<div id="modalAgregarUsuario" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
+    // if($_SESSION["perfil"] =="Administrador"){
 
-    <form role="form" method="post" encryptype="multipart/form-data">
+    //   include "inicio/cajas-superiores.php";
 
-      <div class="modal-header" style="background: #3c8dbc; color:#fff ">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Agregar usuario</h4>
-      </div>
+    // }
 
-      <div class="modal-body">
-        <div class="box-body">
-   
+    ?>
 
-          <!-- ENTRADA PARA EL USUARIO -->
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-key"></i></span>
-              <input type="text" class="form-control input-lg" name="nuevoUsuario" required placeholder="Ingresa usuario">
-            </div>
-          </div>
+    </div> 
 
-          <!-- ENTRADA PARA CONTRASEÑA -->
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="password" class="form-control input-lg" name="nuevoPassword" required placeholder="Ingresa contraseña">
-            </div>
-          </div>
+     <div class="row">
+       
+        <div class="col-lg-12">
+
+          <?php
+
+          // if($_SESSION["perfil"] =="Administrador"){
           
-          <!-- ENTRADA PARA SELECCIONAR PERFIL -->
+          //  include "reportes/grafico-ventas.php";
 
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <select class="form-control input-lg" name="nuevoPerfil">
-                <option value="">Seleccionar perfil</option>
-                <option value="Administrador">Administrador</option>
-                <option value="Empleado">Empleado</option>
-                <option value="Cliente">Cliente</option>
-              </select>
-            </div>
-          </div>
+          // }
 
+          ?>
 
         </div>
-      </div>
 
-          <!-- PIE DEL MODAL -->
+        <div class="col-lg-6">
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Guardar usuario</button>
+          <?php
 
-      </div>
-    </form>
+        //   if($_SESSION["perfil"] =="Administrador"){
+          
+        //    include "reportes/productos-mas-vendidos.php";
 
-    </div>
-  </div>
+        //  }
+
+          ?>
+
+        </div>
+
+         <div class="col-lg-6">
+
+          <?php
+
+        //   if($_SESSION["perfil"] =="Administrador"){
+          
+        //    include "inicio/productos-recientes.php";
+
+        //  }
+
+          ?>
+
+        </div>
+
+         <div class="col-lg-12">
+          
+
+            <div class="box" style="border-radius:70px; width:80%; margin:auto">
+
+             <div class="box-header">
+
+             <h1 class="text-center" >Bienvenid@ Juan</h1>
+             
+             
+             </div>
+
+             </div>
+
+         
+
+      
+
+         </div>
+
+     </div>
+
+  </section>
+ 
 </div>
-
