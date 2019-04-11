@@ -8,7 +8,7 @@ $(document).on("change", "#gridCheck", function(){
 })
 
 /**********************
- ** CREAR PRESTAMOS **
+ * CREAR PRESTAMOS **
  **********************/
 
 $(document).on("change", "#plazoPrestamo", function(){
@@ -39,9 +39,9 @@ $(document).on("change", "#plazoPrestamo", function(){
 
     var doceDias = 1000 * 60 * 60 * 24 * 12;
 
-    var suma = fecha.getTime() + doceDias;
+   var suma = fecha.getTime() + doceDias;
 
-    var fecha1 = new Date(suma);
+   var fecha1 = new Date(suma);
 
     // var fechaFin = (fecha1.getFullYear()+"/"+(fecha1.getMonth()+1)+"/"+fecha1.getDate());
 

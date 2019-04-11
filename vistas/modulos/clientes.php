@@ -157,22 +157,22 @@
 
           <!-- PIE DEL MODAL -->
 
-      <div class="modal-footer">
+      <!-- <div class="modal-footer">
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Guardar usuario</button>
 
-      </div>
+      </div >
 
       <?php
       
-              $cliente = new ControladorClientes();
-              $cliente -> ctrCrearCliente();
+              // $cliente = new ControladorClientes();
+              // $cliente -> ctrCrearCliente();
       ?>
     </form>
 
     </div>
   </div>
-</div>
+</div> -->
 
  <!-- MODAL EDITAR CLIENTES -->
   <!-- Modal -->

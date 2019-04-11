@@ -27,6 +27,7 @@ class ControladorUsuarios{
 						$_SESSION["id"] = $respuesta["id"];
 						$_SESSION["usuario"] = $respuesta["usuario"];
 						$_SESSION["perfil"] = $respuesta["id_perfil"];
+						$_SESSION["empleado"] = $respuesta["id_empleado"];
 						/*=============================================
 						REGISTRAR FECHA PARA SABER EL ÚLTIMO LOGIN
 						=============================================*/

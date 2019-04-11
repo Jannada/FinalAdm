@@ -46,5 +46,31 @@ class ModeloPrestamos{
 		$stmt->close();
 		$stmt = null;
 
+    }
+    
+    static public function mdlCrearCuotas($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_prestamo, monto, capital, interes, fecha_pago, fecha_limite) VALUES (:id_prestamo, :monto, :capital, :interes, :fecha_pago, :fecha_limite)");
+
+		$stmt->bindParam(":id_prestamo", $datos["idPrestamo"], PDO::PARAM_INT);
+		$stmt->bindParam(":monto", $datos["monto"], PDO::PARAM_INT);
+		$stmt->bindParam(":capital", $datos["capital"], PDO::PARAM_STR);
+		$stmt->bindParam(":interes", $datos["interes"], PDO::PARAM_STR);
+		$stmt->bindParam(":fecha_pago", $datos["fechaPago"], PDO::PARAM_STR);
+        $stmt->bindParam(":fecha_limite", $datos["fechaLimite"], PDO::PARAM_STR);
+    
+		if($stmt->execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+		
+		}
+
+		$stmt->close();
+		$stmt = null;
+
 	}
 }

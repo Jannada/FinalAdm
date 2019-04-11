@@ -14,6 +14,7 @@
     require_once "../modelos/prestamos.modelo.php";
     require_once "../modelos/recibos.modelo.php";
     require_once "../modelos/cuotas.modelo.php";
+    require_once "../modelos/plantilla.modelo.php";
 
 session_start();
 
