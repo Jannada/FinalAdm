@@ -22,12 +22,11 @@
                 <th>Usuario</th>
                 <th>Monto</th>
                 <th>Pendiente</th>
+                <th>Total</th>
                 <th>Tasa_interes</th>
                 <th>Interes</th>
                 <th>Estado</th>
                 <th>Cuotas</th>
-                <th>Fecha Inicio</th>
-                <th>Fecha Final</th>
                 <th>Fecha</th>
            
               </tr>
@@ -41,15 +40,14 @@
                 echo ' <tr>
                 <td>'.($i+1).'</td>
                 <td>'.$prestamos[$i]["id_cliente"].'</td>
-                <td>'.$prestamos[$i]["id_empleado"].'</td>
+                <td>'.$prestamos[$i]["id_usuario"].'</td>
                 <td>'.$prestamos[$i]["monto"].'</td>
                 <td>'.$prestamos[$i]["pendiente"].'</td>
+                <td>'.$prestamos[$i]["total"].'</td>
                 <td>'.$prestamos[$i]["tasa_interes"].'</td>
                 <td>'.$prestamos[$i]["interes"].'</td>
                 <td>'.$prestamos[$i]["estado"].'</td>
                 <td>'.$prestamos[$i]["cuotas"].'</td>
-                <td>'.$prestamos[$i]["fecha_inicio"].'</td>
-                <td>'.$prestamos[$i]["fecha_final"].'</td>
                 <td>'.$prestamos[$i]["fecha"].'</td>
                 
             </tr>';

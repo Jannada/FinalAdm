@@ -31,15 +31,71 @@
               <!-- Entrada para el empleado -->
             <br/>
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" id="empleadoNombre" name="empleadoNombre" readonly>
-              <input type="hidden" class="form-control" id="empleadoId" name="empleadoId">
-              <input type="hidden" class="form-control" id="tasaInteres" name="tasaInteres">
+              <label class="" id="empleadoNombre" name="empleadoNombre"><?php echo $_SESSION["usuario"]; ?></label>
+
+              <input type="hidden" name="empleadoId" value="<?php echo $_SESSION["empleado"]; ?>">
+              <?php
+
+               $item = null;
+               $valor = null;
+               $tasa = ControladorPlantilla::ctrMostrarTasa($item, $valor);
+
+               foreach ($tasa as $key => $value) {
+                        
+                        
+                      
+              }
+
+              $valor = $value["tasa"];
+
+              echo '<input type="hidden" class="form-control" id="tasaInteres" name="tasaInteres" value="'.$valor.'">';
+            
+              ?>
+
+              
+              
             
             </div>
+
+            <div class="form-group" style="display:none;">
+                  
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
+
+                    <?php
+
+                    $item = null;
+                    $valor = null;
+
+                    $prestamo = ControladorPrestamos::ctrMostrarPretamos($item, $valor);
+
+                    if(!$prestamo){
+
+                      echo '<input type="hidden" class="form-control" id="prestamoId" name="prestamoId" value="1">';
+                  
+                    }else{
+
+                      foreach ($prestamo as $key => $value) {
+                        
+                      }
+
+                      $codigo = $value["id"] + 1;
+
+                      echo '<input type="hidden" class="form-control" id="prestamoId" name="prestamoId" value="'.$codigo.'" >';
+                  
+                    }
+
+                    ?>
+                    
+                    
+                  </div>
+                
+                </div>
            
             <br/>
         <div class="contenido">
-            <div class="col-md-6"></div>
+            <div class="col-md-4"></div>
              <!-- Entrada para el id empleado -->
 
 
@@ -206,7 +262,7 @@
             </div>
           <!-- Entrada para la Fecha de fin pago -->
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" id="fechaFinPago" name="fechaFinPago" required readonly  placeholder="Fecha del último pago" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
+              <input type="text" class="form-control" id="fechaFinPago" name="fechaFinPago" required readonly  placeholder="Fecha del último pago">
             </div>
             <div class=" col-md-2"></div>
           </div>
@@ -219,7 +275,7 @@
         </div>
 
         <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Crear préstamo</button>
+        <button type="submit" class="btn btn-primary">Guardar usuario</button>
         </div>
         <?php
                 $crearPrestamo = new ControladorPrestamos();
