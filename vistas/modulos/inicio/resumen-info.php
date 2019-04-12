@@ -86,7 +86,7 @@
       </div>
         <!-- Cabecera -->
 
-        <!-- Grafico de préstamos aprobados -->
+        Grafico de préstamos aprobados
     
     <?php
 
@@ -137,7 +137,7 @@
         GRÁFICO DE VENTAS
         ======================================-->
 
-
+<!-- 
           <div class="box box-solid bg-teal-gradient">
 	
 	          <div class="box-header">
@@ -201,7 +201,7 @@
               gridTextSize     : 10
             });
 
-          </script>
+          </script> -->
 
 
 <!-- Gráfico de préstamos aprobados -->

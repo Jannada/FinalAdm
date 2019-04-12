@@ -2,45 +2,47 @@
 
 // error_reporting(0);
 
-// if(isset($_GET["fechaInicial"])){
+if(isset($_GET["fechaInicial"])){
 
-//     $fechaInicial = $_GET["fechaInicial"];
-//     $fechaFinal = $_GET["fechaFinal"];
+    $fechaInicial = $_GET["fechaInicial"];
+    $fechaFinal = $_GET["fechaFinal"];
 
-// }else{
+}else{
 
-// $fechaInicial = null;
-// $fechaFinal = null;
+$fechaInicial = null;
+$fechaFinal = null;
 
-// }
+}
 
-// $respuesta = ControladorVentas::ctrRangoFechasVentas($fechaInicial, $fechaFinal);
+$respuesta = ControladorPrestamos::ctrRangoFechasPrestamos($fechaInicial, $fechaFinal);
 
-// $arrayFechas = array();
-// $arrayVentas = array();
-// $sumaPagosMes = array();
+$arrayFechas = array();
+$arrayPrestamos = array();
+$sumaPagosMes = array();
 
-// foreach ($respuesta as $key => $value) {
+foreach ($respuesta as $key => $value) {
 
-// 	#Capturamos sólo el año y el mes
-// 	$fecha = substr($value["fecha"],0,7);
+	#Capturamos sólo el año y el mes
+	$fecha = substr($value["fecha"],0,7);
 
-// 	#Introducir las fechas en arrayFechas
-// 	array_push($arrayFechas, $fecha);
+	#Introducir las fechas en arrayFechas
+	array_push($arrayFechas, $fecha);
 
-// 	#Capturamos las ventas
-// 	$arrayVentas = array($fecha => $value["total"]);
+	#Capturamos las Prestamos
+	$arrayPrestamos = array($fecha => $value["total"]);
 
-// 	#Sumamos los pagos que ocurrieron el mismo mes
-// 	foreach ($arrayVentas as $key => $value) {
+	#Sumamos los pagos que ocurrieron el mismo mes
+	foreach ($arrayPrestamos as $key => $value) {
 		
-// 		$sumaPagosMes[$key] += $value;
-// 	}
+    $sumaPagosMes[$key] += $value;
+    
+    var_dump($key);
+	}
 
-// }
+}
 
 
-// $noRepetirFechas = array_unique($arrayFechas);
+$noRepetirFechas = array_unique($arrayFechas);
 
 
 ?>
@@ -77,29 +79,29 @@ GRÁFICO DE VENTAS
 
     <?php
 
-    // if($noRepetirFechas != null){
+    if($noRepetirFechas != null){
 
-	  //   foreach($noRepetirFechas as $key){
+	    foreach($noRepetirFechas as $key){
 
-	  //   	echo "{ y: '".$key."', ventas: ".$sumaPagosMes[$key]." },";
+	    	echo "{ y: '".$key."', prestamos: ".$sumaPagosMes[$key]." },";
 
 
-	  //   }
+	    }
 
-	  //   echo "{y: '".$key."', ventas: ".$sumaPagosMes[$key]." }";
+	    echo "{y: '".$key."', prestamos: ".$sumaPagosMes[$key]." }";
 
-    // }else{
+    }else{
 
-    //    echo "{ y: '0', ventas: '0' }";
+       echo "{ y: '0', prestamos: '0' }";
 
-    // }
+    }
 
     ?>
 
     ],
     xkey             : 'y',
-    ykeys            : ['ventas'],
-    labels           : ['ventas'],
+    ykeys            : ['prestamos'],
+    labels           : ['prestamos'],
     lineColors       : ['#efefef'],
     lineWidth        : 2,
     hideHover        : 'auto',
