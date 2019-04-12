@@ -114,13 +114,24 @@
         <li><a href="#">Nosotros</a></li>
         <li><a href="vistas/formulario-inicio.php">Enviar Solicitud</a></li>
         <li><a href="vistas/plantilla.php">Login</a></li>
-        <li><a href="#creadores">Conócenos</a></li>
       </ul>
     </div>
   </nav>
 </header>
 
 <main>
+<?php
+  $item = null;
+  $valor = null;
+
+
+  $tasa = ControladorPlantilla::ctrMostrarTasa($item, $valor);
+
+    foreach ($tasa as $key => $value) {
+    }
+    $valor1 = $value["tasa"];
+
+?>
   <!-- Anuncios -->
   <div class="row anuncios" >
     <div class="">
@@ -129,16 +140,13 @@
             <ol class="carousel-indicators">
                 <li data-target="#slider" data-slide-to="0" class="active"></li>
                 <li data-target="#slider" data-slide-to="1"></li>
-                <li data-target="#slider" data-slide-to="2"></li>
             </ol>
                             <!-- contenedor-slides -->
             <div class="carousel-inner">
                 <div class="item active">
                   <img src="vistas/img/0_xs5p7pxMnWZuZBUw_.png" alt="primer-slide" >
                 </div>
-                <div class="item">
-                  <img src="vistas/img/itla_logo.png" alt="primer-slide">
-                </div>
+                
                 <div class="item">
                   <img src="vistas/img/design.png" alt="primer-slide">
                 </div>
@@ -153,9 +161,10 @@
             </a>
         </div>
     </div>
-  </div>
 
   <!-- acercade -->
+  <!-- <div class="col-md-2"></div>
+
     <div class="acercade col-md-8 ">
 
       <div class="informacion col-md-8">
@@ -174,104 +183,80 @@
 
     </div>
 
+    <div class="col-md-2"></div> -->
+    <br/>
+    <!-- Calculadora de préstamos -->
+    <div class="col-md-4"></div>
+      <div class="col-md-4">
+      <div class="box ">
+      <h3 style="text-align:center">Calculadora de préstamos</h3>
+        
+      <form role="form" method="post" class="calculdora-prestamos" id="calculdora-prestamos">
+      
+        <div class="box-body">
+        
+        <div class="contenido">
 
-<!-- Formulario -->
-  <section class="formulario">
-      <div class="col-md-4" >
-        <div class="panel panel-default text-center">
-          <div class="panel-body">
-          <form role="form" method="post" class="formularioSolicitud">
-                <!--=====================================
-                CABEZA DEL MODAL
-                ======================================-->
+        
+          <div class="form-group col-xs-12">
 
-                <div class="modal-header" style="background:rgb(59, 134, 94); color:white">
-                  <h4 class="modal-title">¡Solicita tu financiamiento ya!</h4>
-                </div>
+            <div class="form-group col-md-12">
+              <input type="text" class="form-control" id="montoPrestamo" name="montoPrestamo" required placeholder="Monto del prestamos($RD)">
+            </div>
 
-                <div class="box-body">
-                  <div class="box">
-                <!--=====================================
-                ENTRADA DEL Nombre
-                ======================================-->
-                    <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input type="text" class="form-control" id="nombre" name="ingNombre" placeholder="Nombre" required>
-                      </div>
-                    </div>
+            <div class="form-group col-md-12">
+              <input type="text" class="form-control" id="plazoPrestamo" name="plazoPrestamo" required placeholder="Plazo del prestamos(meses)">
+            </div>
+          
+           <div class="form-group col-md-4">
+            <input type="text" class="form-control" id="tasa" name="tasa" value="<?php echo number_format($valor1); ?>" required readonly placeholder="Tasa">
+          </div>
 
-                <!--=====================================
-                ENTRADA DEL Apellido
-                ======================================-->
-                    <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
-                        </div>
-                    </div>
-                  <!--=====================================
-                ENTRADA DEL Cedula
-                ======================================-->
-                    <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
-                        <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Cédula" required>
-                      </div>
-                    </div>
-                  <!--=====================================
-                ENTRADA DEL email
-                ======================================-->
-
-                    <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
-                      </div>
-                    </div>
-                  <!--=====================================
-                ENTRADA DE LA Ocupación
-                ======================================-->
-                    <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-briefcase"></i></span>
-                        <select class="form-control" name="ocupacion" id="ocupacion">
-                        <option value="">Seleccionar ocupación</option>
-                        <option value="Empleado">Empleado</option>
-                        <option value="Profesor">Profesor</option>
-                        <option value="Estudiante">Estudiante</option>
-                      </select>
-                      </div>
-                    </div>
-
-                    <div class="cajaOcupacion"></div>
-                    <input type="hidden" name="inputOcupacion" id="inputOcupacion">
-
-                </div>
-              </div>
-
-
-              <div class="box-footer">
-                <button type="submit" class="boton pull-right" >Enviar</button>
-              </div>
-              <!-- <?php
-                $ingresarPersona = new ControladorPersonas();
-                $ingresarPersona -> ctrCrearPersona();
-              ?> -->
-            </form>
+          <div class="form-group col-md-8">
+            <input type="text" class="form-control" id="fechaInicioPago" name="fechaInicioPago" required placeholder="Fecha del primer pago" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
+          </div>
 
           </div>
-          <!-- <?php
-                $inicio = new ControladorPaginaInicio();
-                $inicio -> ctrLogin();
-              ?> -->
         </div>
+
+
+          <div class="col-md-12">
+              <button type="button" onclick="calcular()" class="btn btn-primary pull-right">Calcular</button>
+            </div>
+
+        </div>
+        
+      </form>
       </div>
-  </div>
-</section>
+
+    </div>
+    <div class="col-md-12"></div>
+    <div class="col-md-4"></div>
+    <div class="box-body tabla-prestamos col-md-4">
+    <table class="table tablr-bordered table-striped dt-responsive tablas">
+  <thead>
+    <tr>
+      <th>cuotas</th>
+      <th>Último pago</th>
+      <!-- <th>Monto</th> -->
+      <th>Interés</th>
+      <th>Capital</th>
+      <th>Cuota mensual</th>
+    </tr>
+  </thead>
+  <tbody class="cuerpo-tabla">
+    
+  </tbody>
+</table>
+    </div>
+
+
+
+
+
 
 </main>
-<footer class="tamaño-max">
+<footer class="col-md-12">
 
 <!-- <section class="creadores col-lg-12" id="creadores">
 <h3 class="center creadores-h3">Creadores</h3>
@@ -301,5 +286,6 @@
 
 
 
-<script src="vistas/js/pagina-inicio.js"></script>
+<!-- <script src="vistas/js/pagina-inicio.js"></script> -->
+<script src="vistas/js/calculadora-prestamos.js"></script>
 </body>
