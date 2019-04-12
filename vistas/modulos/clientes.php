@@ -12,9 +12,9 @@
     <section class="content">
 
       <div class="box">
-        <div class="box-header with-border">
+        <!-- <div class="box-header with-border">
             <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCliente">Agregar usuario</button>
-        </div>
+        </div> -->
         
         <div class="box-body">
           <table class="table tablr-bordered table-striped dt-responsive tablas" width="100%">

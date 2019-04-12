@@ -4,22 +4,22 @@
  $valor = null;
 
  $prestamos = ControladorPrestamos::ctrMostrarPretamos($item, $valor);
- $usuarios = ControladorEmpleados::ctrMostrarEmpleados($item, $valor);
+ $empleados = ControladorEmpleados::ctrMostrarEmpleados($item, $valor);
 
- $arrayUsuarios = array();
+ $arrayEmpleados = array();
  $arraylistaPrestamos = array();
 
 foreach ($prestamos as $key => $valuePrestamos) {
 
-  foreach ($usuarios as $key => $valueUsuarios) {
+  foreach ($empleados as $key => $valueEmpleados) {
 
-    if($valueUsuarios["id"] == $valuePrestamos["id_usuario"]){
+    if($valueEmpleados["id"] == $valuePrestamos["id_usuario"]){
 
         #Capturamos los vendedores en un array
-        array_push($arrayUsuarios, $valueUsuarios["usuario"]);
+        array_push($arrayEmpleados, $valueEmpleados["nombre"]);
 
         #Capturamos las nombres y los valores netos en un mismo array
-        $arraylistaPrestamos = array($valueUsuarios["usuario"] => $valuePrestamos["monto"]);
+        $arraylistaPrestamos = array($valueEmpleados["nombre"] => $valuePrestamos["monto"]);
 
          #Sumamos los netos de cada vendedor
 
@@ -36,7 +36,7 @@ foreach ($prestamos as $key => $valuePrestamos) {
 }
 
 #Evitamos repetir nombre
-$noRepetirNombres = array_unique($arrayVendedores);
+$noRepetirNombres = array_unique($arrayEmpleados);
 
 ?>
 
@@ -86,7 +86,7 @@ var bar = new Morris.Bar({
   barColors: ['#0477A5'],
   xkey: 'y',
   ykeys: ['a'],
-  labels: ['ventas'],
+  labels: ['Prestamos'],
   preUnits: '$',
   hideHover: 'auto'
 });

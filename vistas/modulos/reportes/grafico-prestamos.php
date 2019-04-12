@@ -1,6 +1,6 @@
 <?php
 
-// error_reporting(0);
+error_reporting(0);
 
 if(isset($_GET["fechaInicial"])){
 
@@ -36,7 +36,7 @@ foreach ($respuesta as $key => $value) {
 		
     $sumaPagosMes[$key] += $value;
     
-    var_dump($key);
+    // var_dump($arrayPrestamos);
 	}
 
 }

@@ -22,13 +22,32 @@
 
   <!-- Main content -->
   <section class="content">
+
+  
   <div class="colum">
       
     <?php
       include "inicio/resumen-info.php";
     ?>
 
+  </div> 
+
+  <div class="colum">
+      
+    <?php
+      include "reportes/grafico-prestamos.php";
+    ?>
+
     </div> 
+
+  <div class="colum">
+      
+    <?php
+      include "inicio/prestamos-recientes.php";
+    ?>
+
+  </div> 
+    
    
   </section>
   <!-- /.content -->
