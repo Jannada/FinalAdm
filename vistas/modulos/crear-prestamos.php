@@ -276,9 +276,9 @@
         </div>
         </div>
 
-        <!-- <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Guardar usuario</button>
-        </div> -->
+        <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Crear Prestamo</button>
+        </div>
         <?php
                 $crearPrestamo = new ControladorPrestamos();
                 $crearPrestamo -> ctrCrearPrestamo();

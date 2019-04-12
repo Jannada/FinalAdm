@@ -91,8 +91,8 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
       	success:function(respuesta){
 
       	    var descripcion = respuesta["fecha_limite"];
-          	var mora = parseInt(respuesta["mora"]);
-						var monto = parseFloat(respuesta["monto"]);
+          	var mora = respuesta["mora"];
+						var monto = respuesta["monto"];
 						var idPrestamo= respuesta["id_prestamo"];
 						var capital= respuesta["capital"];
 						var interes= respuesta["interes"];
@@ -507,7 +507,7 @@ function sumarTotalPrecios(){
 	for(var i = 0; i < precioItem.length; i++){
 
 		 arraySumaPrecio.push(Number($(precioItem[i]).val()));
-		 arraySumaPrecio1.push(Number($(captalItem[i]).val()));
+		 arraySumaPrecio1.push(Number($(capitalItem[i]).val()));
 		 arraySumaPrecio2.push(Number($(interesItem[i]).val()));
 		
 		 
@@ -578,7 +578,6 @@ var sumaTotalPrecio2 = arraySumaPrecio2.reduce(sumaArrayPrecios2);
 	$("#nuevoImpuestoVenta").val(sumaTotalPrecio2);
 	$("#nuevoPrecioNeto").val(sumaTotalPrecio2);
 	$("#nuevoImpuestoVenta").attr("total",sumaTotalPrecio2);
-
 
 }
 
@@ -748,7 +747,7 @@ function listarMetodos(){
 
 	}else{
 
-		$("#listaMetodoPago").val($("#nuevoMetodoPago").val()+"-"+$("#nuevoCodigoTransaccion").val());
+		$("#listaMetodoPago").val($("#nuevoCodigoTransaccion").val());
 
 	}
 

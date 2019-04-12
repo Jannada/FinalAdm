@@ -81,36 +81,36 @@ class ControladorRecibos{
 					
 				}
 
-				$idPrestamo=($value2["prestamo"]);
-
-				$valorReal = $
+				 $idPrestamo=($value2["prestamo"]);
 				
 	
-				$tabla = "prestamos";
+				// $tabla = "prestamos";
 	
-				$item = null;
-				$valor = null;
+				// $item = null;
+				// $valor = null;
 	
-				$traerPrestamo = ModeloPrestamos::mdlMostrarPrestamos($tabla, $item, $valor);
+				// $traerPrestamo = ModeloPrestamos::mdlMostrarPrestamos($tabla, $item, $valor);
 
-				for ($i=0;$i<count($traerPrestamo);$i++) {
-					if($idPrestamo==$traerPrestamo[$i]["id"]){
+				// for ($i=0;$i<count($traerPrestamo);$i++) {
+				// 	if($idPrestamo==$traerPrestamo[$i]["id"]){
 
-					$pendiente=($traerPrestamo[$i]["pendiente"]);
-					$id=($traerPrestamo[$i]["id"]);
-					}
-				}
+				// 	$pendiente=($traerPrestamo[$i]["pendiente"]);
+				// 	$id=($traerPrestamo[$i]["id"]);
+				// 	}
+				// }
 
-				$calculo = $pendiente - $_POST("nuevoPrecioNeto"); 
+				// $entero = $_POST("nuevoPrecioNeto");
+
+				// $calculo = $pendiente - $entero; 
 				
 
-				
-				$item1a = "pendiente";
-				$valor1 = $calculo;
-				$valor1a = $id;
+				// $tabla25 ="prestamos";
+				// $item1a = "pendiente";
+				// $valor1 = $calculo;
+				// $valor1a = $id;
 
 	
-				$respuestaPrestamo = ModeloPrestamos::mdlActualizarPrestamos($tabla, $item1a, $valor1, $valor1a);
+				// $respuestaPrestamo = ModeloPrestamos::mdlActualizarPrestamos($tabla25, $item1a, $valor1, $valor1a);
 
 			
 	
@@ -128,7 +128,7 @@ class ControladorRecibos{
 				GUARDAR LA COMPRAR
 				=============================================*/	
 	
-				$tabla = "recibo";
+				$tabla52 = "recibo";
 	
 				$datos = array("codigo"=>$_POST["nuevaVenta"],
 								 "id_cliente"=>"00105248752",
@@ -141,13 +141,11 @@ class ControladorRecibos{
 								 "formaPago"=>$_POST["nuevoMetodoPago"],
 								 "referenciaPago"=>$_POST["listaMetodoPago"]);
 	
-				$respuesta = ModeloVentas::mdlIngresarVenta($tabla, $datos);
+				$respuesta = ModeloRecibos::mdlCrearFactura($tabla52, $datos);
 	
-				if($respuesta == "ok" && $respuestaPrestamo == "ok"){
+				if($respuesta == "ok"){
 	
 					echo'<script>
-	
-					localStorage.removeItem("rango");
 	
 					swal({
 							type: "success",
@@ -157,7 +155,7 @@ class ControladorRecibos{
 							}).then(function(result){
 									if (result.value) {
 	
-									window.location = "ventas";
+									window.location = "crear-factura";
 	
 									}
 								})
