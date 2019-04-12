@@ -205,6 +205,7 @@ CUERPO DOCUMENTO
 <script src="js/crear-prestamos.js"></script>
 <script src="js/empleado.js"></script>
 <script src="js/clientes.js"></script>
+<script src="js/reportes.js"></script>
 
 </body>
 </html>
