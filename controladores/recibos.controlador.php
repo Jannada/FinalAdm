@@ -69,15 +69,16 @@ class ControladorRecibos{
 
 				foreach ($listaProductos as $key => $value2) {
 
+					
+					$tablaCuotas="cuotas";
+					
 					$datos2 = array("id"=>$value2["id"],
 								 "estado"=>1,
 								 "mora"=>$value2["cantidad"]);
 
-					$tablaCuotas="cuotas";
-					$valor1b = $datos2;
 					
 					
-					$RespuestaCuotas = ModeloCuotas::mdlActualizarCuota($tablaCuotas, $valor1b);
+					$RespuestaCuotas = ModeloCuotas::mdlActualizarCuota($tablaCuotas, $datos2);
 					
 				}
 
