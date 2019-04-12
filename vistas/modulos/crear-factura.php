@@ -4,7 +4,7 @@
     
     <h1>
       
-      Facturar
+      Crear venta
     
     </h1>
 
@@ -12,7 +12,7 @@
       
       <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
       
-      <li class="active">Facturar</li>
+      <li class="active">Crear venta</li>
     
     </ol>
 
@@ -48,14 +48,14 @@
                     
                     <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-                    <input type="text" class="form-control" id="nuevoVendedor" name="nuevoVendedor" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
+                    <input type="text" class="form-control" id="nuevoVendedor" name="nuevoVendedor" value="Usuario Administrador" readonly>
 
                   </div>
 
                 </div> 
 
                 <!--=====================================
-                ENTRADA DEL CODIGO DE FACTURA
+                ENTRADA DEL VENDEDOR
                 ======================================--> 
 
                 <div class="form-group">
@@ -63,34 +63,9 @@
                   <div class="input-group">
                     
                     <span class="input-group-addon"><i class="fa fa-key"></i></span>
-
-                    <?php
-
-                    $item = null;
-                    $valor = null;
-
-                    $facturas = ControladorRecibos::ctrMostrarRecibos($item, $valor);
-
-                    if(!$facturas){
-
-                      echo '<input type="text" class="form-control" id="nuevaFactura" name="nuevaFactura" value="10001" readonly>';                  
-
-                    }else{
-
-                      foreach ($facturas as $key => $value) {
-                        
-                      }
-
-                      $codigo = $value["codigo"] + 1;
-
-                      echo '<input type="text" class="form-control" id="nuevaFactura" name="nuevaFactura" value="'.$codigo.'" readonly>';
+                    
+                    <input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="10002343" readonly>
                   
-
-                    }
-
-                    ?>
-                    
-                    
                   </div>
                 
                 </div>
@@ -104,29 +79,26 @@
                   <div class="input-group">
                     
                     <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                    <input type="text" class="form-control" id="cedulaCliente" name="cedulaCliente" placeholder="Documento del cliente">
                     
-                    <span class="input-group-addon"><button type="button" class="btn btn-success btn-xs" id="buscarCliente">Agregar cliente</button></span>
-                  
-                  </div>
-                  <br/>
-                  <div class="input-group">
+                    <select class="form-control" id="seleccionarCliente" name="seleccionarCliente" required>
+
+                    <option value="">Seleccionar cliente</option>
+
+                    </select>
                     
-                    <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                    <input type="text" class="form-control" id="nombreCliente" name="nombreCliente" placeholder="Nombre del cliente"readonly>
-                    
+                    <span class="input-group-addon"><button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalAgregarCliente" data-dismiss="modal">Agregar cliente</button></span>
                   
                   </div>
                 
                 </div>
 
                 <!--=====================================
-                ENTRADA PARA AGREGAR CUOTAS A PAGAR 
+                ENTRADA PARA AGREGAR PRODUCTO
                 ======================================--> 
 
                 <div class="form-group row nuevoProducto">
 
-                  <!-- Fecha de cuota -->
+                  <!-- Descripción del producto -->
                   
                   <div class="col-xs-6" style="padding-right:0px">
                   
@@ -134,21 +106,21 @@
                       
                       <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></span>
 
-                      <input type="text" class="form-control" id="agregarCuotas" name="agregarCuotas" placeholder="Fecha de cuotas" required>
+                      <input type="text" class="form-control" id="agregarProducto" name="agregarProducto" placeholder="Descripción del producto" required>
 
                     </div>
 
                   </div>
 
-                  <!-- Mora de cuotas -->
+                  <!-- Cantidad del producto -->
 
                   <div class="col-xs-3">
                     
-                     <input type="number" class="form-control" id="moraCuota" name="moraCuota" min="1" placeholder="0" required readonly>
+                     <input type="number" class="form-control" id="nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" placeholder="0" required>
 
                   </div> 
 
-                  <!-- Cuota a pagar -->
+                  <!-- Precio del producto -->
 
                   <div class="col-xs-3" style="padding-left:0px">
 
@@ -156,7 +128,7 @@
 
                       <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
                          
-                      <input type="number" min="1" class="form-control" id="nuevoPrecioCuota" name="nuevoPrecioCuota" placeholder="000000" readonly required>
+                      <input type="number" min="1" class="form-control" id="nuevoPrecioProducto" name="nuevoPrecioProducto" placeholder="000000" readonly required>
          
                     </div>
                      
@@ -195,18 +167,18 @@
                       
                         <tr>
                           
-                          <td style="width: 40%">
+                          <td style="width: 50%">
                             
                             <div class="input-group">
                            
-                              <input type="number" class="form-control" min="0" id="totalMora" name="totalMora" placeholder="0" readonly required>
-                              <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+                              <input type="number" class="form-control" min="0" id="nuevoImpuestoVenta" name="nuevoImpuestoVenta" placeholder="0" required>
+                              <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                         
                             </div>
 
                           </td>
 
-                           <td style="width: 40%">
+                           <td style="width: 50%">
                             
                             <div class="input-group">
                            
@@ -274,7 +246,7 @@
 
           <div class="box-footer">
 
-            <button type="submit" class="btn btn-primary pull-right">Facturar</button>
+            <button type="submit" class="btn btn-primary pull-right">Guardar venta</button>
 
           </div>
 
@@ -284,7 +256,7 @@
             
       </div>
 
-      <!--=====================================
+       <!--=====================================
       LA TABLA DE PRODUCTOS
       ======================================-->
 
@@ -341,3 +313,5 @@
   </section>
 
 </div>
+
+

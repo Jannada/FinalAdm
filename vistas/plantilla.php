@@ -205,7 +205,11 @@ CUERPO DOCUMENTO
 <script src="js/crear-prestamos.js"></script>
 <script src="js/empleado.js"></script>
 <script src="js/clientes.js"></script>
+<<<<<<< HEAD
 <script src="js/reportes.js"></script>
+=======
+<script src="js/facturas.js"></script>
+>>>>>>> 4d2e128b2cfad4c3653f9a7b9c8001c21f1d020e
 
 </body>
 </html>
