@@ -68,11 +68,23 @@ class ControladorRecibos{
 				// }
 
 				foreach ($listaProductos as $key => $value2) {
+
+					$datos2 = array("id"=>$value2["id"],
+								 "estado"=>1,
+								 "mora"=>$value2["cantidad"]);
+
+					$tablaCuotas="cuotas";
+					$valor1b = $datos2;
+					
+					
+					$RespuestaCuotas = ModeloCuotas::mdlActualizarCuota($tablaCuotas, $valor1b);
 					
 				}
 
-				$valor=($value2["prestamo"]);
-				var_dump($valor);
+				$idPrestamo=($value2["prestamo"]);
+
+				$valorReal = $
+				
 	
 				$tabla = "prestamos";
 	
@@ -81,18 +93,26 @@ class ControladorRecibos{
 	
 				$traerPrestamo = ModeloPrestamos::mdlMostrarPrestamos($tabla, $item, $valor);
 
-				foreach ($traerPrestamo as $key => $value) {
-					var_dump($value["id"]);
-					if($value["id"]==$valor){
-					var_dump($value["pendiente"]);
+				for ($i=0;$i<count($traerPrestamo);$i++) {
+					if($idPrestamo==$traerPrestamo[$i]["id"]){
+
+					$pendiente=($traerPrestamo[$i]["pendiente"]);
+					$id=($traerPrestamo[$i]["id"]);
 					}
 				}
+
+				$calculo = $pendiente - $_POST("nuevoPrecioNeto"); 
 				
+
+				
+				$item1a = "pendiente";
+				$valor1 = $calculo;
+				$valor1a = $id;
+
 	
-				// $item1a = "compras";
-				// $valor1a = array_sum($totalProductosComprados) + $traerCliente["compras"];
-	
-				// $comprasCliente = ModeloClientes::mdlActualizarCliente($tablaClientes, $item1a, $valor1a, $valor);
+				$respuestaPrestamo = ModeloPrestamos::mdlActualizarPrestamos($tabla, $item1a, $valor1, $valor1a);
+
+			
 	
 				// $item1b = "ultima_compra";
 	
@@ -105,44 +125,46 @@ class ControladorRecibos{
 				// $fechaCliente = ModeloClientes::mdlActualizarCliente($tablaClientes, $item1b, $valor1b, $valor);
 	
 				/*=============================================
-				GUARDAR LA COMPRA
+				GUARDAR LA COMPRAR
 				=============================================*/	
 	
-				// $tabla = "ventas";
+				$tabla = "recibo";
 	
-				// $datos = array("id_vendedor"=>$_POST["idVendedor"],
-				// 				 "id_cliente"=>$_POST["seleccionarCliente"],
-				// 				 "codigo"=>$_POST["nuevaVenta"],
-				// 				 "productos"=>$_POST["listaProductos"],
-				// 				 "impuesto"=>$_POST["nuevoPrecioImpuesto"],
-				// 				 "neto"=>$_POST["nuevoPrecioNeto"],
-				// 				 "total"=>$_POST["totalVenta"],
-				// 				 "metodo_pago"=>$_POST["listaMetodoPago"]);
+				$datos = array("codigo"=>$_POST["nuevaVenta"],
+								 "id_cliente"=>"00105248752",
+								 "id_empleado"=>$_POST["idEmpleado"],
+								 "id_prestamo"=>$idPrestamo,
+								 "capital"=>$_POST["nuevoPrecioCapital"],
+								 "interes"=>$_POST["nuevoPrecioInteres"],
+								 "mora"=>$_POST["nuevoPrecioImpuesto"],
+								 "totalPagado"=>$_POST["totalVenta"],
+								 "formaPago"=>$_POST["nuevoMetodoPago"],
+								 "referenciaPago"=>$_POST["listaMetodoPago"]);
 	
-				// $respuesta = ModeloVentas::mdlIngresarVenta($tabla, $datos);
+				$respuesta = ModeloVentas::mdlIngresarVenta($tabla, $datos);
 	
-				// if($respuesta == "ok"){
+				if($respuesta == "ok" && $respuestaPrestamo == "ok"){
 	
-				// 	echo'<script>
+					echo'<script>
 	
-				// 	localStorage.removeItem("rango");
+					localStorage.removeItem("rango");
 	
-				// 	swal({
-				// 			type: "success",
-				// 			title: "La venta ha sido guardada correctamente",
-				// 			showConfirmButton: true,
-				// 			confirmButtonText: "Cerrar"
-				// 			}).then(function(result){
-				// 					if (result.value) {
+					swal({
+							type: "success",
+							title: "La venta ha sido guardada correctamente",
+							showConfirmButton: true,
+							confirmButtonText: "Cerrar"
+							}).then(function(result){
+									if (result.value) {
 	
-				// 					window.location = "ventas";
+									window.location = "ventas";
 	
-				// 					}
-				// 				})
+									}
+								})
 	
-				// 	</script>';
+					</script>';
 	
-				// }
+				}
 	
 			}
 	

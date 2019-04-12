@@ -24,12 +24,13 @@ class ModeloCuotas{
 	ACTUALIZAR PRODUCTO
 	=============================================*/
 
-	static public function mdlActualizarCuota($tabla, $valor2, $valor1){
+	static public function mdlActualizarCuota($tabla, $valor1){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET estado = :estado, mora = :mora, WHERE id_prestamo = :id_prestamo");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET estado = :estado, mora = :mora, WHERE id = :id");
 
-        $stmt -> bindParam(":id_categoria", $valor1, PDO::PARAM_STR);
-		$stmt -> bindParam(":id_prestamo", $valor2, PDO::PARAM_STR);
+        $stmt -> bindParam(":id", $valor1["id"], PDO::PARAM_STR);
+        $stmt -> bindParam(":estado", $valor1["estado"], PDO::PARAM_STR);
+		$stmt -> bindParam(":mora", $valor1["mora"], PDO::PARAM_STR);
 
 		if($stmt -> execute()){
 
