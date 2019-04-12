@@ -54,8 +54,6 @@
 
         ?>
            
-           <button class="btn btn-success" style="margin-top:5px">Descargar reporte en Excel</button>
-
           </a>
 
         </div>
@@ -70,7 +68,7 @@
             
             <?php
 
-              include "reportes/grafico-ventas.php";
+              include "reportes/grafico-prestamos.php";
 
             ?>
 
@@ -90,7 +88,7 @@
              
             <?php
 
-            //  include "reportes/vendedores.php";
+             include "reportes/empleados.php";
 
             ?>
 
@@ -100,7 +98,7 @@
              
             <?php
 
-              include "reportes/compradores.php";
+              include "reportes/clientes.php";
 
             ?>
 

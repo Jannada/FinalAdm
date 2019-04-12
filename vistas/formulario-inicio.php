@@ -114,7 +114,6 @@
         <li><a href="#">Nosotros</a></li>
         <li class="active"><a href="#">Enviar Solicitud</a></li>
         <li><a href="../vistas/plantilla.php">Login</a></li>
-        <li><a href="#creadores">Conócenos</a></li>
       </ul>
     </div>
   </nav>
