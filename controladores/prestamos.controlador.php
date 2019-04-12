@@ -7,6 +7,14 @@ class ControladorPrestamos{
 		$respuesta = ModeloPrestamos::mdlMostrarPrestamos($tabla, $item, $valor);
 		return $respuesta;
 		}
+
+		static public function ctrMostrarTasa($item, $valor){
+
+			$tabla = "tasa";
+			$respuesta = ModeloPlantilla::mdlMostrarTasa($tabla, $item, $valor);
+			return $respuesta;
+
+	}	
 		
 		static public function ctrCrearPrestamo(){
 
@@ -174,4 +182,17 @@ class ControladorPrestamos{
 			}
 	
 		}
+		/*=============================================
+	SUMA TOTAL VENTAS
+	=============================================*/
+
+	public function ctrSumaTotalPrestamos(){
+
+		$tabla = "prestamos";
+
+		$respuesta = ModeloPrestamos::mdlSumaTotalPrestamos($tabla);
+
+		return $respuesta;
+
+	}
 }

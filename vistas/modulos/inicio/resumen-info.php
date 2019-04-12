@@ -1,4 +1,22 @@
+<?php
+  $item = null;
+  $valor = null;
 
+  $montos = ControladorPrestamos::ctrSumaTotalPrestamos();
+
+  $tasa = ControladorPlantilla::ctrMostrarTasa($item, $valor);
+
+    foreach ($tasa as $key => $value) {
+    }
+    $valor1 = $value["tasa"];
+
+
+  $clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
+  $totalClientes = count($clientes);
+
+  $prestamos = ControladorPrestamos::ctrMostrarPretamos($item, $valor);
+  $totalPrestamos = count($prestamos);
+?>
     <div class="container-fluid">
       <div class="container">
        <div class="colum">
@@ -9,14 +27,14 @@
           <!-- Caja 1 -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>2,948,930</h3>
+              <h3><?php echo number_format($montos["total"],2); ?></h3>
 
               <p>Dinero prestado</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="#" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="prestamos" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -24,7 +42,7 @@
           <!-- Caja 2 -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>7<sup style="font-size: 20px">%</sup></h3>
+              <h3><?php echo number_format($valor1); ?><sup style="font-size: 20px">%</sup></h3>
 
               <p>Tasa de interés</p>
             </div>
@@ -39,14 +57,14 @@
           <!-- Caja 3 -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
+              <h3><?php echo number_format($totalClientes); ?></h3>
 
               <p>Clientes Registrados</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="#" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="clientes" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -54,14 +72,14 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>44</h3>
+              <h3><?php echo number_format($totalPrestamos); ?></h3>
 
               <p>Préstamos Aprobados</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
             </div>
-            <a href="#" class="small-box-footer">Más información  <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="prestamos" class="small-box-footer">Más información  <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -126,7 +144,7 @@
 		
  		          <i class="fa fa-th"></i>
 
-  		          <h3 class="box-title">Gráfico de Ventas</h3>
+  		          <h3 class="box-title">Gráfico de Prestamos</h3>
 
 	          </div>
 
@@ -191,11 +209,11 @@
 <!-- Prestamos recientes -->
 
       <?php
-        // $item = null;
-        // $valor = null;
+         $item = null;
+         $valor = null;
         // $orden = "id";
         
-        // $productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
+        // $productos = ControladorProductos::ctrMostrarProductos($item, $valor);
         
         ?>
         
@@ -206,22 +224,8 @@
             
             <h3 class="box-title">Prestamos Recientes</h3>
             
-            <!-- <div class="box-tools pull-right">
-              
-              <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                
-                <i class="fa fa-minus"></i>
-                
-                </button>
-                
-                <button type="button" class="btn btn-box-tool" data-widget="remove">
-                  
-                  <i class="fa fa-times"></i>
-                  
-                  </button>
-                  
-                  </div> -->
-            <!-- Aquei va un div -->
+          
+            
           </div>
                   
             
@@ -231,39 +235,33 @@
                 
             <?php
             
-            // for($i = 0; $i < 10; $i++){
+            for($i = 0; $i < 5; $i++){
               
-            //   echo '<li class="item">
+              echo '<li class="item">
                 
-            //     <div class="product-img">
-                  
-            //       <img src="'.$productos[$i]["imagen"].'" alt="Product Image">
-                  
-            //       </div>
-                  
-            //       <div class="product-info">
+                  <div class="product-info">
                     
-            //         <a href="" class="product-title">
+                    <a href="" class="product-title">
                       
-            //           '.$productos[$i]["descripcion"].'
+                      '.$prestamos[$i]["fecha"].'
                       
-            //           <span class="label label-warning pull-right">$'.$productos[$i]["precio_venta"].'</span>
+                      <span class="label label-warning pull-right">$'.$prestamos[$i]["monto"].'</span>
                       
-            //           </a>
+                      </a>
                       
-            //           </div>
+                      </div>
                       
-            //           </li>';
+                      </li>';
                       
-            //   }
+              }
                     
               ?>
               </ul>
 
               </div>
-              <div class="box-footer text-center">
+              <!-- <div class="box-footer text-center">
                 <a href="productos" class="uppercase">Ver todos los productos</a>
-              </div>
+              </div> -->
             </div>
 
         </div>

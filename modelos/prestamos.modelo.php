@@ -73,4 +73,18 @@ class ModeloPrestamos{
 		$stmt = null;
 
 	}
+
+	static public function mdlSumaTotalPrestamos($tabla){	
+
+		$stmt = Conexion::conectar()->prepare("SELECT SUM(monto) as total FROM $tabla");
+
+		$stmt -> execute();
+
+		return $stmt -> fetch();
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
 }
