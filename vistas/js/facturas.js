@@ -882,6 +882,18 @@ $(".daterangepicker.opensleft .ranges li").on("click", function(){
 
 })
 
+/*=============================================
+IMPRIMIR FACTURA
+=============================================*/
+
+$(".tablas").on("click", ".btnImprimirFactura", function(){
+
+	var codigoVenta = $(this).attr("codigoVenta");
+
+	window.open("extensiones/tcpdf/pdf/factura.php?codigo="+codigoVenta, "_blank");
+
+})
+
 
 
 

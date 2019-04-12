@@ -246,7 +246,7 @@
 
           <div class="box-footer">
 
-            <button type="submit" class="btn btn-primary pull-right">Guardar venta</button>
+            <button type="submit" class="btnImprimirFactura btn btn-primary pull-right">Guardar venta</button>
 
           </div>
 
