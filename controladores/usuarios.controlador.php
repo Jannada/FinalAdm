@@ -28,6 +28,7 @@ class ControladorUsuarios{
 						$_SESSION["usuario"] = $respuesta["usuario"];
 						$_SESSION["perfil"] = $respuesta["id_perfil"];
 						$_SESSION["empleado"] = $respuesta["id_empleado"];
+						$_SESSION["nombre"] = $respuesta["nombre"];
 						/*=============================================
 						REGISTRAR FECHA PARA SABER EL ÚLTIMO LOGIN
 						=============================================*/
@@ -70,7 +71,8 @@ class ControladorUsuarios{
 			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoPassword"])){
 				$tabla = "usuarios";
 				$encriptar = crypt($_POST["nuevoPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
-				$datos = array("usuario" => $_POST["nuevoUsuario"],
+				$datos = array("nombre" => $_POST["nombreUsuario"],
+											"usuario" => $_POST["nuevoUsuario"],
 					           "password" => $encriptar,
 					           "perfil" => $_POST["nuevoPerfilUsuario2"],
 					           "empleado"=>$_POST["nuevoPerfil"]);

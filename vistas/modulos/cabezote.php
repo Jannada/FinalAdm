@@ -61,7 +61,7 @@
 
 					?>
 						
-						<span class="hidden-xs"><?php  echo $_SESSION["usuario"]; ?></span>
+						<span class="hidden-xs"><?php  echo $_SESSION["nombre"]; ?></span>
 
 					</a>
 

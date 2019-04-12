@@ -31,7 +31,7 @@
               <!-- Entrada para el empleado -->
             <br/>
             <div class="form-group col-md-4">
-              <label class="" id="empleadoNombre" name="empleadoNombre"><?php echo $_SESSION["usuario"]; ?></label>
+              <label class="" id="empleadoNombre" name="empleadoNombre"><?php echo $_SESSION["nombre"]; ?></label>
 
               <input type="hidden" name="empleadoId" value="<?php echo $_SESSION["empleado"]; ?>">
               <?php
@@ -41,9 +41,7 @@
                $tasa = ControladorPlantilla::ctrMostrarTasa($item, $valor);
 
                foreach ($tasa as $key => $value) {
-                        
-                        
-                      
+                                 
               }
 
               $valor = $value["tasa"];

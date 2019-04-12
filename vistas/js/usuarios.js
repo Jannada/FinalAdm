@@ -25,6 +25,7 @@ $(document).on("change", "#nuevoPerfil", function(){
  
     var datos = new FormData();
     var idEmpleado = $("#nuevoPerfil").val();
+    
    console.log(idEmpleado);
     datos.append("idEmpleado", idEmpleado);
 
@@ -38,8 +39,8 @@ $(document).on("change", "#nuevoPerfil", function(){
         processData: false,
         dataType: "json",
         success: function(respuesta){
-            
-           // $("#nuevoPerfilUsuario").val(respuesta["id_perfil"]);
+
+           $("#nombreUsuario").val(respuesta["nombre"]);
 
             var datosPerfil = new FormData();
             datosPerfil.append("idPerfil",respuesta["id_perfil"]);
@@ -55,6 +56,7 @@ $(document).on("change", "#nuevoPerfil", function(){
                       success:function(respuestaPerfil){ 
                        $("#nuevoPerfilUsuario").val(respuestaPerfil["perfil"]);
                        $("#nuevoPerfilUsuario2").val(respuestaPerfil["id"]);
+                       
                         }
                    
             }) 
