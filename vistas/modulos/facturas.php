@@ -1,3 +1,11 @@
+<?php 
+  if($_SESSION["perfil"]=="4" || $_SESSION["perfil"]=="2"){
+    echo '<script>
+        window.location = "inicio";
+        </script>';
+        return;   
+  }
+?>
 <div class="content-wrapper">
     <section class="content-header">
       <h1>

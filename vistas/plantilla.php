@@ -166,6 +166,7 @@ CUERPO DOCUMENTO
          $_GET["ruta"] == "reportes" ||
          $_GET["ruta"] == "facturas" ||
          $_GET["ruta"] == "crear-factura" ||
+         $_GET["ruta"] == "formulario-inicio2" ||
          $_GET["ruta"] == "salir"){
 
         include "modulos/".$_GET["ruta"].".php";
@@ -207,6 +208,7 @@ CUERPO DOCUMENTO
 <script src="js/clientes.js"></script>
 <script src="js/reportes.js"></script>
 <script src="js/facturas.js"></script>
+<script src="js/formulario-inicio.js"></script>
 
 </body>
 </html>

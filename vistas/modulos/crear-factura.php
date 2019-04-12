@@ -1,3 +1,13 @@
+<?php 
+  if($_SESSION["perfil"]=="4" || $_SESSION["perfil"]=="2"){
+    echo '<script>
+        window.location = "inicio";
+        </script>';
+        return;
+
+        
+  }
+?>
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -49,6 +59,7 @@
                     <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
                     <input type="text" class="form-control" id="nuevoVendedor" name="nuevoVendedor" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
+                    <input type="hidden" name="idEmpleado" value="<?php echo $_SESSION["empleado"]; ?>">
 
                   </div>
 
@@ -165,6 +176,8 @@
                            <input type="text" class="form-control input-lg" min="0" id="nuevoImpuestoVenta" name="nuevoImpuestoVenta" placeholder="0" required readonly>
 
                             <input type="hidden" name="nuevoPrecioImpuesto" id="nuevoPrecioImpuesto" required>
+                            <input type="hidden" name="nuevoPrecioCapital" id="nuevoPrecioCapital" required>
+                            <input type="hidden" name="nuevoPrecioInteres" id="nuevoPrecioInteres" required>
 
                             <input type="hidden" name="nuevoPrecioNeto" id="nuevoPrecioNeto" required>
 
@@ -258,7 +271,7 @@
       LA TABLA DE PRODUCTOS
       ======================================-->
 
-      <div class="col-lg-6 hidden-md hidden-sm hidden-xs">
+      <div class="col-lg-6 col-md-12 col-xs-12">
         
         <div class="box box-warning">
 

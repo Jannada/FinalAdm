@@ -1,4 +1,12 @@
-  <div class="content-wrapper">
+<?php 
+  if($_SESSION["perfil"]!="1"){
+    echo '<script>
+        window.location = "inicio";
+        </script>';
+        return;    
+  }
+  ?>
+<div class="content-wrapper">
 
   <section class="content-header">
     

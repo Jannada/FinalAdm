@@ -94,6 +94,10 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
           	var mora = parseInt(respuesta["mora"]);
 						var monto = parseFloat(respuesta["monto"]);
 						var idPrestamo= respuesta["id_prestamo"];
+						var capital= respuesta["capital"];
+						var interes= respuesta["interes"];
+
+
 						var fecha =moment(new Date(descripcion));
 					//	var fecha1 = (fecha1.getFullYear()+"/"+(fecha1.getMonth()+1)+"/"+fecha1.getDate())
 						var fechaActual =moment(new Date());
@@ -149,6 +153,8 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 	                 
 								'<input type="text" class="form-control nuevoPrecioProducto" precioReal="'+precio+'" name="nuevoPrecioProducto" value="'+precio+'" readonly required>'+
 								'<input type="hidden" class="idPrestamo" id="idPrestamo" value="'+idPrestamo+'">'+
+								'<input type="hidden" class="capital" id="capital" value="'+capital+'">'+
+								'<input type="hidden" class="interes" id="interes" value="'+interes+'">'+
 	 
 	            '</div>'+
 	             
@@ -490,13 +496,19 @@ SUMAR TODOS LOS PRECIOS
 function sumarTotalPrecios(){
 
 	var precioItem = $(".nuevoPrecioProducto");
-	var moraItem = $(".nuevaCantidadProducto");
+	var capitalItem = $(".capital");
+	var interesItem = $(".interes");
 	
 	var arraySumaPrecio = [];
+	var arraySumaPrecio1 = [];
+	var arraySumaPrecio2 = [];
+
 
 	for(var i = 0; i < precioItem.length; i++){
 
 		 arraySumaPrecio.push(Number($(precioItem[i]).val()));
+		 arraySumaPrecio1.push(Number($(captalItem[i]).val()));
+		 arraySumaPrecio2.push(Number($(interesItem[i]).val()));
 		
 		 
 	}
@@ -508,10 +520,15 @@ function sumarTotalPrecios(){
 	}
 
 	var sumaTotalPrecio = arraySumaPrecio.reduce(sumaArrayPrecios);
+	var sumaTotalPrecio1 = arraySumaPrecio1.reduce(sumaArrayPrecios);
+	var sumaTotalPrecio2 = arraySumaPrecio2.reduce(sumaArrayPrecios);
 	
 	$("#nuevoTotalVenta").val(sumaTotalPrecio);
 	$("#totalVenta").val(sumaTotalPrecio);
 	$("#nuevoTotalVenta").attr("total",sumaTotalPrecio);
+
+	$("#nuevoPrecioCapital").val(sumaTotalPrecio1);
+	$("#nuevoPrecioInteres").val(sumaTotalPrecio2);
 
 
 }
@@ -539,7 +556,6 @@ function agregarImpuesto(){
 
 	var moraItem = $(".nuevaCantidadProducto");
 	
-	var arraySumaPrecio = [];
 	var arraySumaPrecio2 = [];  
 
 	for(var i = 0; i < moraItem.length; i++){
@@ -560,7 +576,7 @@ var sumaTotalPrecio2 = arraySumaPrecio2.reduce(sumaArrayPrecios2);
 
 
 	$("#nuevoImpuestoVenta").val(sumaTotalPrecio2);
-	$("#nuevoPrecioImpuesto").val(sumaTotalPrecio2);
+	$("#nuevoPrecioNeto").val(sumaTotalPrecio2);
 	$("#nuevoImpuestoVenta").attr("total",sumaTotalPrecio2);
 
 
@@ -626,7 +642,7 @@ $("#nuevoMetodoPago").change(function(){
 
 		// Agregar formato al precio
 
-		$('#nuevoValorEfectivo').number( true, 2);
+				$('#nuevoValorEfectivo').number( true, 2);
       	$('#nuevoCambioEfectivo').number( true, 2);
 
 
