@@ -2,7 +2,6 @@
 
 class ControladorPlantilla{
 
-
     static public function ctrMostrarTasa($item, $valor){
 
         $tabla = "tasa";

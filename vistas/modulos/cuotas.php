@@ -28,7 +28,7 @@
                 <th>Mora</th>
                 <th>Estado</th>
                 <th>Fecha de Pago</th>
-                <th>Forma limite</th>
+                <th>Fecha limite</th>
                
            
               </tr>
