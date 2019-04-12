@@ -2,13 +2,22 @@
 
 <?php
 
-// $item = null;
-// $valor = null;
+ $item = null;
+ $valor = null;
 // $orden = "ventas";
 
-// $productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
+$perfiles = ControladorUsuarios::ctrMostrarPerfil($item, $valor);
+$totalPerfiles = count($perfiles);
 
-// $colores = array("red","green","yellow","aqua","purple","blue","cyan","magenta","orange","gold");
+
+$colores = array("red","green","yellow","aqua","purple","blue","cyan","magenta","orange","gold");
+
+$usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+$totalUsuarios = count($usuarios);
+
+
+
+
 
 // $totalVentas = ControladorProductos::ctrMostrarSumaVentas();
 
@@ -24,7 +33,7 @@ PRODUCTOS MÁS VENDIDOS
 	
 	<div class="box-header with-border">
   
-      <h3 class="box-title">Productos más vendidos</h3>
+      <h3 class="box-title">Perfiles de usuarios más usados</h3>
 
   </div>
 
@@ -50,11 +59,11 @@ PRODUCTOS MÁS VENDIDOS
 
 		  	<?php
 
-				// for($i = 0; $i < 10; $i++){
+				for($i = 0; $i < 4; $i++){
 
-				// echo ' <li><i class="fa fa-circle-o text-'.$colores[$i].'"></i> '.$productos[$i]["descripcion"].'</li>';
+				echo ' <li><i class="fa fa-circle-o text-'.$colores[$i].'"></i> '.$perfiles[$i]["perfil"].'</li>';
 
-				// }
+				}
 		  	?>
 
 		  	</ul>
@@ -71,27 +80,26 @@ PRODUCTOS MÁS VENDIDOS
 			
 			 <?php
 
-      //     	for($i = 0; $i <5; $i++){
+          	for($i = 0; $i <4; $i++){
 			
-      //     		echo '<li>
+          		echo '<li>
 						 
-			// 			 <a>
+						 <a>
 
-			// 			 <img src="'.$productos[$i]["imagen"].'" class="img-thumbnail" width="60px" style="margin-right:10px"> 
              
-      //        '.$productos[$i]["descripcion"].'
+             '.$perfiles[$i]["perfil"].'
 
-			// 			 <span class="pull-right text-'.$colores[$i].'">   
-      //        '.ceil($productos[$i]["ventas"]*100/$totalVentas["total"]).'%
-			// 			 </span>
+						 <span class="pull-right text-'.$colores[$i].'">   
+             '.ceil($totalPerfiles*100/$totalUsuarios).'%
+						 </span>
 							
-			// 			 </a>
+						 </a>
 
-      //         </li>';
+              </li>';
               
-      //         // ceil es para redondear en PHP
+              // ceil es para redondear en PHP
 
-			// }
+			}
 
 			?>
 
@@ -115,16 +123,16 @@ PRODUCTOS MÁS VENDIDOS
 
   <?php
 
-  // for($i = 0; $i < 10; $i++){
+  for($i = 0; $i < 4; $i++){
 
-  // 	echo "{
-  //     value    : '".$productos[$i]["ventas"]."',
-  //     color    : '".$colores[$i]."',
-  //     highlight: '".$colores[$i]."',
-  //     label    : '".$productos[$i]["descripcion"]."'
-  //   },";
+  	echo "{
+      value    : '".$perfiles[$i]["id"]."',
+      color    : '".$colores[$i]."',
+      highlight: '".$colores[$i]."',
+      label    : '".$perfiles[$i]["perfil"]."'
+    },";
 
-  // }
+  }
     
    ?>
   ];

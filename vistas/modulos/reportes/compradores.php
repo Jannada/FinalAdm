@@ -13,7 +13,7 @@ foreach ($prestamos as $key => $valuePrestamos) {
   
   foreach ($clientes as $key => $valueClientes) {
     
-      if($valueClientes["id"] == $valuePrestamos["id_cliente"]){
+      if($valueClientes["documento"] == $valuePrestamos["id_cliente"]){
 
         #Capturamos los Clientes en un array
         array_push($arrayClientes, $valueClientes["nombre"]);

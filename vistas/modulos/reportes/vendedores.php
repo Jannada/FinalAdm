@@ -1,42 +1,42 @@
  <?php
 
-//  $item = null;
-//  $valor = null;
+ $item = null;
+ $valor = null;
 
-//  $ventas = ControladorVentas::ctrMostrarVentas($item, $valor);
-//  $usuarios = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
+ $prestamos = ControladorPrestamos::ctrMostrarPretamos($item, $valor);
+ $usuarios = ControladorEmpleados::ctrMostrarEmpleados($item, $valor);
 
-//  $arrayVendedores = array();
-//  $arraylistaVendedores = array();
+ $arrayUsuarios = array();
+ $arraylistaPrestamos = array();
 
-// foreach ($ventas as $key => $valueVentas) {
+foreach ($prestamos as $key => $valuePrestamos) {
 
-//   foreach ($usuarios as $key => $valueUsuarios) {
+  foreach ($usuarios as $key => $valueUsuarios) {
 
-//     if($valueUsuarios["id"] == $valueVentas["id_vendedor"]){
+    if($valueUsuarios["id"] == $valuePrestamos["id_usuario"]){
 
-//         #Capturamos los vendedores en un array
-//         array_push($arrayVendedores, $valueUsuarios["nombre"]);
+        #Capturamos los vendedores en un array
+        array_push($arrayUsuarios, $valueUsuarios["usuario"]);
 
-//         #Capturamos las nombres y los valores netos en un mismo array
-//         $arraylistaVendedores = array($valueUsuarios["nombre"] => $valueVentas["neto"]);
+        #Capturamos las nombres y los valores netos en un mismo array
+        $arraylistaPrestamos = array($valueUsuarios["usuario"] => $valuePrestamos["monto"]);
 
-//          #Sumamos los netos de cada vendedor
+         #Sumamos los netos de cada vendedor
 
-//         foreach ($arraylistaVendedores as $key => $value) {
+        foreach ($arraylistaPrestamos as $key => $value) {
 
-//             $sumaTotalVendedores[$key] += $value;
+            $sumaTotalVendedores[$key] += $value;
 
-//          }
+         }
 
-//     }
+    }
   
-//   }
+  }
 
-// }
+}
 
-// #Evitamos repetir nombre
-// $noRepetirNombres = array_unique($arrayVendedores);
+#Evitamos repetir nombre
+$noRepetirNombres = array_unique($arrayVendedores);
 
 ?>
 
@@ -75,11 +75,11 @@ var bar = new Morris.Bar({
 
   <?php
     
-    // foreach($noRepetirNombres as $value){
+    foreach($noRepetirNombres as $value){
 
-    //   echo "{y: '".$value."', a: '".$sumaTotalVendedores[$value]."'},";
+      echo "{y: '".$value."', a: '".$sumaTotalVendedores[$value]."'},";
 
-    // }
+    }
 
   ?>
   ],

@@ -80,7 +80,7 @@
              
             <?php
 
-             include "reportes/productos-mas-vendidos.php";
+             include "reportes/perfiles-pie.php";
 
             ?>
 
@@ -90,7 +90,7 @@
              
             <?php
 
-             include "reportes/vendedores.php";
+            //  include "reportes/vendedores.php";
 
             ?>
 
