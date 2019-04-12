@@ -47,7 +47,7 @@ class ModeloUsuarios{
 		
         }
     }else{
-        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(usuario, password, id_perfil, id_cliente) VALUES (:usuario, :password, :id_perfil, :id_cliente)");
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, usuario, password, id_perfil, id_cliente) VALUES (:nombre, :usuario, :password, :id_perfil, :id_cliente)");
         $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
         $stmt->bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
 		$stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
