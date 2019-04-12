@@ -27,6 +27,7 @@
   <div class="colum">
       
     <?php
+    
       include "inicio/resumen-info.php";
     ?>
 

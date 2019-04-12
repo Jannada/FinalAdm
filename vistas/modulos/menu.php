@@ -4,7 +4,13 @@
 
 		<ul class="sidebar-menu">
 
-			<li>
+		<?php
+
+		if($_SESSION["perfil"] == 1){
+
+
+
+			echo '<li>
 
 				<a href="inicio" >
 
@@ -24,10 +30,14 @@
 
 				</a>
 
-			</li>
+			</li>';
 
-			<li>
+			
+		}
 
+		if($_SESSION["perfil"] == 1 || $_SESSION["perfil"] == 2){
+		
+				echo '<li>
 				<a href="clientes">
 
 				<i class="fa fa-user-circle"></i>
@@ -35,9 +45,13 @@
 
 				</a>
 
-			</li>
+			</li>';
+		}
+		
 
-			<li>
+		if($_SESSION["perfil"] == 1){
+
+			echo '<li>
 
 				<a href="empleados">
 
@@ -46,9 +60,13 @@
 
 				</a>
 
-			</li>			
+			</li>';
+		}
+		
+		
+		if($_SESSION["perfil"] == 1 || $_SESSION["perfil"] == 3){
 
-			<li class="treeview">
+			echo '<li class="treeview">
 
 				<a href="#">
 
@@ -112,9 +130,12 @@
 
 				</ul>
 
-			</li>
+			</li>';
+		}
 
-			<li class="treeview">
+		if($_SESSION["perfil"] == 1 || $_SESSION["perfil"] == 3){
+
+			echo '<li class="treeview">
 
 				<a href="#">
 
@@ -129,6 +150,7 @@
 					</span>
 
 				</a>
+				
 
 				<ul class="treeview-menu">
 					
@@ -154,11 +176,15 @@
 
 					</li>
 
-				</ul>
+				 </ul>
 
-			</li>
+				 echo </li>';
+		}
+
+		?>
 
 		</ul>
+		
 
 	 </section>
 
