@@ -57,7 +57,7 @@
                 <td>'.$recibos[$i]["interes"].'</td>
                 <td>'.$recibos[$i]["mora"].'</td>
                 <td>'.$recibos[$i]["total_pagado"].'</td>
-                <td>'.$recibos[$i]["id_forma_pago"].'</td>
+               
                 <td>'.$recibos[$i]["referencia_f_pago"].'</td>
                 <td>'.$recibos[$i]["fecha"].'</td>
                 
