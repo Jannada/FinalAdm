@@ -1,3 +1,13 @@
+<?php 
+  if($_SESSION["perfil"]=="3" || $_SESSION["perfil"]=="2"){
+    echo '<script>
+        window.location = "inicio";
+        </script>';
+        return;
+
+        
+  }
+  ?>
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -97,7 +107,20 @@
              <!-- Entrada para el id empleado -->
 
 
-          <h3 >Información del cliente</h3>
+          <div class="garante col-md-12 ">
+          <h3 style="text-align: center">Información del cliente</h3>
+
+              <div class="form-group ">
+                <div class="form-check pull-right">
+                  <input class="form-check-input " type="checkbox" id="gridCheck2">
+                  <label class="form-check-label" for="gridCheck">
+                    Cliente existente
+                  </label>
+                </div>
+            </div>
+          </div>
+        <div class="informacion-cliente">
+          
 
           <!-- Entrada para el nombre -->
           <div class="form-group">
@@ -161,7 +184,19 @@
             </div>
               <br/>
           </div>
-          
+        </div>
+        
+        <!-- Entrada para el documento si ya existe el cliente -->
+        <div class="col-md-12">
+        <div class="form-group">
+          <div class="col-md-3"></div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="documentoExistente" name="documentoExistente" required  placeholder="documento">
+            </div>
+          </div>
+
+
+        </div>
 
           <div class="garante col-md-12 ">
               <div class="form-group ">
@@ -172,7 +207,8 @@
                   </label>
                 </div>
             </div>
-            </div>
+          </div>
+
           <!-- Información del cliente -->
         </div>
 
@@ -181,7 +217,7 @@
 
            <br/>
 
-              <h3 style="text-align:center">Información del garánte</h3>
+            <h3 style="text-align:center">Información del garánte</h3>
 
           <!-- Nombre del garante -->
           <div class="form-group">

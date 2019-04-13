@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 if($_SESSION["perfil"] != 1){
@@ -11,6 +12,16 @@ if($_SESSION["perfil"] != 1){
   return;
 
 }
+=======
+<?php 
+  if($_SESSION["perfil"]=="3" || $_SESSION["perfil"]=="2"){
+    echo '<script>
+        window.location = "inicio";
+        </script>';
+        return;  
+  }
+  ?>
+>>>>>>> vivi
 <div class="content-wrapper">
     <section class="content-header">
       <h1>

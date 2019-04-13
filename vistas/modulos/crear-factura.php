@@ -1,3 +1,13 @@
+<?php 
+  if($_SESSION["perfil"]=="4" || $_SESSION["perfil"]=="2"){
+    echo '<script>
+        window.location = "inicio";
+        </script>';
+        return;
+
+        
+  }
+?>
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -261,7 +271,7 @@
       LA TABLA DE PRODUCTOS
       ======================================-->
 
-      <div class="col-lg-6 hidden-md hidden-sm hidden-xs">
+      <div class="col-lg-6 col-md-12 col-xs-12">
         
         <div class="box box-warning">
 

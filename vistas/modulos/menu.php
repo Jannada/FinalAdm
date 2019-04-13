@@ -3,7 +3,9 @@
 	 <section class="sidebar">
 
 		<ul class="sidebar-menu">
+		<?php
 
+<<<<<<< HEAD
 		<?php
 
 		if($_SESSION["perfil"] == 1){
@@ -11,14 +13,20 @@
 
 
 			echo '<li>
+=======
+		if($_SESSION["perfil"]=="1"||$_SESSION["perfil"]=="2"|| $_SESSION["perfil"]=="3"||$_SESSION["perfil"]=="4"){
+			echo '
+>>>>>>> vivi
 
-				<a href="inicio" >
 
+			<li class="active">
+				<a href="inicio">
 					<i class="fa fa-home"></i>
 					<span>Inicio</span>
-
 				</a>
+			</li>';}
 
+<<<<<<< HEAD
 			</li>
 
 			<li>
@@ -38,6 +46,19 @@
 		if($_SESSION["perfil"] == 1 || $_SESSION["perfil"] == 2){
 		
 				echo '<li>
+=======
+		   if($_SESSION["perfil"]=="1"){
+			echo '
+					<li>
+						<a href="usuarios">
+							<i class="fa fa-user"></i>
+							<span>Usuario</span>
+						</a>
+					</li>
+
+					
+				<li>
+>>>>>>> vivi
 				<a href="clientes">
 
 				<i class="fa fa-user-circle"></i>
@@ -60,11 +81,18 @@
 
 				</a>
 
+<<<<<<< HEAD
 			</li>';
 		}
 		
 		
 		if($_SESSION["perfil"] == 1 || $_SESSION["perfil"] == 3){
+=======
+			</li>	';
+		}	
+		if($_SESSION["perfil"]=="1" || $_SESSION["perfil"]=="4" ){
+			echo '
+>>>>>>> vivi
 
 			echo '<li class="treeview">
 
@@ -104,38 +132,52 @@
 
 						</a>
 
-					</li>
+					</li>'; 
+				
+				}
+				
 
-					<li>
+				if($_SESSION["perfil"]=="1"){
+					echo '<li>
 
-						<a href="cuotas">
-							
-							<i class="fa fa-circle-o"></i>
-							<span>Administras cuotas</span>
+					<a href="cuotas">
+						
+						<i class="fa fa-circle-o"></i>
+						<span>Administras cuotas</span>
 
-						</a>
+					</a>
 
-					</li> 
+				</li> 
 
-					<li>
+				<li>
 
-						<a href="reportes">
-							
-							<i class="fa fa-circle-o"></i>
-							<span>Reporte de prestamos</span>
+					<a href="reportes">
+						
+						<i class="fa fa-circle-o"></i>
+						<span>Reporte de prestamos</span>
 
-						</a>
+					</a>
 
-					</li> 
+				</li> 
 
-				</ul>
+			</ul>
 
+<<<<<<< HEAD
 			</li>';
 		}
 
 		if($_SESSION["perfil"] == 1 || $_SESSION["perfil"] == 3){
 
 			echo '<li class="treeview">
+=======
+		</li>';
+				}
+
+					
+		if($_SESSION["perfil"]=="1" || $_SESSION["perfil"]=="3"){
+					echo '
+			<li class="treeview">
+>>>>>>> vivi
 
 				<a href="#">
 
@@ -178,10 +220,16 @@
 
 				 </ul>
 
+<<<<<<< HEAD
 				 echo </li>';
 		}
 
 		?>
+=======
+			</li>';
+		}
+			?>
+>>>>>>> vivi
 
 		</ul>
 		

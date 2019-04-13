@@ -111,7 +111,6 @@
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Nosotros</a></li>
         <li><a href="vistas/formulario-inicio.php">Enviar Solicitud</a></li>
         <li><a href="vistas/plantilla.php">Login</a></li>
       </ul>
@@ -132,6 +131,16 @@
     $valor1 = $value["tasa"];
 
 ?>
+    <div class="col-md-1"></div>
+    <div class="small-box bg-green col-md-10">
+      <div class="inner">
+        <h3 style="text-align:center"><?php echo number_format($valor1); ?><sup style="font-size: 20px">%</sup></h3>
+        <p style="text-align:center">Tasa de interés</p>
+      </div>
+      <div class="icon">
+        <i class="ion ion-stats-bars"></i>
+      </div>
+    </div>
   <!-- Anuncios -->
   <div class="row anuncios" >
     <div class="">

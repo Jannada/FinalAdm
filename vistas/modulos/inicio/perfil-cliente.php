@@ -27,7 +27,7 @@
             <div class="icon">
               <i class="ion ion-person"></i>
             </div>
-            <a href="prestamos" class="small-box-footer">Solicitar nuevo préstamo<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="formulario-inicio2" class="small-box-footer">Solicitar nuevo préstamo<i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
       

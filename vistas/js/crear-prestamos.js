@@ -15,6 +15,32 @@ $(document).on("change", "#gridCheck", function(){
     }
 })
 
+// Existe el cliente
+$(document).on("change", "#gridCheck2", function(){
+    
+  if( $('#gridCheck2').prop('checked') ) {
+      $(".informacion-cliente").hide();
+      $(".documentoExistente").show();
+
+      $("#documentoExistente").attr("required","true");
+
+
+      $("#nuevoCliente").attr("required","false");
+      $("#nuevoDocumentoCliente2").attr("required","false");
+      $("#nuevaDireccionCliente").attr("required","false");
+      $("#nuevoEmail").attr("required","false");
+      $("#nuevoTelefono").attr("required","false");
+      $("#nuevaFechaNacimiento").attr("required","false");
+      $("#nuevoUsuarioCliente").attr("required","false");
+      $("#nuevoPasswordCliente").attr("required","false");
+      
+  }else{
+    $(".informacion-cliente").show();
+    $(".documentoExistente").hide();
+    $("#documentoExistente").attr("required","false");
+  }
+})
+
 if(localStorage.getItem("capturarRango")!= null){
     $("#daterange-btn span").html(localStorage.getItem("capturarRango"));
   }else{

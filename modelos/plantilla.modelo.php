@@ -19,4 +19,24 @@ class ModeloPlantilla{
         $stmt-> close();
         $stmt = null;
     }
+
+         //editar Tasa
+
+         static public function mdlEditarTasa($tabla, $datos){
+            $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET tasa =:tasa WHERE id = :id");
+            
+            $stmt->bindParam(":id", $datos["id"], PDO::PARAM_STR);
+            $stmt->bindParam(":tasa", $datos["tasa"], PDO::PARAM_STR);
+
+    
+            if($stmt->execute()){
+                return "ok";
+            }else{
+                return "error";
+            }
+            $stmt-> close();
+    
+            $stmt = null;
+        
+        }
 }
