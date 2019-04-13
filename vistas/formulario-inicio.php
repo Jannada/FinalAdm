@@ -111,7 +111,6 @@
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li ><a href="../index.php">Home</a></li>
-        <li><a href="#">Nosotros</a></li>
         <li class="active"><a href="#">Enviar Solicitud</a></li>
         <li><a href="../vistas/plantilla.php">Login</a></li>
       </ul>
